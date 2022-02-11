@@ -1,0 +1,114 @@
+/* Navigation */
+ #navbar ul li{
+    
+     font-size: 0.5rem;
+     margin: 0px 0px;
+    }
+    #navbar ul li a{
+     padding: 2px 8px;
+    }
+  /* logo */
+ #logo img
+ {
+   height: 20px;
+ }
+ #logotext
+ {
+    font-size: 0.8rem;
+ }
+ /* Home */
+ #home{
+  height: 120px;
+ }
+ #home::before{
+  height:190px;
+ }
+ /* Service */
+ #service-container::before
+ {
+    filter:blur(1px);
+ }
+ #idservice .box{
+     padding:5px 5px;
+     margin: 5px 8px;
+ }
+ #idservice .box p{
+     font-size: 0.5rem;
+ }
+ #idservice .box img{
+     height: 80px;
+ }
+ /* cilent */
+ #client-container::before
+ {
+    filter:blur(1px);
+ }
+ .client-item{
+     /* padding: 12px; */
+     margin: 8px;
+     border-radius: 10px;
+ }
+ #client img{
+    height: 40px;
+ }
+ /* contact */
+ #contact-box button
+{
+    font-size: .7rem;
+    padding: 4px;
+    margin-top: 6px;
+    border-radius: 5px;
+}
+ #contact::before{
+    filter:blur(1px);
+ }
+#contact-box input,
+#contact-box textarea{
+    width: 90%;
+    font-size: .4rem;
+}
+#contact-box form{
+    width: 85%;
+    padding:10px;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+#contact-box label{
+    font-size: .7rem;
+}
+ /* footer */
+ footer{
+    padding: 4px 0px;
+    font-size: .3rem;
+}
+.platform
+{
+    margin:2px 8px;
+}
+.platform img
+{
+    height: 15px;
+}
+ /* ulitity */
+ .hprimary{
+     padding: 2px;
+     font-size: .9rem;
+ }
+ .hsecondary{
+     font-size: 1rem;
+     padding: 0px; 
+ }
+ .hthird{
+     padding: 3px;
+     font-size: 1rem;
+ }
+ #home p
+ {
+     font-size: .3rem;   
+ }
+ .btn{
+     margin: 5px;
+     padding: 2px 4px;
+     border: 2px solid white;
+     font-size: 0.3rem;
+ }

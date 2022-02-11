@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&family=Merriweather:wght@300&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+/* Css reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+/* Navigation bar */
+#navbar
+{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top:0px;
+    justify-content: space-between;
+    z-index: 2;
+}
+#navbar::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    top:0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.6;
+ }
+/* logo and image*/
+#logo
+{
+    margin: 19px 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+#logotext
+{
+   color:white;
+   font-family: 'Dancing Script', cursive;
+   font-size: 4rem;
+}
+#logo img
+{
+  height: 170px;
+  margin: 3px 6px;
+}
+/* list  styling*/
+#navbar a{
+    text-decoration: none;
+}
+#navbar ul{
+    display: flex;
+}
+
+#navbar ul li{
+ list-style: none;
+ font-size: 3.2rem;
+ margin-right: 3rem;
+}
+#navbar ul li a{
+ color: white;
+ display: block;
+ padding: 8px 22px;
+ border-radius: 300px;
+ text-decoration: none;
+}
+#navbar ul li a:hover{
+color: black;
+background-color: white;
+}
+/* Home section */
+#home
+{
+display: flex;
+flex-direction: column;
+padding: 81px 200px;
+height: 800px;
+margin-bottom: 150px;
+justify-content: center;
+align-items: center;
+overflow: hidden;
+}
+#home::before
+{
+content: "";
+position: absolute;
+background: url("../image/logo/bg4.jpg")no-repeat center /cover;
+height: 1325px;
+width: 100%;
+top:0px;
+left: 0px;
+z-index: -1;
+filter: brightness(80%);
+}
+/* Services */
+#service-container
+{
+   position: relative;
+   height: 100%;
+}
+#service-container::before
+{
+    content: "";
+    position: absolute;
+    top:0px;
+    left:0px;
+    background: url("../image/logo/bg3.jpg")no-repeat center center/cover;
+    height: 103%;
+    width: 100%;
+    z-index: -1;
+    filter:blur(4px);
+}
+
+#idservice
+{
+    margin:3px;
+    display: flex;
+}
+#idservice .box{
+    border: 2px solid rgb(255, 255, 255);
+    padding:70px 50px;
+    margin: 25px 25px;
+    border-radius: 23px;
+    background: rgba(233, 230, 230, 0.719);
+    box-shadow: 0 0 40px grey;
+}
+#idservice .box img{
+    height: 400px;
+    display: block;
+    margin: auto;
+}
+#idservice .box p{
+    font-size: 2rem;
+    font-family: 'Lora', serif;
+    text-align: center;
+}
+/* Client Section */
+#client-container
+{
+    position: relative;
+    height: 100%;
+}
+#client-container::before
+{
+   content: "";
+   position: absolute;
+   background: url("../image/logo/bg2.jpg")no-repeat center center/cover;
+   width: 100%;
+   height: 100%;
+   top: 0px;
+   left: 0px;
+   z-index: -1;
+   filter:blur(4px);
+}
+#client{
+    display: flex;
+    height: 350px;
+    justify-content: center;
+    align-items: center;
+}
+.client-item{
+    padding: 34px;
+    margin: 0px 14px;
+    border-radius: 23px;
+    background: rgba(233, 230, 230, 0.719);
+    box-shadow: 0 0 40px grey;
+}
+#client img{
+   height: 200px;
+}
+/* contact */
+#contact{
+    position:relative
+}
+#contact::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:0px;
+    left: 0px;
+    z-index: -1;
+    background: url("../image/contact/contact.png")no-repeat center center/cover;
+    filter:blur(4px);
+}
+#contact-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 34px;
+}
+#contact-box input,
+#contact-box textarea{
+    width: 98%;
+    height: 80%;
+    padding: 0.5rem;
+    border-radius: 9px;
+    font-size: 2rem;
+}
+#contact-box button
+{
+    font-size: 2rem;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+#contact-box form{
+    width: 35%;
+    padding: 40px;
+    margin-top: 40px;
+    border-radius: 23px;
+    background: rgba(233, 230, 230, 0.719);
+    box-shadow: 0 0 40px grey;
+}
+#contact-box label{
+    font-size: 3rem;
+    font-family: 'Lora', serif;
+}
+/* footer */
+footer{
+    background: black;
+    color: white;
+    padding: 9px 2px;
+    font-size: 1.7rem;
+    font-family:sans-serif,arial;
+}
+#socialmedia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.platform
+{
+    margin:10px 30px;
+}
+.platform img
+{
+    height: 50px;
+}
+/* ulitity class */
+.hprimary{
+    font-size: 6.3rem;
+    padding: 12px;
+    font-weight: 1000;
+}
+.hsecondary{
+    font-weight: bolder;
+    font-size: 5rem;
+    padding: 12px; 
+    font-family: 'Playfair Display', serif;   
+    color: rgb(0, 0, 0);
+    text-shadow: 4px 4px 900px rgba(56, 53, 53, 0.418);
+    box-shadow: 2px 2px 18px rgba(128, 128, 128, 0.781);
+    background-color: rgba(151, 136, 136, 0.137);
+}
+.hthird{
+    font-family: 'Lora', serif;
+    font-size: 3.8rem;
+    padding: 12px;
+}
+#home h1{
+    color: white;
+    text-align: center;
+    font-family: 'Quintessential', cursive;
+}
+#home p
+{
+    color: white;
+    text-align: center;
+    font-size: 2.1rem;
+    font-family: 'Ubuntu', sans-serif;
+}
+.btn{
+    padding: 12px 20px;
+    border: 10px solid white;
+    border-radius: 100px;
+    background-color: rgb(255, 251, 0);
+    color: black;
+    font-size: 3rem;
+    margin: 25px;
+    cursor: pointer;
+}
+.center
+{
+   text-align: center; 
+}
