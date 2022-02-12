@@ -2,10 +2,10 @@
 #navbar ul li{
     
     font-size: .8rem;
-    margin: 5px 5px;
+    margin: 4px 7px;
    }
    #navbar ul li a{
-    padding: 5px 11px;
+    padding: 5px 5px;
    }
  /* logo */
 #logo
@@ -19,7 +19,7 @@
 }
 #logotext
 {
-   font-size: 1.4rem;
+   font-size: 1.8rem;
 }
 /* Home */
 #home{
@@ -41,7 +41,7 @@
     margin-top: 5px;
 }
 #idservice .box p{
-    font-size: 1.1rem;
+    font-size: 1.2rem;
 }
 #idservice .box img{
     height: 150px;
@@ -106,7 +106,7 @@ footer{
 }
 /* ulitity */
 .hprimary{
-    padding: 5px;
+    padding: 1px;
     font-size: 1.5rem;
 }
 .hsecondary{
@@ -124,6 +124,6 @@ footer{
 .btn{
     margin: 10px;
     padding: 3px 4px;
-    border: 4px solid white;
+    border: 3px solid white;
     font-size: 0.6rem;
 }
