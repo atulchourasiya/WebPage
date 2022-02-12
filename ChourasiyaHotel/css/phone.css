@@ -41,13 +41,16 @@
 {
   flex-direction: column;
 }
+#idservice .box p{
+    font-size: 1.7em;
+}
 #idservice .box{
-    padding:20px 150px;
-    margin: 20px 30px;
+    padding:10px 100px;
+    margin: 1px 300px;
     margin-top: 40px;
 }
 #idservice .box img{
-    height: 300px;
+    height:150px;
 }
 /* cilent */
 #client-container::before
@@ -59,12 +62,16 @@
     height: 100%;
 }
 .client-item{
+    padding: 20px;
     margin: 14px 14px;
 }
 #client img{
-   height: 150px;
+   height: 80px;
 }
 /* contact */
+#contact-box{
+    height: 10%;
+}
 #contact-box button
 {
     font-size: 1.5rem;
@@ -80,6 +87,7 @@
 #contact-box input,
 #contact-box textarea{
     font-size: 1.8rem;
+    height: 60%;
 }
 #contact-box label{
     font-size: 2rem;
@@ -97,7 +105,7 @@ footer{
     padding: 4px; 
 }
 .hthird{
-    font-size: 3rem;
+    font-size: 2rem;
 }
 #home p
 {
