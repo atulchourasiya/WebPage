@@ -1,0 +1,742 @@
+
+:root
+{
+   font-size: 18.8%;
+}
+/* nav-bar */
+#navbar {
+   display: none;
+}
+/* navbar1 */
+#navbar1 {
+   display: flex;
+   box-shadow: .05px .05px 0px .2px rgba(197, 197, 197, 0.466);
+}
+.navbar1center{
+   margin-left: 24.4px;
+}
+.fa-bars
+{
+   margin: 4.7px;
+   margin-left: 4px;
+}
+.navbar1btn{
+   margin: 3.76px;
+   margin-top: 5px;
+}
+.navbar1btn a{
+   font-weight: bold;
+   letter-spacing: .2px;
+   margin-top: 0px;
+   padding: 2.2px;
+   width: 23.7px;
+   border: .75px solid rgb(0, 0, 0);
+}
+.navbar1btn a:hover{
+ border-radius: .47px;
+}
+#navbar1 ul {
+   padding:1.8px 0px;
+   padding-top: .94px;
+}
+
+#navbar1 ul li {
+   padding: .75px;
+}
+
+#navbar1 ul li a {
+  text-shadow: .05px .05px rgb(126, 38, 3);
+}
+
+/* nav-bar animation */
+#navbar1 ul li a::before {
+   border-top: .37px solid rgb(255, 255, 255);
+   border-left: .37px solid rgb(255, 255, 255);
+}
+
+#navbar1 ul li a::after {
+   border-bottom: .37px solid rgb(255, 255, 255);
+   border-right: .37px solid rgb(255, 255, 255);
+}
+
+/* hover effect */
+#navbar1 ul li a:hover::after,
+#navbar1 ul li a:hover::before
+ {
+   width: 1.12px;
+   height: .98px;
+}
+#navbar1 ul li .active1::after,
+#navbar1 ul li .active1::before
+{
+   width: 1.12px;
+   height: .98px;
+}
+#navbar1 ul li .active1
+{
+   text-shadow: .09px .09px rgb(248, 223, 81);
+}
+#navbar1 ul li a:hover {
+   text-shadow: .09px .09px rgb(248, 223, 81);
+}
+/* Logo */
+#logo1 img {
+   height: 17px;
+   width: 17px;
+   margin: .1px;
+   margin-left: 3.08px;
+}
+
+
+/* Home */
+#home {
+   height: 300px;
+   box-shadow: inset 0px 0px 0px 18px rgb(241, 255, 230);
+}
+
+/* slider */
+.slider {
+   height: 300px;
+}
+
+.slides {
+   height: 300px;
+}
+
+/*css for manual slide navigation*/
+
+.navigation-manual {
+   bottom: 23px;
+}
+
+.manual-btn {
+   border: .4px solid #40D3DC;
+   padding: 3px;
+}
+
+.manual-btn:not(:last-child) {
+   margin-right: 5px;
+}
+
+.manual-btn:hover {
+   background: transparent;
+}
+/*css for automatic navigation*/
+
+.navigation-auto {
+   bottom: 23px;
+}
+
+.navigation-auto div {
+   border: .4px solid #40D3DC;
+   padding: 3px;
+}
+
+.navigation-auto div:not(:last-child) {
+   margin-right: 5px;
+}
+#home h1 {
+   font-size: 3rem;
+}
+
+.imagetext {
+   letter-spacing: .2px;
+   margin-bottom: 10px;
+}
+
+#btn {
+   font-size: 2rem;
+   font-weight: bold;
+   letter-spacing: .2px;
+   margin-top: 40px;
+   padding: 6px;
+   border: 3px solid white;
+}
+
+#btn:hover {
+ border-radius: .75px;
+}
+
+/* welcome */
+#welcome {
+   padding-bottom: 4.7px;
+}
+
+
+/* welcometext1 */
+.welcometext {
+   padding: 4.7px 9.4px;
+}
+
+.welcometext h2 {
+   height: 25px;
+   width: 90px;
+   border-bottom: .94px solid black;
+}
+
+.welcometext h2::before {
+   width: 90px;
+   bottom: 1px;
+   border-bottom: .75px solid rgb(0, 0, 0);
+}
+
+.firstpara {
+   margin-top: 2.35px;
+}
+
+.secondpara {
+   margin-top: 7.05px;
+
+}
+
+.welcometext a {
+   letter-spacing: .2px;
+   margin-top: 9.4px;
+   padding: 2.25px;
+   width: 32px;
+   border: .75px solid rgb(0, 0, 0);
+}
+
+.welcometext a:hover {
+   border-radius: .47px;
+}
+
+/* welcometext2 */
+.welcometext1 {
+   padding: 4.7px 9.4px;
+}
+
+.welcometext1 h2 {
+   font-size: 4rem;
+   height: 20px;
+   width: 80px;
+   border-bottom: .94px solid black;
+}
+
+.welcometext1 h2::before {
+   width: 80px;
+   bottom: .2px;
+   border-bottom: .47px solid rgb(0, 0, 0);
+}
+
+/* welcometext2 */
+.welcometext2 {
+   padding: 4.7px 9.4px;
+}
+
+.welcometext2 h2 {
+   font-size: 4rem;
+   height: 20px;
+   width: 106px;
+   border-bottom: .94px solid black;
+}
+
+.welcometext2 h2::before {
+   width: 106px;
+   bottom: 0.2px;
+   border-bottom: .47px solid rgb(0, 0, 0);
+}
+
+.welcomeimg {
+   margin-top: 4.7px;
+}
+
+.welcomeimg img {
+   height: 70.5px;
+}
+
+/* Menu */
+#menu-container {
+   padding: 0px 18.8px;
+   padding-bottom: 9.4px;
+   padding-top: 2.35px;
+}
+
+#menu-container h2 {
+   font-size: 6rem;
+   height: 25px;
+   width: 50px;
+   border-bottom: .75px solid rgb(0, 0, 0);
+   margin-bottom: 2.35px;
+}
+
+#menu-container h2::before {
+   width: 50px;
+   bottom: 1px;
+   border-bottom: .47px solid rgb(0, 0, 0);
+}
+
+#menu-container>p {
+   font-size: 1rem;
+}
+
+.menuitem {
+   height: 16.45px;
+}
+
+.menuitem h4 {
+   padding: 1.41px 0px;
+   padding-left: 10px;
+   font-size:2rem;
+   border: .94px solid black;
+   width: 80vw;
+   height: 11.75px;
+   margin-top: 4.7px;
+}
+
+.menuitem h4::before {
+   left: .70px;
+   width: 9.4px;
+   height: 9.4px;
+}
+
+.hovereffect:hover {
+   height: 50px;
+}
+
+.item {
+   margin-top: 4.7px;
+   padding-bottom: .75px;
+   margin-left: 2.35px;
+}
+
+.item h5 {
+   font-size: 1rem;
+   width: 65.8px;
+   margin-top: .47px;
+}
+
+.item .dot {
+   bottom: -1.41px;
+   border-bottom: .47px dotted rgba(189, 189, 189, 0.699);
+}
+
+.item .menuorder {
+   width: 15px;
+   font-size: 1rem;
+}
+
+.item .menuorder:hover {
+   font-size: 1rem;
+}
+
+.item .price {
+   font-size: .8rem;
+}
+
+.item img {
+   height: 9.87px;
+   margin-right: 2.35px;
+}
+
+.item p {
+   font-size: .8rem;
+   margin-top: .94px;
+}
+
+/* Event */
+#event-container {
+   padding-bottom: 9.4px;
+}
+
+#event-container h2 {
+   text-shadow: .2px .2px .94px rgb(0, 0, 0);
+   height: 25px;
+   width: 65px;
+   border-bottom: .94px solid rgb(255, 255, 255);
+   margin-bottom: 2.3px;
+}
+
+#event-container h2::before {
+   width: 65px;
+   bottom: 1px;
+   border-bottom: .47px solid rgb(255, 255, 255);
+}
+
+#event .eventitem {
+   margin: 3.57px;
+   box-shadow: 0px 0px 0px 1.4px rgb(255, 255, 255);
+}
+
+#event .eventitem img {
+   width: 70.5px;
+   height: 70.5px;
+}
+
+#event .eventitem div {
+   width: 70.5px;
+   height: 70.5px;
+   text-shadow: .37px .37px .37px rgb(44, 44, 44);
+}
+
+#event .eventitem div::before {
+   width: 61.1px;
+   height: 61.1px;
+   border: .94px solid rgb(255, 255, 255);
+}
+#event .eventitem P {  
+   font-size: 3rem;
+}
+#event .eventitem a {
+   font-size: 1.2rem;
+   letter-spacing: .2px;
+   width: 31px;
+   margin-top: 30px;
+   border: .75px solid rgb(255, 255, 255);
+   text-shadow: .18px .18px .18px rgb(44, 44, 44);
+   box-shadow: .03px .03px .1px rgb(44, 44, 44);
+   z-index: 0;
+   padding: 2.2px;
+}
+
+#event .eventitem a:hover {
+   border-radius: .47px;
+}
+#event .eventitem:hover>a {
+   z-index: 0;
+   padding: 2.2px;
+}
+#event .eventitem div p {
+   margin-bottom: 14.1px;
+}
+#event .eventitem:hover>div p {
+   margin-bottom: 14.1px;
+}
+
+/* gallery */
+#gallery {
+   padding-bottom: 4.7px;
+   padding-top: 2.35px;
+}
+
+#gallery h2 {
+   height: 25px;
+   width: 75px;
+   margin-bottom: 4.7px;
+   border-bottom: .75px solid black;
+}
+
+#gallery h2::before {
+   width: 75px;
+   border-bottom: .47px solid rgb(0, 0, 0);
+}
+
+#gallery-container {
+   grid-gap: 2.82px;
+}
+
+.griditem a::before {
+   height: 70.5px;
+   width: 70.5px;
+   border: .47px solid rgb(255, 255, 255);
+   background: url(/image/social/instawhite.png)no-repeat center center;
+   background-size: 0px 0px;
+}
+
+.griditem a:hover:before {
+   background-size: 11.75px 11.75px;
+}
+
+#gallery-container .griditem img {
+   height: 75.2px;
+   width: 75.2px;
+}
+
+#gallery>a {
+   letter-spacing: .2px;
+   margin-top: 4.7px;
+   padding: 2.2px;
+   width: 47px;
+   border: .75px solid rgb(0, 0, 0);
+}
+
+#gallery>a:hover {
+   border-radius: .47px;
+}
+
+#gallery>a img {
+   display: none;
+}
+
+/* Our chef */
+
+#aboutchef {
+   padding: 4.7px 9.4px;
+}
+
+#aboutchef h2 {
+   font-size: 3.8rem;
+   height: 18px;
+   width: 56.4px;
+   border-bottom: .47px solid black;
+}
+
+#aboutchef h2::before {
+   width: 56.4px;
+   bottom: 1px;
+   border-bottom: .47px solid rgb(0, 0, 0);
+}
+
+#aboutchef .firstpara {
+   margin-top: 2.35px;
+}
+#aboutchef .secondpara {
+   margin-top: 7.05px;
+
+}
+
+#aboutchef a {
+   font-size: 1.2rem;
+   font-weight: bold;
+   letter-spacing: .2px;
+   margin-top: 9.4px;
+   padding: 2.5px;
+   width: 37px;
+   border: .47px solid rgb(0, 0, 0);
+}
+#aboutchef a:hover {
+   border-radius: .47px;
+}
+
+#aboutchef a img {
+  display: none;
+}
+
+#ourchef {
+   margin-top: 4.7px;
+}
+
+#ourchef img {
+   height: 123px;
+}
+
+/* reservation */
+#reservation-container {
+   background-attachment: scroll;
+   background-size: 540px 100vw;
+  }
+
+#reservation {
+   height: 70px;
+}
+
+#reservation h2 {
+   border-bottom: .75px solid rgb(255, 255, 255);
+   margin: .75px;
+}
+
+#reservation h2::before {
+   width:76px;
+   bottom: 1px;
+   border-bottom: .47px solid rgb(255, 255, 255);
+}
+
+#reservation p {
+   margin-top: 5px;
+}
+
+#reservation .topmargin {
+   margin-top: 5px;
+}
+
+#reservation div a {
+   letter-spacing: .2px;
+   margin: 1.8px;
+   font-weight: bold;
+   padding: 2.2px;
+   width: 35px;
+   border: .75px solid rgb(255, 255, 255);
+}
+
+#reservation a:hover {
+   border-radius: .47px;
+}
+
+/* footer */
+footer {
+padding:4px;
+padding-top: 7px;
+}
+#foot-container .footitem {
+   padding: 9.4px;
+   width: 100%;
+}
+
+.footitem h4 {
+   line-height: 7.05px;
+}
+.footitem p {
+   font-family: serif;
+   font-size: 1.4rem;
+}
+#social-container {
+   height: 9.4px;
+}
+
+#social-container li {
+   height: 6.69px;
+   width: 6.58px;
+   padding: 4px;
+   margin: 3px;
+   border: 0.2px solid rgba(0, 0, 0, 0.144);
+   border-radius: 100px;
+}
+
+#social-container li:hover>a img {
+   height: 4px;
+   width: 3.9px;
+}
+
+#social-container li a img {
+   height: 3.5px;
+   width: 3.4px;
+   margin-top: 0px;
+}
+
+#cpyryt {
+   padding: 1.88px 0px;
+}
+
+/* contact */
+#contact {
+   background-color: rgb(250, 250, 250);
+   padding-bottom: 2.23px;
+}
+#contact .contactgriditem1 {
+   margin-left: 9.4px;
+   margin-right: 9.4px;
+}
+
+#contact .contactgriditem1 h2 {
+   font-size: 3.2rem;
+   height: 15px;
+   width: 67px;
+   border-bottom: .74px solid black;
+   margin: 1.8px;
+}
+
+#contact .contactgriditem1 h2::before {
+   width: 67px;
+   bottom: .47px;
+   border-bottom: .74px solid rgb(0, 0, 0);
+}
+
+#contact .contactgriditem2 h2 {
+   height: 15px;
+   width: 38px;
+   border-bottom: .74px solid black;
+   margin: 1.8px;
+}
+
+#contact .contactgriditem2 h2::before {
+   width: 38px;
+   bottom: .47px;
+   border-bottom: .47px solid rgb(0, 0, 0);
+}
+#contact .contactgriditem2 iframe{
+   height: 100px;
+   width: 100px; 
+}
+
+#contact .contactgriditem1 p {
+   margin-bottom: 4.7px;
+}
+#contact .contactgriditem1 input {
+   height: 9.4px;
+   margin-bottom: 4.7px;
+   padding: .74px;
+   border-radius: 1.4px;
+   border: .01px rgb(146, 146, 146) inset;
+   box-shadow: none;
+   outline: none;
+   caret-color: rgba(53, 53, 53, 0.199);
+}
+
+#contact .contactgriditem1 textarea {
+   height: 32.9px;
+   padding: .75px;
+   border-radius: 1.4px;
+   border: .01px rgb(146, 146, 146) inset;
+   box-shadow: none;
+   outline: none;
+   caret-color: rgba(53, 53, 53, 0.199);
+}
+
+#contact .contactgriditem1 label {
+   margin-bottom: .75px;
+}
+
+#contact .contactgriditem1 button {
+   letter-spacing: .2px;
+   margin-top: 4.7px;
+   padding: 2.2px;
+   width: 32px;
+   border: .74px solid rgb(0, 0, 0);
+   margin-left: 70px;
+}
+
+#contact .contactgriditem1 button:hover {
+   border-radius: .47px;
+}
+
+/* reservation */
+#reservationform {
+   padding: 4.7px 18.8px;
+}
+
+#reservationform h2 {
+   font-size: 3.2rem;
+   font-weight: bolder;
+   height: 15px;
+   width: 104px;
+   border-bottom: .94px solid black;
+   margin: 1.8px;
+}
+
+#reservationform h2::before {
+   width: 104px;
+   bottom: 1px;
+   border-bottom: .47px solid rgb(0, 0, 0);
+}
+
+#reservationform p {
+   font-size: 1rem;
+   margin: .94px;
+}
+
+#reservationform input {
+   font-size: 1rem;
+   width: 65.8px;
+   height: 9.4px;
+   margin: 4.7px;
+   padding: .94px;
+   border-radius: 1.4px;
+   border: .01px rgba(146, 146, 146, 0.609) inset;
+   box-shadow: none;
+   outline: none;
+   caret-color: rgba(53, 53, 53, 0.199);
+}
+
+#reservationform textarea {
+   font-size: 1rem;
+   width: 141px;
+   height: 28.2px;
+   margin: 4.7px;
+   padding: .94px;
+   border-radius: 1.4px;
+   border: .01px rgb(146, 146, 146) inset;
+   box-shadow: none;
+   outline: none;
+   caret-color: rgba(53, 53, 53, 0.199);
+}
+
+#reservationform button {
+   letter-spacing: .2px;
+   margin-top: 4.7px;
+   padding: 2.2px;
+   border: .75px solid rgb(0, 0, 0);
+}
+
+#reservationform button:hover {
+   border-radius: .4px;
+}

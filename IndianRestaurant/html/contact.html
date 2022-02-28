@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="author" content="AtulChourasiya">
+   <link rel="shortcut icon" href="./image/logo/chourasiyahotellogo.png" type="image/x-icon">
+   <link rel="stylesheet" href="./css/style.css">
+   <link rel="stylesheet" href="/css/all.min.css">
+   <link rel="stylesheet" media="screen and (max-width:320px)" href="/css/media320px.css">
+   <link rel="stylesheet" media="screen and (min-device-width:320px) and (max-width:480px)" href="/css/media480px.css">
+   <script src="/javascript/index.js" async></script>
+   <title>ChourasiyaHotel.com</title>
+</head>
+
+<body>
+   <!-- navigation-bar -->
+   <nav id="navbar">
+      <ul>
+         <li><a href="/index.html">Home</a></li>
+         <li><a href="/html/explore.html">About us</a></li>
+         <li><a href="/index.html#menu-container">Menu</a></li>
+         <li><a href="/index.html#event-container">Event</a></li>
+      </ul>
+      <a href="/index.html">
+         <!-- Logo -->
+         <div id="logo">
+            <img src="./image/logo/chourasiyahotellogo.png" alt="ChourasiyaHotel">
+         </div>
+      </a>
+      <ul>
+         <li><a href="/index.html#gallery">Gallery</a></li>
+         <li><a href="/index.html#chef">Our chef</a></li>
+         <li><a href="/html/reservation.html">Reservation</a></li>
+         <li><a href="/html/contact.html" class="active">Contact</a></li>
+      </ul>
+   </nav>
+   <!-- navbar1 -->
+   <nav id="navbar1">
+      <i class="fa-solid fa-bars" onclick="clickme()" title="menu"></i>
+      <div class="navbar1center">
+            <a href="/index.html">
+            <!-- Logo -->
+            <div id="logo1">
+               <img src="./image/logo/chourasiyahotellogo.png" alt="ChourasiyaHotel">
+            </div>
+         </a>
+         <ul id="navbar1link">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/html/explore.html" >About us</a></li>
+            <li><a href="/index.html#menu-container" >Menu</a></li>
+            <li><a href="/index.html#event-container" >Event</a></li>
+            <li><a href="/index.html#gallery" >Gallery</a></li>
+            <li><a href="/index.html#chef" >Our chef</a></li>
+            <li><a href="/html/reservation.html" >Reservation</a></li>
+            <li><a href="/html/contact.html" class="active1">Contact</a></li>
+         </ul>
+      </div>
+      <div class="navbar1btn">
+         <a href="/html/reservation.html">RESERVATION</a>
+      </div>
+   </nav>
+
+   <!-- Home -->
+   <section id="home">
+      <h1>HOME >> CONTACT</h1>
+      <p class="contactpara">We love to hear from you</p>
+      <!-- image slider -->
+      <div class="slider">
+         <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <input type="radio" name="radio-btn" id="radio5">
+            <div class="slide first">
+               <img src="/image/background/sweet.jpg">
+            </div>
+            <div class="slide">
+               <img src="/image/background/idli.jpg">
+            </div>
+            <div class="slide">
+               <img src="/image/background/pizza.jpg">
+            </div>
+            <div class="slide">
+               <img src="/image/background/roti.jpg">
+            </div>
+            <div class="slide">
+               <img src="/image/background/pasta.jpg">
+            </div>
+            <div class="navigation-auto">
+               <div class="auto-btn1"></div>
+               <div class="auto-btn2"></div>
+               <div class="auto-btn3"></div>
+               <div class="auto-btn4"></div>
+               <div class="auto-btn5"></div>
+            </div>
+         </div>
+      </div>
+      <div class="navigation-manual">
+         <label for="radio1" class="manual-btn"></label>
+         <label for="radio2" class="manual-btn"></label>
+         <label for="radio3" class="manual-btn"></label>
+         <label for="radio4" class="manual-btn"></label>
+         <label for="radio5" class="manual-btn"></label>
+      </div>
+   </section>
+
+   <!-- welcome -->
+   <section id="contact">
+      <div id="contactgrid">
+         <div class="contactgriditem1">
+            <h2>GET IN TOUCH</h2>
+            <p>
+            You have a piece of advice or a suggestion that you would like to share with us? Feel free to contact us.
+            </p>
+            <form action="">
+               <label for="name">NAME :</label>
+               <input type="text" id="name" placeholder="ENTER YOUR NAME" required>
+               <label for="email,">E-MAIL :</label>
+               <input type="email" id="email" placeholder="ENTER YOUR E-MAIL"required >
+               <label for="number">MOBILE NO. :</label>
+               <input type="tel" id="number" placeholder="ENTER YOUR MOBILE NO." minlength="9" maxlength="12" required>
+               <label for="message">MESSAGE :</label>
+               <textarea name="message" id="message" cols="30" rows="10" placeholder="WRITE A MESSAGE" required></textarea>
+               <button type="submit">SEND MESSAGE</button>
+            </form>
+         </div>
+         <div class="contactgriditem2">
+            <h2>FIND US</h2>
+            <p>ChourasiyaHotel<br>W.No-4 katangi,India 481445
+            <p>+91 9876543210<br>Contact@ChourasiyaHotel.com
+            <div>
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3705.263795306807!2d79.79800901428611!3d21.770049185601557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a2ae8e5b56efbc5%3A0x35fb910aea9fe6e8!2sChourasiya%20Hotel!5e0!3m2!1sen!2sin!4v1645596982055!5m2!1sen!2sin" width="500px" height="500px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+         </div>
+      </div>
+      <form action="">
+
+      </form>
+      
+      
+
+   </section>
+
+   <footer>
+      <div id="foot-container">
+         <div class="footitem">
+            <h4>ADDRESS</h4>
+            <p>ChourasiyaHotel<br>W.No-4 katangi,India 481445
+            </p>
+         </div>
+         <div class="footitem">
+            <h4>RESERVATION</h4>
+            <p>+91 9876543210<br>Contact@ChourasiyaHotel.com
+            </p>
+         </div>
+         <div class="footitem">
+            <h4>OPEN HOURS</h4>
+            <p>Monday - Friday: 10 AM - 11 PM
+            </p>
+            <p>Saturday - Sunday: 9 AM - 1 PM
+            </p>
+         </div>
+      </div>
+      <ul id="social-container">
+         <li class="social"><a href="https://www.facebook.com/atul.chourasiya.756859" target="_blank" loading="lazy"><img src="/image/social/facebook.png" alt="facebook"></a></li>
+         <li class="social"><a href="https://www.instagram.com/sageatulchourasiya/" target="_blank" loading="lazy"><img src="/image/social/insta.png" alt="insta"></a></li>
+         <li class="social"><a href="https://twitter.com/AtulChourasiyaa" target="_blank" loading="lazy"><img src="/image/social/twitter.png" alt="twitter"></a></li>
+      </ul>
+      <p id="cpyryt">Copyright &copy; 2022,ChourasiyaHotel.com Designed By Atul Chourasiya.</p>
+   </footer>
+</body>
+
+</html>
