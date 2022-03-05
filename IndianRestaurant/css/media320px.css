@@ -424,7 +424,6 @@
 #gallery-container {
    grid-gap: 2.82px;
 }
-
 .griditem a::before {
    height: 70.5px;
    width: 70.5px;
@@ -434,7 +433,11 @@
 }
 
 .griditem a:hover:before {
-   background-size: 11.75px 11.75px;
+   background-size: 0px 0px;
+}
+.griditem:hover {
+
+   filter: opacity(100%)
 }
 
 #gallery-container .griditem img {
@@ -672,7 +675,6 @@ padding-top: 7px;
    padding: 2.2px;
    width: 32px;
    border: .74px solid rgb(0, 0, 0);
-   margin-left: 70px;
 }
 
 #contact .contactgriditem1 button:hover {

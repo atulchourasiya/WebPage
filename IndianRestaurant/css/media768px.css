@@ -1,7 +1,7 @@
 
 :root
 {
-   font-size: 30%;
+   font-size: 50%;
 }
 /* nav-bar */
 #navbar {
@@ -13,35 +13,35 @@
    box-shadow: .09px .09px 0px .036px rgba(197, 197, 197, 0.466);
 }
 .navbar1center{
-   margin-left: 39px;
+   margin-left: 65px;
 }
 .fa-bars
 {
-   margin: 7.5px;
-   margin-left: 4.5px;
+   margin: 13px;
+   margin-left: 8px;
 }
 .navbar1btn{
-   margin: 6px;
-   margin-top: 10.5px;
+   margin: 10px;
+   margin-top: 22px;
 }
 .navbar1btn a{
    font-weight: bold;
-   letter-spacing: .45px;
+   letter-spacing: .8px;
    margin-top: 0px;
-   padding: 3.6px;
-   width: 37.89px;
-   border: 1.2px solid rgb(0, 0, 0);
+   padding: 6px;
+   width: 63px;
+   border: 2px solid rgb(0, 0, 0);
 }
 .navbar1btn a:hover{
- border-radius: .75px;
+ border-radius: 1.2px;
 }
 #navbar1 ul {
-   padding:3px 0px;
-   padding-top: 1.5px;
+   padding:5px 0px;
+   padding-top: 2px;
 }
 
 #navbar1 ul li {
-   padding: 1.2px;
+   padding: 2px;
 }
 
 #navbar1 ul li a {
@@ -50,63 +50,63 @@
 
 /* nav-bar animation */
 #navbar1 ul li a::before {
-   border-top: .6px solid rgb(255, 255, 255);
-   border-left: .6px solid rgb(255, 255, 255);
+   border-top: 1px solid rgb(255, 255, 255);
+   border-left: 1px solid rgb(255, 255, 255);
 }
 
 #navbar1 ul li a::after {
-   border-bottom: .6px solid rgb(255, 255, 255);
-   border-right: .6px solid rgb(255, 255, 255);
+   border-bottom: 1px solid rgb(255, 255, 255);
+   border-right: 1px solid rgb(255, 255, 255);
 }
 
 /* hover effect */
 #navbar1 ul li a:hover::after,
 #navbar1 ul li a:hover::before
  {
-   width: 1.8px;
-   height: 1.57px;
+   width: 3px;
+   height: 3px;
 }
 #navbar1 ul li .active1::after,
 #navbar1 ul li .active1::before
 {
-   width: 1.8px;
-   height: 1.57px;
+   width: 3px;
+   height: 3px;
 }
 #navbar1 ul li .active1
 {
-   text-shadow: .15px .15px rgb(248, 223, 81);
+   text-shadow: .3px .3px rgb(248, 223, 81);
 }
 #navbar1 ul li a:hover {
-   text-shadow: .15px .15px rgb(248, 223, 81);
+   text-shadow: .3px .3px rgb(248, 223, 81);
 }
 /* Logo */
 #logo1 img {
-   height: 29px;
-   width: 29px;
+   height: 50px;
+   width: 50px;
    margin: .24px;
-   margin-left: 4.8px;
+   margin-left: 8px;
 }
 
 
 /* Home */
 #home {
-   height: 420px;
-   box-shadow: inset 0px 0px 0px 14px rgb(241, 255, 230);
+   height: 700px;
+   box-shadow: inset 0px 0px 0px 25px rgb(241, 255, 230);
 }
 
 /* slider */
 .slider {
-   height: 420px;
+   height: 700px;
 }
 
 .slides {
-   height: 420px;
+   height: 700px;
 }
 
 /*css for manual slide navigation*/
 
 .navigation-manual {
-   bottom: 19px;
+   bottom: 33px;
 }
 
 .manual-btn {
@@ -123,7 +123,7 @@
 /*css for automatic navigation*/
 
 .navigation-auto {
-   bottom: 19px;
+   bottom: 33px;
 }
 
 .navigation-auto div {
@@ -141,7 +141,7 @@
 
 .imagetext {
    font-size: 3.5rem;
-   letter-spacing: .2px;
+   letter-spacing: .5px;
    margin-bottom: 10px;
 }
 
@@ -149,38 +149,38 @@
    font-size: 2rem;
    font-weight: bold;
    letter-spacing: .2px;
-   margin-top: 60px;
+   margin-top: 100px;
    padding: 6px;
-   border: 3px solid white;
+   border: 4px solid white;
 }
 
 #btn:hover {
- border-radius: .75px;
+ border-radius: 1.2px;
 }
 
 /* welcome */
 #welcome {
    grid-template-columns: 1fr 1fr;
-   padding-bottom: 7.5px;
+   padding-bottom: 12px;
 }
 
 
 /* welcometext1 */
 .welcometext {
-   padding: 4px 9px;
+   padding:12px 25px;
 }
 
 .welcometext h2 {
    font-size: 5rem;
-   height: 35px;
-   width: 120px;
-   border-bottom: 1.5px solid black;
+   height: 55px;
+   width: 200px;
+   border-bottom: 2px solid black;
 }
 
 .welcometext h2::before {
-   width: 120px;
-   bottom: 1.2px;
-   border-bottom: 1.2px solid rgb(0, 0, 0);
+   width: 200px;
+   bottom: 1.5px;
+   border-bottom: 1.5px solid rgb(0, 0, 0);
 }
 
 .firstpara {
@@ -196,7 +196,7 @@
    letter-spacing: .3px;
    margin-top: 15px;
    padding: 3.6px;
-   width: 51px;
+   width: 75px;
    border: 1.2px solid rgb(0, 0, 0);
 }
 
@@ -212,15 +212,15 @@
 
 .welcometext1 h2 {
    font-size: 3.5rem;
-   height: 25px;
-   width: 114px;
-   border-bottom: 1.5px solid black;
+   height: 40px;
+   width: 190px;
+   border-bottom: 2px solid black;
 }
 
 .welcometext1 h2::before {
-   width: 114px;
-   bottom: 1.2px;
-   border-bottom: 1.2px solid rgb(0, 0, 0);
+   width: 190px;
+   bottom: 1.5px;
+   border-bottom: 1.5px solid rgb(0, 0, 0);
 }
 
 /* welcometext2 */
@@ -230,15 +230,15 @@
 
 .welcometext2 h2 {
    font-size: 3.5rem;
-   height: 25px;
-   width: 148px;
-   border-bottom: 1.5px solid black;
+   height: 39px;
+   width: 250px;
+   border-bottom: 2px solid black;
 }
 
 .welcometext2 h2::before {
-   width: 148px;
-   bottom: 1.2px;
-   border-bottom: 1.2px solid rgb(0, 0, 0);
+   width: 250px;
+   bottom: 1.5px;
+   border-bottom: 1.5px solid rgb(0, 0, 0);
 }
 
 .welcomeimg {
@@ -251,23 +251,23 @@
 
 /* Menu */
 #menu-container {
-   padding: 0px 30px;
-   padding-bottom: 15px;
-   padding-top: 3.75px;
+   padding: 0px 50px;
+   padding-bottom: 25px;
+   padding-top: 8px;
 }
 
 #menu-container h2 {
    font-size: 5rem;
-   height: 32px;
-   width: 68px;
-   border-bottom: 1.5px solid rgb(0, 0, 0);
-   margin-bottom: 2.35px;
+   height: 55px;
+   width: 115px;
+   border-bottom: 2px solid rgb(0, 0, 0);
+   margin-bottom: 6px;
 }
 
 #menu-container h2::before {
-   width: 68px;
-   bottom: 1.2px;
-   border-bottom: 1.2px solid rgb(0, 0, 0);
+   width: 115px;
+   bottom: 1.5px;
+   border-bottom: 1.5px solid rgb(0, 0, 0);
 }
 
 #menu-container>p {
@@ -275,13 +275,13 @@
 }
 
 .menuitem {
-   height: 26.25px;
+   height: 26px;
 }
 
 .menuitem h4 {
    padding: 2.25px 0px;
    padding-left: 11.25px;
-   font-size:1.8rem;
+   font-size:1rem;
    border: .94px solid black;
    height: 18.75px;
    margin-top: 7.5px;
@@ -294,20 +294,20 @@
 }
 
 .hovereffect:hover {
-   height: 73px;
+   height: 90px;
 }
 
 .item {
    display: flex;
    justify-content: left;
-   margin-top: 7.5px;
-   padding-bottom: 1.2px;
-   margin-left: 3.75px;
+   margin-top: 12px;
+   padding-bottom: 2px;
+   margin-left: 6px;
 }
 
 .item h5 {
-   font-size: 1rem;
-   width: 90px;
+   font-size: .7rem;
+   width: 120px;
    margin-top: .3px;
 }
 
@@ -317,7 +317,7 @@
 }
 
 .item .menuorder {
-   width: 20px;
+   width: 33px;
    font-size: .8rem;
 }
 
@@ -326,7 +326,7 @@
 }
 
 .item .price {
-   font-size: .8rem;
+   font-size: .6rem;
 }
 
 .item img {
@@ -341,21 +341,21 @@
 
 /* Event */
 #event-container {
-   padding-bottom: 15px;
+   padding-bottom: 25px;
 }
 
 #event-container h2 {
-   text-shadow: .3px .3px 1.5px rgb(0, 0, 0);
-   height: 38px;
-   width: 105px;
-   border-bottom: 1.5px solid rgb(255, 255, 255);
+   text-shadow: .5px .5px 1.5px rgb(0, 0, 0);
+   height: 60px;
+   width: 180px;
+   border-bottom: 2px solid rgb(255, 255, 255);
    margin-bottom: 3.6px;
 }
 
 #event-container h2::before {
-   width: 105px;
-   bottom: 1px;
-   border-bottom: .47px solid rgb(255, 255, 255);
+   width: 180px;
+   bottom: 1.5px;
+   border-bottom: 1.5px solid rgb(255, 255, 255);
 }
 
 #event .eventitem {
@@ -364,34 +364,34 @@
 }
 
 #event .eventitem img {
-   width: 90px;
-   height: 90px;
+   width: 130px;
+   height: 130px;
 }
 
 #event .eventitem div {
-   width: 80px;
-   height:  80px;
+   width: 110px;
+   height:  110px;
    text-shadow: .6px .6px .6px rgb(44, 44, 44);
 }
 
 #event .eventitem div::before {
-   width:  80px;
-   height:  80px;
+   width:  110px;
+   height:  110px;
    border: 1.5px solid rgb(255, 255, 255);
 }
 #event .eventitem P {  
-   font-size: 2.8rem;
+   font-size: 2.5rem;
 }
 #event .eventitem a {
    font-size: 1rem;
-   letter-spacing: .2px;
-   width: 40px;
-   margin-top: 40px;
+   letter-spacing: .4px;
+   width: 70px;
+   margin-top: 60px;
    border: 2px solid rgb(255, 255, 255);
    text-shadow: .18px .18px .18px rgb(44, 44, 44);
    box-shadow: .03px .03px .1px rgb(44, 44, 44);
    z-index: 0;
-   padding: 2px;
+   padding: 3px;
 }
 
 #event .eventitem a:hover {
@@ -411,29 +411,29 @@
 
 /* gallery */
 #gallery {
-   padding-bottom: 7.5px;
-   padding-top: 3.7px;
+   padding-bottom: 12px;
+   padding-top: 6px;
 }
 
 #gallery h2 {
-   height: 38px;
-   width: 118px;
+   height: 60px;
+   width: 200px;
    margin-bottom: 7.5px;
-   border-bottom: 1.5px solid black;
+   border-bottom: 2px solid black;
 }
 
 #gallery h2::before {
-   width: 118px;
-   border-bottom: 1.2px solid rgb(0, 0, 0);
+   width: 200px;
+   border-bottom: 1.5px solid rgb(0, 0, 0);
 }
 
 #gallery-container {
-   grid-gap: 3.4vw;
+   grid-gap: 1.5vw;
 }
 
 .griditem a::before {
-   height: 75px;
-   width: 75px;
+   height: 130px;
+   width: 130px;
    border: 1.8px solid rgb(255, 255, 255);
    background: url(/image/social/instawhite.png)no-repeat center center;
    background-size: 0px 0px;
@@ -448,16 +448,16 @@
 }
 
 #gallery-container .griditem img {
-   height: 90px;
-   width: 90px;
+   height: 150px;
+   width: 150px;
 }
 
 #gallery>a {
-   letter-spacing: .2px;
-   margin-top: 4.7px;
-   padding: 2.2px;
-   width: 80px;
-   border: .75px solid rgb(0, 0, 0);
+   letter-spacing: .5px;
+   margin-top: 6px;
+   padding: 6px;
+   width: 150px;
+   border: 2px solid rgb(0, 0, 0);
 }
 
 #gallery>a:hover {
@@ -466,50 +466,50 @@
 
 #gallery>a img {
    margin-left: 3px;
-   height: 7px;
-   width: 7px;
+   height: 9px;
+   width: 9px;
 }
 
 /* Our chef */
 
 #aboutchef {
-   padding: 7.5px 15px;
+   padding: 12px 25px;
 }
 
 #aboutchef h2 {
    font-size: 3.8rem;
-   height: 27px;
-   width: 90px;
-   border-bottom: 1.5px solid black;
+   height: 40px;
+   width: 150px;
+   border-bottom: 2px solid black;
 }
 
 #aboutchef h2::before {
-   width: 90px;
-   bottom: 1.2px;
-   border-bottom: 1.2px solid rgb(0, 0, 0);
+   width: 150px;
+   bottom: 1.5px;
+   border-bottom: 1.5px solid rgb(0, 0, 0);
 }
 
 #aboutchef .firstpara {
-   margin-top: 3.75px;
-   font-size: 2rem;
+   margin-top: 10px;
+   font-size: 1.5rem;
 }
 #aboutchef .secondpara {
-   margin-top: 11.2px;
-   font-size: 1.5rem;
+   margin-top: 18px;
+   font-size: 1.2rem;
 
 }
 
 #aboutchef a {
    font-size: 1.2rem;
    font-weight: bold;
-   letter-spacing: .4px;
-   margin-top: 15px;
-   padding: 3.6px;
-   width: 70px;
-   border: .47px solid rgb(0, 0, 0);
+   letter-spacing: .5px;
+   margin-top: 25px;
+   padding: 6px;
+   width: 120px;
+   border: 2px solid rgb(0, 0, 0);
 }
 #aboutchef a:hover {
-   border-radius: .75px;
+   border-radius: 1.2px;
 }
 
 #aboutchef a img {
@@ -523,31 +523,28 @@
 }
 
 #ourchef img {
-   height: 150px;
+   height: 220px;
 }
 
 /* reservation */
-#reservation-container {
-   background-attachment: fixed;
-  }
 
 #reservation {
-   height: 110px;
+   height: 162px;
 }
 
 #reservation h2 {
-   border-bottom: 1.5px solid rgb(255, 255, 255);
+   border-bottom: 2px solid rgb(255, 255, 255);
    margin: 0px;
 }
 
 #reservation h2::before {
-   width:121px;
-   bottom: 1.2px;
-   border-bottom: 1.2px solid rgb(255, 255, 255);
+   width: 202px;
+   bottom: 1.5x;
+   border-bottom: 1.5px solid rgb(255, 255, 255);
 }
 
 #reservation p {
-   margin-top: 7px;
+   margin-top:12px;
 }
 
 #reservation .topmargin {
@@ -559,8 +556,8 @@
    margin: 3px;
    font-weight: bold;
    padding: 3.6px;
-   width: 55px;
-   border: 1.8px solid rgb(255, 255, 255);
+   width: 85px;
+   border: 2px solid rgb(255, 255, 255);
 }
 
 #reservation a:hover {
@@ -570,44 +567,44 @@
 /* footer */
 footer {
 padding:7.5px;
-padding-top: 4px;
+padding-top: 12px;
 }
 #foot-container .footitem {
-   padding: 15px;
+   padding: 25px;
 }
 
 .footitem h4 {
-   line-height: 11.4px;
+   line-height: 18px;
 }
 .footitem p {
    font-family: serif;
-   font-size: 1rem;
+   font-size: .9rem;
 }
 #social-container {
-   height: 15px;
+   height: 25px;
 }
 
 #social-container li {
-   height: 10.5px;
-   width: 10.5px;
-   padding: 1.8px;
+   height: 18px;
+   width: 18px;
+   padding: 3px;
    margin: 3px;
-   border: .75px solid rgba(0, 0, 0, 0.144);
+   border: 1.2px solid rgba(0, 0, 0, 0.144);
 }
 
 #social-container li:hover>a img {
-   height: 5.5px;
-   width: 5.4px;
+   height: 9px;
+   width: 9px;
 }
 
 #social-container li a img {
-   height: 5.5px;
-   width: 5.4px;
-   margin-top: 1px;
+   height: 9px;
+   width: 9px;
+   
 }
 
 #cpyryt {
-   padding: 1.88px 0px;
+   padding: 5px 0px;
 }
 
 /* contact */
@@ -621,40 +618,40 @@ padding-top: 4px;
 }
 
 #contact .contactgriditem1 h2 {
-   height: 23px;
-   width: 107px;
-   border-bottom: 1.5px solid black;
+   height: 38px;
+   width: 180px;
+   border-bottom: 2px solid black;
    margin: 3px;
 }
 
 #contact .contactgriditem1 h2::before {
-   width: 107px;
-   bottom: 1.2px;
-   border-bottom: 1.2px solid rgb(0, 0, 0);
+   width: 180px;
+   bottom: 1.5px;
+   border-bottom: 1.5px solid rgb(0, 0, 0);
 }
 
 #contact .contactgriditem2 h2 {
-   height: 23px;
-   width: 68px;
-   border-bottom: 1.5px solid black;
+   height: 35px;
+   width: 98px;
+   border-bottom: 2px solid black;
    margin: 3px;
 }
 
 #contact .contactgriditem2 h2::before {
-   width: 68px;
-   bottom: 1.2px;
-   border-bottom: 1.2px solid rgb(0, 0, 0);
+   width: 98px;
+   bottom: 1.5px;
+   border-bottom: 1.5px solid rgb(0, 0, 0);
 }
 #contact .contactgriditem2 iframe{
-   height: 120px;
-   width: 120px; 
+   height: 230px;
+   width: 230px; 
 }
 
 #contact .contactgriditem1 p {
    margin-bottom: 4.7px;
 }
 #contact .contactgriditem1 input {
-   height: 15px;
+   height: 25px;
    margin-bottom: 4.7px;
    padding: .74px;
    border-radius: 1.4px;
@@ -665,7 +662,7 @@ padding-top: 4px;
 }
 
 #contact .contactgriditem1 textarea {
-   height: 32.9px;
+   height: 80px;
    padding: .75px;
    border-radius: 1.4px;
    border: .01px rgb(146, 146, 146) inset;
@@ -675,47 +672,47 @@ padding-top: 4px;
 }
 
 #contact .contactgriditem1 label {
-   margin-bottom: .75px;
+   margin-bottom:  2px;
 }
 
 #contact .contactgriditem1 button {
-   letter-spacing: .4px;
+   letter-spacing: .5px;
    margin-top: 7.5px;
    padding: 3.6px;
-   width: 55px;
+   width: 78px;
    border: 1.2px solid rgb(0, 0, 0);
 }
 
 #contact .contactgriditem1 button:hover {
-   border-radius: .74px;
+   border-radius: 1.2px;
 }
 
 /* reservation */
 #reservationform {
-   padding: 7.5px 30px;
+   padding: 12px 50px;
 }
 
 #reservationform h2 {
-   height: 21px;
-   width: 167px;
-   border-bottom: 1.5px solid black;
-   margin: 1.8px;
+   height: 37px;
+   width:279px;
+   border-bottom: 2px solid black;
+   margin: 5px;
 }
 
 #reservationform h2::before {
-   width: 167px;
-   bottom: 1.2px;
-   border-bottom: 1.2px solid rgb(0, 0, 0);
+   width:279px;
+   bottom: 1.5px;
+   border-bottom: 1.5px solid rgb(0, 0, 0);
 }
 
 #reservationform p {
-   font-size: .8rem;
+   font-size: 1rem;
    margin: 2px;
 }
 
 #reservationform input {
    font-size: 1rem;
-   width: 80px;
+   width: 130px;
    height: 15px;
    margin: 7.5px;
    padding: 1.5px;
@@ -728,10 +725,10 @@ padding-top: 4px;
 
 #reservationform textarea {
    font-size: 1rem;
-   width: 150px;
-   height: 40px;
-   margin: 7.4px;
-   padding: 1.2px;
+   width: 180px;
+   height: 75px;
+   margin: 12px;
+   padding: 2px;
    border-radius: 2.2px;
    border: .01px rgb(146, 146, 146) inset;
    box-shadow: none;
@@ -740,12 +737,12 @@ padding-top: 4px;
 }
 
 #reservationform button {
-   letter-spacing: .4px;
-   margin-top: 7.5px;
-   padding: 3.6px;
-   border: 1.2px solid rgb(0, 0, 0);
+   letter-spacing: .5px;
+   margin-top: 12px;
+   padding: 6px;
+   border: 2px solid rgb(0, 0, 0);
 }
 
 #reservationform button:hover {
-   border-radius: .75px;
+   border-radius: 1.2px;
 }

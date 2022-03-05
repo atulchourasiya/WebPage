@@ -1225,16 +1225,17 @@ footer {
    font-size: 3.2rem;
    font-weight: bolder;
    height: 50px;
-   width: 250px;
+   width: 130px;
    border-bottom: 4px solid black;
    position: relative;
    margin: 10px;
 }
 
+
 #contact .contactgriditem2 h2::before {
    content: "";
    position: absolute;
-   width: 250px;
+   width: 130px;
    bottom: 1.2px;
    border-bottom: 4px solid rgb(0, 0, 0);
 }
@@ -1287,7 +1288,6 @@ footer {
    padding: 12px;
    width: 137.5px;
    border: 4px solid rgb(0, 0, 0);
-   margin-left: 500px;
    background-color: white;
    transition: all .5s linear;
 }
@@ -1344,7 +1344,7 @@ footer {
 
 #reservationform input {
    font-size: 1.2rem;
-   width: 350px;
+   width: 450px;
    height: 50px;
    margin: 25px;
    padding: 5px;
@@ -1353,7 +1353,7 @@ footer {
 
 #reservationform textarea {
    font-size: 1.2rem;
-   width: 750px;
+   width: 950px;
    height: 150px;
    margin: 25px;
    padding: 5px;

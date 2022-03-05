@@ -1,0 +1,63 @@
+#reservationform input {
+   width: 280px;
+}
+#reservationform textarea {
+   width: 550px;
+}
+.item h5 {
+   font-size: 1.3rem;
+   width: 250px;
+}
+.item .menuorder {
+   width: 74px;
+   font-size: 1.3rem;
+}
+
+#event .eventitem img {
+   width: 300px;
+   height: 300px;
+}
+#event .eventitem div {
+   width: 250px;
+   height: 250px;
+}
+
+#event .eventitem div::before {
+   width: 250px;
+   height: 250px;
+}
+#gallery-container .griditem img {
+   height: 300px;
+   width: 300px;
+}
+.griditem a::before {
+   height: 275px;
+   width: 275px;
+}
+
+.welcometext1 h2 {
+   font-size: 4.5rem;
+   height: 75px;
+   width: 297.5px;
+}
+
+.welcometext1 h2::before {
+   width: 297.5px;
+}
+
+/* welcometext2 */
+.welcometext2 h2 {
+   font-size: 4.5rem;
+   height: 75px;
+   width: 400px;
+
+}
+
+.welcometext2 h2::before {
+   width: 400px;
+}
+
+
+.welcomeimg img {
+   height: 305px;
+}
