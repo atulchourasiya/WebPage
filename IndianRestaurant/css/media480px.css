@@ -140,7 +140,7 @@
 }
 
 .imagetext {
-   font-size: 3.5rem;
+   font-size: 3rem;
    letter-spacing: .2px;
    margin-bottom: 10px;
 }
@@ -258,7 +258,7 @@
 
 #menu-container h2 {
    font-size: 5rem;
-   height: 38px;
+   height: 36px;
    width: 68px;
    border-bottom: 1.5px solid rgb(0, 0, 0);
    margin-bottom: 2.35px;
@@ -294,7 +294,7 @@
 }
 
 .hovereffect:hover {
-   height: 84px;
+   height: 86px;
 }
 
 .item {
@@ -695,7 +695,7 @@ padding-top: 4px;
 }
 
 #reservationform h2 {
-   height: 21px;
+   height: 25px;
    width: 167px;
    border-bottom: 1.5px solid black;
    margin: 1.8px;
