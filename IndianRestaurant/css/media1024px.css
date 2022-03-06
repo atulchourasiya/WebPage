@@ -366,10 +366,6 @@
 }
 
 .griditem a::before {
-   height: 130px;
-   width: 130px;
-   border: 1.8px solid rgb(255, 255, 255);
-   background: url(/image/social/instawhite.png)no-repeat center center;
    background-size: 0px 0px;
 }
 
