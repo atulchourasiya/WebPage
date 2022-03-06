@@ -1361,6 +1361,7 @@ footer {
 }
 
 #reservationform button {
+   margin: 0px 20vw;
    font-family: 'Roboto Condensed', sans-serif;
    font-size: 1.2rem;
    font-weight: bolder;

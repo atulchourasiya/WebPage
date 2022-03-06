@@ -732,6 +732,7 @@ padding-top: 7px;
 }
 
 #reservationform button {
+   margin: 0px 20vw;
    letter-spacing: .2px;
    margin-top: 4.7px;
    padding: 2.2px;

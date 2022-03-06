@@ -140,7 +140,7 @@
 }
 
 .imagetext {
-   font-size: 3.5rem;
+   font-size: 3rem;
    letter-spacing: .2px;
    margin-bottom: 10px;
 }
@@ -739,6 +739,7 @@ padding-top: 4px;
 }
 
 #reservationform button {
+   margin: 0px 20vw;
    letter-spacing: .4px;
    margin-top: 7.5px;
    padding: 3.6px;

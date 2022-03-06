@@ -661,7 +661,7 @@ padding-top: 12px;
 
 #reservationform textarea {
    font-size: 1rem;
-   width: 180px;
+   width: 185px;
    height: 75px;
    margin: 12px;
    padding: 2px;
@@ -673,6 +673,7 @@ padding-top: 12px;
 }
 
 #reservationform button {
+   margin: 0px 25vw;
    letter-spacing: .5px;
    margin-top: 12px;
    padding: 6px;
