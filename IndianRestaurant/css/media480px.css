@@ -317,7 +317,7 @@
 }
 
 .item .menuorder {
-   width: 22px;
+   width: 24px;
    font-size: .8rem;
 }
 
@@ -387,7 +387,7 @@
    letter-spacing: .2px;
    width: 47px;
    margin-top: 40px;
-   border: 2px solid rgb(255, 255, 255);
+   border: 1.4px solid rgb(255, 255, 255);
    text-shadow: .18px .18px .18px rgb(44, 44, 44);
    box-shadow: .03px .03px .1px rgb(44, 44, 44);
    z-index: 0;
