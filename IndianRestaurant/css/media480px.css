@@ -258,7 +258,7 @@
 
 #menu-container h2 {
    font-size: 5rem;
-   height: 32px;
+   height: 36px;
    width: 68px;
    border-bottom: 1.5px solid rgb(0, 0, 0);
    margin-bottom: 2.35px;
@@ -294,7 +294,7 @@
 }
 
 .hovereffect:hover {
-   height: 73px;
+   height: 86px;
 }
 
 .item {
@@ -317,8 +317,8 @@
 }
 
 .item .menuorder {
-   width: 22px;
-   font-size: .8rem;
+   width: 30px;
+   font-size: .7rem;
 }
 
 .item .menuorder:hover {
@@ -385,9 +385,9 @@
 #event .eventitem a {
    font-size: 1rem;
    letter-spacing: .2px;
-   width: 44px;
+   width: 47px;
    margin-top: 40px;
-   border: 2px solid rgb(255, 255, 255);
+   border: 1.7px solid rgb(255, 255, 255);
    text-shadow: .18px .18px .18px rgb(44, 44, 44);
    box-shadow: .03px .03px .1px rgb(44, 44, 44);
    z-index: 0;
@@ -695,7 +695,7 @@ padding-top: 4px;
 }
 
 #reservationform h2 {
-   height: 21px;
+   height: 25px;
    width: 167px;
    border-bottom: 1.5px solid black;
    margin: 1.8px;
