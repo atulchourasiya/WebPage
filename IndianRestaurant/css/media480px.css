@@ -385,7 +385,7 @@
 #event .eventitem a {
    font-size: 1rem;
    letter-spacing: .2px;
-   width: 47px;
+   width: 50px;
    margin-top: 40px;
    border: 1.7px solid rgb(255, 255, 255);
    text-shadow: .18px .18px .18px rgb(44, 44, 44);
@@ -504,7 +504,7 @@
    letter-spacing: .4px;
    margin-top: 15px;
    padding: 3.6px;
-   width: 70px;
+   width: 80px;
    border: .47px solid rgb(0, 0, 0);
 }
 #aboutchef a:hover {
@@ -558,7 +558,7 @@
    margin: 3px;
    font-weight: bold;
    padding: 3.6px;
-   width: 59px;
+   width: 61px;
    border: 1.8px solid rgb(255, 255, 255);
 }
 
@@ -580,7 +580,7 @@ padding-top: 4px;
 }
 .footitem p {
    font-family: serif;
-   font-size: .6rem;
+   font-size: 1rem;
 }
 #social-container {
    height: 15px;
@@ -681,7 +681,7 @@ padding-top: 4px;
    letter-spacing: .4px;
    margin-top: 7.5px;
    padding: 3.6px;
-   width: 55px;
+   width: 56px;
    border: 1.2px solid rgb(0, 0, 0);
 }
 
