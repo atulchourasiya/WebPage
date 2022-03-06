@@ -725,7 +725,7 @@ body {
    left: 0px;
    width: 100%;
    height: 100%;
-   background: url(../image/background/white.jpg)no-repeat center center/cover;
+   background: url("../image/background/white.jpg")no-repeat center center/cover;
    background-attachment: fixed;
    z-index: -1;
 }
@@ -891,7 +891,7 @@ body {
    height: 375px;
    width: 375px;
    border: 2.5px solid rgb(255, 255, 255);
-   background: url(../image/social/instawhite.png)no-repeat center center;
+   background: url("../image/social/instawhite.png")no-repeat center center;
    background-size: 0px 0px;
    transition: all .2s;
 }
@@ -1035,7 +1035,7 @@ body {
 
 /* reservation */
 #reservation-container {
-   background: url(../image/background/reservation.jpg);
+   background: url("../image/background/reservation.jpg");
    background-attachment: fixed;
    background-size: cover;
    background-repeat: no-repeat;
