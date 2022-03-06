@@ -425,6 +425,9 @@
    grid-gap: 2.82px;
 }
 .griditem a::before {
+   height: 70.5px;
+   width: 70.5px;
+   border: .47px solid rgb(255, 255, 255);
    background-size: 0px 0px;
 }
 
