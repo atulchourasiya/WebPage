@@ -672,8 +672,9 @@ body {
 }
 
 .item .menuorder {
+   display: flex;
    font-family: 'Roboto Condensed', sans-serif;
-   width: 75px;
+   /* width: 75px; */
    font-size: 1.4rem;
    color: rgb(163, 0, 0);
    font-weight: bolder;
