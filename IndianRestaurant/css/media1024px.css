@@ -128,7 +128,7 @@
    letter-spacing: .3px;
    margin-top: 50px;
    padding: 3.6px;
-   width: 95px;
+   width: 90px;
    border: 2px solid rgb(0, 0, 0);
 }
 
@@ -319,7 +319,7 @@
 #event .eventitem a {
    font-size: 1rem;
    letter-spacing: .4px;
-   width: 80px;
+   width: 73px;
    margin-top: 60px;
    border: 2px solid rgb(255, 255, 255);
    text-shadow: .18px .18px .18px rgb(44, 44, 44);
@@ -389,7 +389,7 @@
    letter-spacing: .5px;
    margin-top: 6px;
    padding: 6px;
-   width: 150px;
+   width: 140px;
    border: 2px solid rgb(0, 0, 0);
 }
 
@@ -438,7 +438,7 @@
    letter-spacing: .5px;
    margin-top: 25px;
    padding: 6px;
-   width: 125px;
+   width: 120px;
    border: 2px solid rgb(0, 0, 0);
 }
 #aboutchef a:hover {
