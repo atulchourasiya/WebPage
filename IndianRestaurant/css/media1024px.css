@@ -241,7 +241,7 @@
 
 .item h5 {
    font-size: .7rem;
-   width: 120px;
+   width: 15vw;
    margin-top: .3px;
 }
 
@@ -264,7 +264,7 @@
 }
 
 .item img {
-   height: 9.87px;
+   height: 15px;
    margin-right: 2.35px;
 }
 

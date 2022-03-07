@@ -307,7 +307,7 @@
 
 .item h5 {
    font-size: 1rem;
-   width: 90px;
+   width: 25vw;
    margin-top: .3px;
 }
 
@@ -322,7 +322,7 @@
 }
 
 .item .menuorder:hover {
-   font-size: .8rem;
+   font-size: .7rem;
 }
 
 .item .price {
@@ -330,7 +330,7 @@
 }
 
 .item img {
-   height: 9.87px;
+   height: 12px;
    margin-right: 2.35px;
 }
 
