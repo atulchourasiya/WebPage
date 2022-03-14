@@ -430,7 +430,10 @@
    font-size: 1.2rem;
 
 }
-
+#aboutchef div
+{
+   justify-content: left;
+}
 #aboutchef a {
    font-size: 1.2rem;
    font-weight: bold;

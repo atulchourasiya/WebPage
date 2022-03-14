@@ -485,7 +485,10 @@
    margin-top: 7.05px;
 
 }
-
+#aboutchef div
+{
+   justify-content: left;
+}
 #aboutchef a {
    font-size: 1.2rem;
    font-weight: bold;
