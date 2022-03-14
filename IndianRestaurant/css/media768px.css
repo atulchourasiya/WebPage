@@ -191,12 +191,15 @@
 .secondpara {
    margin-top: 11.25px;
 }
-
+.welcometext div
+{
+   width: 84px;
+}
 .welcometext a {
    letter-spacing: .3px;
    margin-top: 15px;
    padding: 3.6px;
-   width: 84px;
+   /* width: 84px; */
    border: 1.2px solid rgb(0, 0, 0);
 }
 
@@ -451,19 +454,19 @@
    width: 150px;
 }
 
-#gallery>a {
+#gallery>div a {
    letter-spacing: .5px;
    margin-top: 6px;
    padding: 6px;
-   width: 150px;
+   /* width: 150px; */
    border: 2px solid rgb(0, 0, 0);
 }
 
-#gallery>a:hover {
+#gallery>div a:hover {
    border-radius: .74px;
 }
 
-#gallery>a img {
+#gallery>div a img {
    margin-left: 3px;
    height: 9px;
    width: 9px;
