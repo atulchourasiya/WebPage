@@ -557,7 +557,7 @@
    margin: 3px;
    font-weight: bold;
    padding: 3.6px;
-   width: 61px;
+   /* width: 61px; */
    border: 1.8px solid rgb(255, 255, 255);
 }
 

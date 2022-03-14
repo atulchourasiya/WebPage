@@ -545,7 +545,7 @@
    margin: 1.8px;
    font-weight: bold;
    padding: 2.2px;
-   width: 40px;
+   /* width: 40px; */
    border: .75px solid rgb(255, 255, 255);
 }
 
