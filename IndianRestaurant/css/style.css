@@ -1092,7 +1092,6 @@ body {
 }
 
 #reservation .topmargin {
-   display: flex;
    margin-top: 25px;
 }
 
