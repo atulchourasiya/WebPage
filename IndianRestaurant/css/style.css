@@ -1006,11 +1006,14 @@ body {
    margin-top: 37.5px;
 
 }
-
+#aboutchef div
+{
+   justify-content: left;
+}
 #aboutchef a {
-   /* display: flex;
+   display: flex;
    justify-content: center;
-   align-items: center; */
+   align-items: center;
    font-family: 'Roboto Condensed', sans-serif;
    font-size: 1.2rem;
    font-weight: bolder;
