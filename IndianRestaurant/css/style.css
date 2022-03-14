@@ -475,7 +475,8 @@ body {
 }
 .welcometext div
 {
-   width: 150px;
+   justify-content: left;
+   width: 100%;
 }
 .welcometext a {
    font-family: 'Roboto Condensed', sans-serif;
