@@ -503,7 +503,7 @@
    letter-spacing: .4px;
    margin-top: 15px;
    padding: 3.6px;
-   width: 80px;
+   /* width: 80px; */
    border: .47px solid rgb(0, 0, 0);
 }
 #aboutchef a:hover {

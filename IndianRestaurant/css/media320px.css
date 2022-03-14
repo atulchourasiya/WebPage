@@ -492,7 +492,7 @@
    letter-spacing: .2px;
    margin-top: 9.4px;
    padding: 2.5px;
-   width: 47px;
+   /* width: 47px; */
    border: .47px solid rgb(0, 0, 0);
 }
 #aboutchef a:hover {
