@@ -148,7 +148,7 @@ body {
 .navbar1btn a{
    font-family: 'Roboto Condensed', sans-serif;
    font-size: 1.2rem;
-   font-weight: bolder;
+   font-weight: normal;
    letter-spacing: 1.5px;
    color: rgb(0, 0, 0);
    text-decoration: none;
@@ -403,7 +403,7 @@ body {
 #btn {
    font-family: 'Roboto Condensed', sans-serif;
    font-size: 1.2rem;
-   font-weight: bolder;
+   font-weight: normal;
    letter-spacing: 1.5px;
    color: white;
    text-decoration: none;
@@ -481,7 +481,7 @@ body {
 .welcometext a {
    font-family: 'Roboto Condensed', sans-serif;
    font-size: 1.2rem;
-   font-weight: bolder;
+   font-weight: normal;
    letter-spacing: 1.5px;
    color: rgb(0, 0, 0);
    text-decoration: none;
@@ -691,7 +691,7 @@ body {
    /* width: 75px; */
    font-size: 1.4rem;
    color: rgb(163, 0, 0);
-   font-weight: bolder;
+   font-weight: normal;
    cursor: pointer;
    transition: all .3s;
 }
@@ -823,7 +823,7 @@ body {
    align-items: center;
    font-family: 'Roboto Condensed', sans-serif;
    font-size: 1.2rem;
-   font-weight: bolder;
+   font-weight: normal;
    letter-spacing: 1.5px;
    color: rgb(255, 255, 255);
    text-decoration: none;
@@ -932,7 +932,7 @@ body {
    align-items: center;
    font-family: 'Roboto Condensed', sans-serif;
    font-size: 1.2rem;
-   /* font-weight: bolder; */
+   font-weight: normal;
    letter-spacing: 1.5px;
    color: rgb(0, 0, 0);
    text-decoration: none;
@@ -1017,7 +1017,7 @@ body {
    align-items: center;
    font-family: 'Roboto Condensed', sans-serif;
    font-size: 1.2rem;
-   /* font-weight: bolder; */
+   font-weight: normal;
    letter-spacing: 1.5px;
    color: rgb(0, 0, 0);
    text-decoration: none;
@@ -1105,7 +1105,7 @@ body {
    align-items: center;
    font-family: 'Roboto Condensed', sans-serif;
    font-size: 1.2rem;
-   /* font-weight: bolder; */
+   font-weight: normal;
    letter-spacing: 1.5px;
    color: rgb(255, 255, 255);
    text-decoration: none;
@@ -1147,7 +1147,7 @@ footer {
 
 .footitem h4 {
    font-family: 'Poppins', sans-serif;
-   /* font-weight: bold; */
+   font-weight: normal;
    line-height: 37.5px;
    font-size: 2rem;
 }
@@ -1298,7 +1298,7 @@ footer {
    align-items: center;
    font-family: 'Roboto Condensed', sans-serif;
    font-size: 1.2rem;
-   font-weight: bolder;
+   font-weight: normal;
    letter-spacing: 1.5px;
    color: rgb(0, 0, 0);
    text-decoration: none;
@@ -1382,7 +1382,7 @@ footer {
    margin: 0px 20vw;
    font-family: 'Roboto Condensed', sans-serif;
    font-size: 1.2rem;
-   font-weight: bolder;
+   font-weight: normal;
    letter-spacing: 1.5px;
    color: rgb(0, 0, 0);
    text-decoration: none;
