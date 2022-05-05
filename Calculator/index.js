@@ -17,6 +17,12 @@ for(item of buttons)
          screenvalue += buttonText;
          screen.value = screenvalue;
       }
+      else if (buttonText=='%')
+      {
+         screen.value += buttonText;
+         screenvalue = eval(screenvalue)/100;
+         screen.value = screenvalue;
+      }
       else if(buttonText=='AC')
       {
          screenvalue = '';
