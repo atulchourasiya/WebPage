@@ -1,0 +1,33 @@
+*{
+   margin: 0px;
+   padding: 0px;
+}
+.container{
+   text-align: center;
+   margin-top: 10px;
+}
+input{
+   font-size: 14px;
+   height: 22px;
+   border-radius: 6px;
+   margin: 8px;
+   
+}
+button{
+   font-size: 14px;
+   border-radius: 8px;
+   width: 43px;
+   height: 31px;
+}
+.calculator{
+   padding: 5px;
+   border-radius: 8px;
+  
+}
+header{
+  font-size: 15px;
+}
+footer{
+   font-size: 10px;
+   margin-top: 20px;
+}
