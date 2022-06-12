@@ -45,13 +45,28 @@
       }
 
       /* media query */
-      @media (max-width: 575.98px) {
+      @media (max-width: 319.98px) {
+        .type{
+        height: 7rem;
+      }
+      .copyright{
+          font-size: .6rem;
+        }
+     }
+
+      @media (min-width: 320px) and (max-width: 575.98px) {
+        .type{
+        height: 6.5rem;
+      }
         .copyright{
           font-size: .7rem;
         }
       }
-
+      
       @media (min-width: 576px) and (max-width: 767.98px) {
+        .type{
+        height: 6rem;
+      }
         .copyright{
           font-size: .8rem;
         }
@@ -75,9 +90,9 @@
       </div>
     </nav>
     <!-- welcome  -->
-    <div class="container d-flex justify-content-center">
+    <div class="type container d-flex justify-content-center">
       <h3
-        class=" my-4 mt-1"
+        class="my-4 mt-1"
         style="font-size: 1.8rem; font-weight: normal; text-align: center"
       >
         <span id="textline"></span>
