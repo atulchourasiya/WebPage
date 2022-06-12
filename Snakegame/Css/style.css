@@ -155,7 +155,7 @@
    transform: scale(1);
 }
 
-@media screen and (max-device-width: 480px)
+/* @media screen and (max-device-width: 480px)
 and (orientation: portrait) {
    .body{
       align-items:flex-start;
@@ -217,4 +217,4 @@ and (orientation: portrait) {
       font-size: .7rem;
    }
    
-}
+} */

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>caveman Notes</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: "Crimson Text", serif;
+        box-sizing: border-box;
+      }
+      .bi {
+        position: absolute;
+        padding: 0.5rem;
+        color: rgba(236, 236, 236, 0.459);
+      }
+      .searchbox {
+        padding-left: 1.9rem;
+      }
+      .copyright {
+        position: fixed;
+        background-color: rgb(221, 221, 221);
+        bottom: 0px;
+        width: 100%;
+        padding: .1rem;
+        /* font-size: .7rem; */
+      }
+
+      /* media query */
+      @media (max-width: 575.98px) {
+        .copyright{
+          font-size: .7rem;
+        }
+      }
+
+      @media (min-width: 576px) and (max-width: 767.98px) {
+        .copyright{
+          font-size: .8rem;
+        }
+      }
+    </style>
+    <!-- navbar -->
+    <nav class="navbar bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold">Caveman Notes</a>
+        <form class="d-flex" role="search">
+          <i class="bi bi-search"></i>
+          <input
+            id="searchtxt"
+            class="searchbox form-control me-2"
+            type="search"
+            placeholder="Search Note"
+            aria-label="Search"
+          />
+          <!-- <button class="btn btn-outline-success"disabled >Search</button> -->
+        </form>
+      </div>
+    </nav>
+    <!-- welcome  -->
+    <div class="container d-flex justify-content-center">
+      <h3
+        class="type my-4 mt-1"
+        style="font-size: 1.8rem; font-weight: normal; text-align: center"
+      >
+        <span id="textline"></span>
+      </h3>
+    </div>
+    <!-- textarea -->
+    <div class="container">
+      <div class="container">
+        <h4>Add A Note</h4>
+      </div>
+      <div class="d-flex justify-content-center">
+        <textarea
+          id="txt"
+          class="form-control"
+          id="exampleFormControlTextarea1"
+          rows="8"
+        ></textarea>
+      </div>
+      <div class="container">
+        <button id="addbtn" type="button" class="btn btn-primary my-2">
+          Add Note
+        </button>
+      </div>
+      <hr style="background-color: rgba(14, 21, 26, 0)" />
+    </div>
+    <!-- Notes -->
+    <div class="container">
+      <h4 class="px-2">Your Notes</h4>
+    </div>
+    <!-- Notes container -->
+    <div
+      id="note"
+      class="container d-flex flex-wrap justify-content-start"
+    ></div>
+    <div
+      class="copyright d-flex justify-content-center"
+    >
+      <span> Copyright &copy;2022 Desinged By Atul Chourasiya </span>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script>
+      var typed = new Typed("#textline", {
+        strings: [
+          "Welcome to Caveman Notes",
+          "Best Web Application For Taking Notes",
+          "Add Search And Delete Notes In Just One Click",
+        ],
+        startDelay: 500,
+        typeSpeed: 50,
+        backSpeed: 50,
+        backDelay: 500,
+        showCursor: true,
+        loop: true,
+        loopCount: Infinity,
+      });
+    </script>
+  </body>
+</html>
