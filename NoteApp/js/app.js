@@ -2,7 +2,8 @@ console.log("Welcome to Caveman notes");
 let addbtn = document.getElementById('addbtn');
 showNotes();
 addbtn.addEventListener('click',(e)=>{
-   let addtxt = document.getElementById('txt');
+   let addtxt = document.getElementById('txt'); 
+   let addtitle = document.getElementById('titleTxt');
    let notes = localStorage.getItem("notes");
    let noteObj;  
    if(notes===null)
@@ -13,9 +14,10 @@ addbtn.addEventListener('click',(e)=>{
    {
       noteObj = JSON.parse(notes);
    }
-   noteObj.push(addtxt.value);
+   noteObj.push([addtitle.value,addtxt.value]);
    localStorage.setItem("notes",JSON.stringify(noteObj));
    addtxt.value ="";
+   addtitle.value ="";
    showNotes();
 });
 
@@ -32,12 +34,11 @@ function showNotes(){
    } 
    let html = "";
    noteObj.forEach((element,index) => {
-      html += `<div class="card m-2" style="max-width: 16rem">
+      html += `<div class="card m-2" >
       <div class="card-body">
-        <h5 class="card-title">Note ${index +1}</h5>
-
+        <h5 class="card-title">${(element[0]==='')?'Note '+(index+1):element[0]}</h5>
         <p class="card-text">
-         ${element}
+         ${element[1]}
         </p>
         <button id=${index} type="button" class="btn btn-primary" onclick="deleteNote(this.id)">Delete</button>
       </div>
