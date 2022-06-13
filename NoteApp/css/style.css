@@ -1,0 +1,143 @@
+body {
+  font-family: "Crimson Text", serif;
+  box-sizing: border-box;
+}
+.bi {
+  position: absolute;
+  padding: 0.5rem;
+  color: rgba(104, 104, 104, 0.795);
+  z-index: 2;
+}
+#form {
+  background-color: rgb(255, 255, 255);
+  position: relative;
+}
+.searchbox {
+  padding-left: 1.9rem;
+  background: transparent;
+  z-index: 1;
+}
+.stabletxt {
+  position: absolute;
+  color: rgba(104, 104, 104, 0.795);
+  right: 40%;
+  top: 20%;
+}
+.fliptxt {
+  position: absolute;
+  color: rgba(104, 104, 104, 0.795);
+  width: 2rem;
+  right: 23%;
+  top: 20%;
+}
+#flip1 {
+  animation: titleflip 8s linear infinite;
+  backface-visibility: hidden;
+}
+#flip2 {
+  animation: textflip 8s linear infinite;
+  backface-visibility: hidden;
+}
+@keyframes textflip {
+  0% {
+    transform: rotateX(180deg);
+  }
+  50% {
+    transform: rotateX(360deg);
+  }
+  100% {
+    transform: rotateX(180deg);
+  }
+}
+@keyframes titleflip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(180deg);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+.copyright {
+  position: fixed;
+  color: rgba(128, 128, 128, 0.76);
+  background-color: rgb(245, 249, 250);
+  opacity: 1px;
+  bottom: 0px;
+  width: 100%;
+  padding: 0.1rem;
+}
+.card {
+  border: none;
+  max-height: 16rem;
+  max-width: 16rem;
+  overflow-y: hidden;
+}
+.card-body {
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  border-radius: 1rem;
+  flex: unset;
+}
+.card-text {
+  max-height: 8rem;
+  overflow-y: auto;
+}
+
+/* scrollbar  */
+.card-text::-webkit-scrollbar {
+  width: 20px;
+}
+.card-text ::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.card-text::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+.card-text::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+hr {
+  background-color: rgba(14, 21, 26, 0);
+}
+.type h3 {
+  font-size: 1.8rem;
+  font-weight: normal;
+  text-align: center;
+}
+/* media query */
+@media (max-width: 319.98px) {
+  .type {
+    height: 7rem;
+  }
+  .copyright {
+    font-size: 0.6rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 575.98px) {
+  .type {
+    height: 6.2rem;
+  }
+  .copyright {
+    font-size: 0.7rem;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .type {
+    height: 6rem;
+  }
+  .copyright {
+    font-size: 0.8rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .type {
+    height: 4rem;
+  }
+}
