@@ -79,8 +79,12 @@ search.addEventListener('input',()=>{
    let noteCard = document.getElementsByClassName('card');
    Array.from(noteCard).forEach((element)=>{
       let cardtxt = element.getElementsByTagName('p')[0].innerText;
-      if(cardtxt.includes(inputval))
+      let titletxt = element.getElementsByTagName('h5')[0].innerText;
+      if(cardtxt.toLowerCase().includes(inputval))
       {
+         element.style.display = "block";
+      }
+      else if(titletxt.toLowerCase().includes(inputval)){
          element.style.display = "block";
       }
       else
@@ -89,3 +93,19 @@ search.addEventListener('input',()=>{
       }
    }) 
 })
+
+
+function handleplaceholder(element){
+   let placeholder = document.getElementsByClassName('srchtxt');
+   if(search.value !='')
+   {
+      placeholder.forEach(ele)
+      {
+         ele.style.display = 'none';
+      }
+   }
+   else
+   {
+      ele.style.display = 'block';
+   }
+}

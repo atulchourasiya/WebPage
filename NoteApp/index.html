@@ -31,17 +31,29 @@
         position: absolute;
         padding: 0.5rem;
         color: rgba(104, 104, 104, 0.795);
+        z-index: 2;
+      }
+      #form{
+        background-color: rgb(255, 255, 255);
+        position: relative;
       }
       .searchbox {
         padding-left: 1.9rem;
+        background: transparent;
+        z-index: 1;
+      }
+      .stabletxt{
+        position: absolute;
+        color: rgba(104, 104, 104, 0.795);   
+        right: 40%;
+        top: 20%;
       }
       .fliptxt{
         position: absolute;
         color: rgba(104, 104, 104, 0.795);
         width: 2rem;
-        background-color: rgb(255, 255, 255);
-        right: 4.3rem;
-        top: 1rem;
+        right: 22.5%;
+        top: 20%
       }
       #flip1{
         animation: titleflip 8s linear infinite;
@@ -168,17 +180,18 @@
     <nav class="navbar bg-light">
       <div class="container-fluid">
         <a class="navbar-brand fw-bold">Caveman Notes</a>
-        <form class="d-flex" role="search">
+        <form id="form"class="d-flex" role="search">
           <i class="bi bi-search"></i>
           <input
           id="searchtxt"
-          class="searchbox form-control me-2"
+          class="searchbox form-control"
           type="search"
-          placeholder="Search Note By"
+          placeholder=""
           aria-label="Search"
           />
-          <span id="flip1" class="fliptxt ">Title</span>
-          <span id="flip2" class="fliptxt ">Text</span>
+          <span  class="stabletxt srchtxt">Search Note By</span>
+          <span id="flip1" class="fliptxt srchtxt ">Title</span>
+          <span id="flip2" class="fliptxt srchtxt">Text</span>
           <!-- <button class="btn btn-outline-success"disabled >Search</button> -->
         </form>
       </div>
