@@ -3,6 +3,8 @@ let addbtn = document.getElementById('addbtn');
 showNotes();
 addbtn.addEventListener('click',(e)=>{
    let addtxt = document.getElementById('txt'); 
+   let addtxtvalue = addtxt.value.split('\n');
+   addtxtvalue = addtxtvalue.join('<br/>');
    let addtitle = document.getElementById('titleTxt');
    let notes = localStorage.getItem("notes");
    let noteObj;  
@@ -14,7 +16,7 @@ addbtn.addEventListener('click',(e)=>{
    {
       noteObj = JSON.parse(notes);
    }
-   noteObj.push([addtitle.value,addtxt.value]);
+   noteObj.push([addtitle.value,addtxtvalue]);
    localStorage.setItem("notes",JSON.stringify(noteObj));
    addtxt.value ="";
    addtitle.value ="";
