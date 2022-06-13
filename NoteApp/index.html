@@ -35,13 +35,50 @@
       .searchbox {
         padding-left: 1.9rem;
       }
+      .fliptxt{
+        position: absolute;
+        color: rgba(104, 104, 104, 0.795);
+        width: 2rem;
+        background-color: rgb(255, 255, 255);
+        right: 4.3rem;
+        top: 1rem;
+      }
+      #flip1{
+        animation: titleflip 8s linear infinite;
+        backface-visibility: hidden;
+      }
+      #flip2{
+        animation: textflip 8s  linear infinite;
+        backface-visibility: hidden;
+      }
+      @keyframes textflip {
+        0%{
+          transform: rotateX(180deg);
+        }
+        50%{
+          transform: rotateX(360deg);
+        }
+        100%{
+          transform: rotateX(180deg);
+        }
+      }
+      @keyframes titleflip {
+        0%{
+          transform: rotateX(0deg);
+        }
+        50%{
+          transform: rotateX(180deg);
+        }
+        100%{
+          transform: rotateX(360deg);
+        }
+      }
       .copyright {
         position: fixed;
         background-color: rgb(221, 221, 221);
         bottom: 0px;
         width: 100%;
         padding: 0.1rem;
-        /* font-size: .7rem; */
       }
       .card {
         border: none;
@@ -134,12 +171,14 @@
         <form class="d-flex" role="search">
           <i class="bi bi-search"></i>
           <input
-            id="searchtxt"
-            class="searchbox form-control me-2"
-            type="search"
-            placeholder="Search Note"
-            aria-label="Search"
+          id="searchtxt"
+          class="searchbox form-control me-2"
+          type="search"
+          placeholder="Search Note By"
+          aria-label="Search"
           />
+          <span id="flip1" class="fliptxt ">Title</span>
+          <span id="flip2" class="fliptxt ">Text</span>
           <!-- <button class="btn btn-outline-success"disabled >Search</button> -->
         </form>
       </div>
