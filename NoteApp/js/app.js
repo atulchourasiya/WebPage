@@ -107,7 +107,12 @@ function editNote(index){
   addtitle.value = noteObj[index][0];
   addtxt.value = noteObj[index][1];
   let save = document.getElementById("savebtn");
-  save.addEventListener('click',function() { addNote(index);},{once:true});
+  save.addEventListener('click',function(){
+    if(addtxt.value !='' && addtitle.value != '')
+    {
+      addNote(index);
+    }
+  },{once:true});
 }
 // DeleteNote 
 function deleteNote(event) {
