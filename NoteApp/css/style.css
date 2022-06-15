@@ -12,7 +12,7 @@ body {
 .bi-star-fill{
  position: absolute;
  color: rgba(214, 222, 225, 0.725);
- top: 6.5%;
+ top: 1rem;
  right: 6.5%;
 }
 
@@ -27,14 +27,14 @@ body {
 .stabletxt {
   position: absolute;
   color: rgba(104, 104, 104, 0.795);
-  right: 35%;
+  left: 2rem;
   top: 20%;
 }
 .fliptxt {
   position: absolute;
   color: rgba(104, 104, 104, 0.795);
   width: 2rem;
-  right: 16%;
+   left: 8.25rem;
   top: 20%;
 }
 #flip1 {
@@ -90,6 +90,7 @@ body {
   flex: unset;
 }
 .card-title{
+ 
   width: 85%;
 }
 .card-text {
