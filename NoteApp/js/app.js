@@ -1,15 +1,13 @@
 console.log("Welcome to Caveman notes");
 showNotes();
 showImpcard();
-let addbtn = document.getElementById("addbtn");
 let markedimp = document.getElementsByClassName("bi-star-fill");
 // Btn Add event Listner
-addbtn.addEventListener("click", (e) => {
+function addNote(index){
   let addtxt = document.getElementById("txt");
   let addtxtvalue = addtxt.value.split("\n");
   addtxtvalue = addtxtvalue.join("<br/>");
   let addtitle = document.getElementById("titleTxt");
-  let imp = false;
   let notes = localStorage.getItem("notes");
   let noteObj;
   if (notes === null) {
@@ -17,13 +15,21 @@ addbtn.addEventListener("click", (e) => {
   } else {
     noteObj = JSON.parse(notes);
   }
-  noteObj.push([addtitle.value, addtxtvalue, imp]);
+  if(index === -1)
+  {
+    let imp = false;
+    noteObj.push([addtitle.value, addtxtvalue, imp]);
+  }
+  else{
+    noteObj[index][0] = addtitle.value;
+    noteObj[index][1] = addtxtvalue;
+  }
   localStorage.setItem("notes", JSON.stringify(noteObj));
   addtxt.value = "";
   addtitle.value = "";
   showNotes();
   showImpcard();
-});
+}
 // Mark Important 
 function handleMarkImp(index){
    let notes = localStorage.getItem("notes");
@@ -77,8 +83,9 @@ function showNotes() {
         } <i class=" bi-star-fill" onclick="handleMarkImp(${index})"></i></h5>
         <p class="card-text">
          ${element[1]}
-        </p>
-        <button id=${index} type="button" class="btn btn-primary" onclick="deleteNote(this.id)">Delete</button>
+         </p>
+         <a href="#titleTxt"> <button type="button" class="btn btn-primary" onclick="editNote(${index})">Edit</button></a>  
+         <button id=${index} type="button" class="btn btn-primary" onclick="deleteNote(this.id)">Delete</button>
       </div>
     </div>`;
   });
@@ -90,6 +97,17 @@ function showNotes() {
       <p>Nothing to show add something to display it here</p>
     </div>`;
   }
+}
+//Edit Note
+function editNote(index){
+  let notes = localStorage.getItem("notes");
+  let noteObj = JSON.parse(notes);
+  let addtxt = document.getElementById("txt");
+  let addtitle = document.getElementById("titleTxt");
+  addtitle.value = noteObj[index][0];
+  addtxt.value = noteObj[index][1];
+  let save = document.getElementById("savebtn");
+  save.addEventListener('click',function() { addNote(index);},{once:true});
 }
 // DeleteNote 
 function deleteNote(event) {
