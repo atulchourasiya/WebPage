@@ -21,21 +21,20 @@ body {
   position: relative;
 }
 .searchbox {
-  padding-left: 1.9rem;
   background: transparent;
   z-index: 1;
 }
 .stabletxt {
   position: absolute;
   color: rgba(104, 104, 104, 0.795);
-  right: 40%;
+  right: 35%;
   top: 20%;
 }
 .fliptxt {
   position: absolute;
   color: rgba(104, 104, 104, 0.795);
   width: 2rem;
-  right: 23%;
+  right: 16%;
   top: 20%;
 }
 #flip1 {
