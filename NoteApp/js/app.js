@@ -1,4 +1,5 @@
 console.log("Welcome to Caveman notes");
+debugger;
 showNotes();
 showImpcard();
 let addbtn = document.getElementById("addbtn");
@@ -26,6 +27,7 @@ addbtn.addEventListener("click", (e) => {
 });
 // Mark Important 
 function handleMarkImp(index){
+  console.log(index)
    let notes = localStorage.getItem("notes");
    let noteObj;
    if (notes === null) {
