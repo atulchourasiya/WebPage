@@ -1,5 +1,6 @@
 body {
   font-family: "Crimson Text", serif;
+  /* background-color: rgba(245, 255, 245, 0.788); */
   box-sizing: border-box;
 }
 .bi {
@@ -8,6 +9,13 @@ body {
   color: rgba(104, 104, 104, 0.795);
   z-index: 2;
 }
+.bi-star-fill{
+ position: absolute;
+ color: rgba(214, 222, 225, 0.725);
+ top: 6.5%;
+ right: 6.5%;
+}
+
 #form {
   background-color: rgb(255, 255, 255);
   position: relative;
@@ -72,13 +80,18 @@ body {
 .card {
   border: none;
   max-height: 16rem;
+  min-width: 12%;
   max-width: 16rem;
   overflow-y: hidden;
 }
 .card-body {
   border: 1px solid rgba(0, 0, 0, 0.175);
+  /* padding: 2%; */
   border-radius: 1rem;
   flex: unset;
+}
+.card-title{
+  width: 85%;
 }
 .card-text {
   max-height: 8rem;
