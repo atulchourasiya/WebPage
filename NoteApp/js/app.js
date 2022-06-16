@@ -94,14 +94,14 @@ function showNotes() {
       <div class="card-body">
         <h5 class="card-title">${
           element[0] === "" ? "Note " + (index + 1) : element[0]
-        } <i class=" bi-star-fill" onclick="handleMarkImp(${index})"></i></h5>
+        } <i title="Mark Important"class=" bi-star-fill" onclick="handleMarkImp(${index})"></i></h5>
         <p class="card-text">
          ${element[1]}
          </p>
-         <a href="#titleTxt"> <button type="button" class="mb-2 btn btn-primary" onclick="editNote(${index})">Edit</button></a>  
-         <button id=${index} type="button" class="mb-2 btn btn-primary" onclick="deleteNote(this.id)">Delete</button>
-         <button  type="button" class="mb-2 btn btn-primary" onclick="Clone(${index})"><i class=" bi-back"></i></button>
-         <button id="pin" type="button" onclick="pin(${index})" class="mb-2 btn btn-light"> <i class=" bi-pin-angle-fill"></i></button>
+         <a href="#titleTxt"> <button type="button" title="Edit" class="mb-2 btn btn-primary" onclick="editNote(${index})">Edit</button></a>  
+         <button id=${index} type="button" title="Delete" class="mb-2 btn btn-primary" onclick="deleteNote(this.id)">Delete</button>
+         <button  type="button" title="Clone"class="mb-2 btn btn-primary" onclick="Clone(${index})"><i class=" bi-back"></i></button>
+         <button id="pin" title="Pin" type="button" onclick="pin(${index})" class="mb-2 btn btn-light"> <i class=" bi-pin-angle-fill"></i></button>
       </div>
     </div>`;
   });
