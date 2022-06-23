@@ -19,7 +19,23 @@ body {
 .bi-pin-angle-fill{
   color: rgba(164, 180, 185, 0.527);
 }
-
+#addtask{
+  display: none;
+}
+.card-text-task{
+  padding: 0;
+}
+.taskList{
+ border: 1px solid rgba(0, 0, 0, 0.175);
+ border-radius: .5rem;
+ margin-bottom: .5rem;
+ padding: .5rem;
+  
+}
+.nav-link{
+  font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-weight: 600;
+}
 #form {
   background-color: rgb(255, 255, 255);
   position: relative;

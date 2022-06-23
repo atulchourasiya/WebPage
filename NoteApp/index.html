@@ -24,24 +24,33 @@
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar bg-light">
+    <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <a class="navbar-brand fw-bold">Caveman Notes</a>
-        <form id="form"class="d-flex" role="search">
-          <i class="bi bi-search"></i>
-          <input
-          id="searchtxt"
-          title="Search"
-          class="searchbox form-control"
-          type="search"
-          placeholder=""
-          aria-label="Search"
-          />
-          <span  class="stabletxt srchtxt">Search Note By</span>
-          <span id="flip1" class="fliptxt srchtxt ">Title</span>
-          <span id="flip2" class="fliptxt srchtxt">Text</span>
-          <!-- <button class="btn btn-outline-success"disabled >Search</button> -->
-        </form>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a id="taskToDoBtn" onclick="toggleTaskTodo()" title="To Do List" class=" nav-link active" aria-current="page" href="#">To Do List</a>
+            </li>
+          </ul>
+          <form id="form"class="d-flex" role="search">
+            <i class="bi bi-search"></i>
+            <input
+            id="searchtxt"
+            title="Search"
+            class="searchbox form-control"
+            type="search"
+            placeholder=""
+            aria-label="Search"
+            />
+            <span  class="stabletxt srchtxt">Search Note By</span>
+            <span id="flip1" class="fliptxt srchtxt ">Title</span>
+            <span id="flip2" class="fliptxt srchtxt">Text</span>
+          </form>
+        </div>
       </div>
     </nav>
     <!-- welcome  -->
@@ -55,19 +64,19 @@
     <!-- textarea -->
     <div class="container">
       <div class="container">
-        <h4>Add A Title</h4>
+        <h4 id="addAtitle">Add A Title</h4>
       </div>
       <div class="d-flex justify-content-center">
         <textarea
           id="titleTxt"
           class="form-control"
-          placeholder="Write a title"
+          placeholder="Write your title"
           rows="1"
           required
         ></textarea>
       </div>
       <div class="container">
-        <h4>Add A Note</h4>
+        <h4 id="addANote">Add A Note</h4>
       </div>
       <div class="d-flex justify-content-center">
         <textarea
@@ -78,8 +87,11 @@
         ></textarea>
       </div>
       <div class="container">
-        <button id="addbtn" title="Add Note" type="button" class="btn btn-primary my-2" onclick="addNote(-1)">
+        <button id="addbtn" title="Add Note" type="button" class="btn btn-primary my-2" onclick="addNote(-1,'notes')">
           Add Note
+        </button>
+        <button id="addtask" title="Add Task" type="button" class="btn btn-primary my-2" onclick="addNote(-2,'task')">
+          Add Task
         </button>
         <button id="savebtn" title="Save Edit" class="btn btn-primary my-2">
           Save Edit
@@ -89,16 +101,18 @@
     </div>
     <!-- Notes -->
     <div class="container">
-      <h4 class="px-2">Your Notes</h4>
+      <h4 class="px-2">Your Notes</h4>    
+      
     </div>
     <!-- Notes container -->
     <div
       id="note"
       class="container d-flex flex-wrap justify-content-start"
     ></div>
-    <div class="copyright d-flex justify-content-center">
+    <!-- Copywrite -->
+    <!-- <div class="copyright d-flex justify-content-center">
       <span> Copyright &copy;2022 Designed By Atul Chourasiya </span>
-    </div>
+    </div> -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
@@ -112,6 +126,7 @@
           "Welcome to Caveman Notes",
           "Best Web Application For Taking Notes",
           "Add Search And Delete Note In Just One Click",
+          "Make To-Do-List To Organize Your Task"
         ],
         startDelay: 500,
         typeSpeed: 50,
