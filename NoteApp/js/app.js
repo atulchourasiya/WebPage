@@ -2,7 +2,7 @@ console.log("Welcome to Caveman notes");
 showNotes(-1);
 let markedimp = document.getElementsByClassName("bi-star-fill");
 // Btn Add event Listner
-function addNote(index,key) {
+function addNote(index, key) {
   let addtxt = document.getElementById("txt");
   let addtxtvalue = addtxt.value.split("\n");
   if (key != "task") {
@@ -19,19 +19,46 @@ function addNote(index,key) {
   if (index < 0) {
     let imp = false;
     let pinned = false;
+    if (key === "task") {
+      for (let i = 0; i < addtxtvalue.length; i++) {
+        addtxtvalue[i] = [addtxtvalue[i], false];
+      }
+    }
     cardObj.push([addtitle.value, addtxtvalue, imp, pinned]);
   } else {
     cardObj[index][0] = addtitle.value;
-    cardObj[index][1] = addtxtvalue;
+    if(key != 'task')
+    {
+      cardObj[index][1] = addtxtvalue;
+    }
+    else
+    {
+      let j;
+      let i;
+      let newArr = [];
+      for (i = 0; i < addtxtvalue.length; i++) {
+        for (j = 0; j < cardObj[index][1].length; j++) {
+          if(addtxtvalue[i] === cardObj[index][1][j][0])
+          {
+             newArr.push([addtxtvalue[i],cardObj[index][1][j][1]]);
+             cardObj[index][1][j][0] = 'NULL';
+             break;
+          } 
+        }
+        if(j === cardObj[index][1].length)
+        {
+          newArr.push([addtxtvalue[i],false]);
+        }
+      }
+      cardObj[index][1] = newArr;
+    }  
   }
   localStorage.setItem(key, JSON.stringify(cardObj));
   addtxt.value = "";
   addtitle.value = "";
-  if(key === 'task')
-  {
+  if (key === "task") {
     showNotes(-2);
-  }
-  else{
+  } else {
     showNotes(index);
   }
 }
@@ -56,7 +83,7 @@ function showNotes(keyValue) {
       html += `<div class=" card m-2" >
         <div class="card-body">
           <h5 class="card-title">${
-            element[0] === "" ? "To-Do-List " + (index + 1) : element[0]
+            element[0] === "" ? "To Do " + (index + 1) : element[0]
           } <i title="Mark Important"class=" bi-star-fill" onclick="handleMarkImp(${index},-2)"></i></h5>
           <ul  class="card-text  card-text-task">
           ${taskListShow(index)}
@@ -97,6 +124,7 @@ function showNotes(keyValue) {
   if (keyValue === -2) {
     showImpcard(-2);
     showPin(-2);
+    ShowChecked();
   } else {
     showImpcard(-1);
     showPin(-1);
@@ -240,21 +268,62 @@ function editNote(index, keyValue) {
   let addtxt = document.getElementById("txt");
   let addtitle = document.getElementById("titleTxt");
   addtitle.value = cardObj[index][0];
-  if(keyValue != -2){
-    cardObj[index][1] = cardObj[index][1].split("<br/>")
+  let splitArray =[];
+  if (keyValue != -2) {
+    splitArray = cardObj[index][1].split("<br/>");
   }
-  txtValue = cardObj[index][1].join("\n");
-  addtxt.value = txtValue;
+  else
+  {
+    for (let i = 0; i < cardObj[index][1].length; i++) {
+      splitArray.push(cardObj[index][1][i][0])
+    }
+  }
+  addtxt.value = splitArray.join("\n");;
   let save = document.getElementById("savebtn");
   save.addEventListener(
     "click",
     function () {
       if (addtxt.value != "" && addtitle.value != "") {
-        addNote(index,key);
+        addNote(index, key);
       }
     },
     { once: true }
   );
+}
+// if Checked
+function Checked(index, item) {
+  let cards = localStorage.getItem("task");
+  let cardObj = JSON.parse(cards);
+  if (cardObj[index][1][item][1] === false) {
+    cardObj[index][1][item][1] = true;
+  } else if (!cardObj[index][1][item][1]) {
+    cardObj[index][1][item][1] = true;
+  } else {
+    cardObj[index][1][item][1] = false;
+  }
+  localStorage.setItem("task", JSON.stringify(cardObj));
+  ShowChecked();
+}
+//show checked
+function ShowChecked() {
+  let cards = localStorage.getItem("task");
+  let cardObj;
+  if (cards === null) {
+    cardObj = [];
+  } else {
+    cardObj = JSON.parse(cards);
+  }
+  let lists = document.getElementsByClassName("card-text");
+  Array.from(lists).forEach((element, index) => {
+    element = Array.from(element.children);
+    for (let i = 0; i < element.length; i++) {
+      if (cardObj[index][1][i][1] === true) {
+        element[i].getElementsByTagName("input")[0].checked = true;
+      } else {
+        element[i].getElementsByTagName("input")[0].checked = false;
+      }
+    }
+  });
 }
 // DeleteNote
 function deleteNote(event, keyValue) {
@@ -280,7 +349,7 @@ function deleteNote(event, keyValue) {
   }
 }
 //Add CheckBox to Tasklist
-function taskListShow(index){
+function taskListShow(index) {
   let cards = localStorage.getItem("task");
   let cardObj;
   if (cards === null) {
@@ -288,15 +357,16 @@ function taskListShow(index){
   } else {
     cardObj = JSON.parse(cards);
   }
-  let html ='';
+  let html = "";
   for (let i = 0; i < cardObj[index][1].length; i++) {
-    html +=
-    `<li class="taskList">
+    html += `<li class="taskList" onclick="Checked(${index},${i})" >
     <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
-    ${cardObj[index][1][i]}
-  </li>`
-  } 
- return html;
+    <span>
+       ${cardObj[index][1][i][0]}
+    </span>
+  </li>`;
+  }
+  return html;
 }
 function toggleTaskTodo() {
   let stabletxt = document.getElementsByClassName("stabletxt");
@@ -329,6 +399,7 @@ function toggleTaskTodo() {
       element.style.display = "none";
     });
     showNotes(-2);
+    ShowChecked();
   }
 }
 // Search text

@@ -32,6 +32,23 @@ body {
  padding: .5rem;
   
 }
+.form-check-input+span{
+  position: relative;
+}
+.form-check-input+span::before{
+  content: "";
+  position: absolute;
+  top: 52%;
+  left:0%;
+  width: 0%;
+  height: 1px;
+  background-color:rgba(48, 48, 48, 0.795);
+  transition: width .5s ease-in-out;
+}
+.form-check-input:checked+span::before
+{
+  width: 100%;
+}
 .nav-link{
   font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   font-weight: 600;
