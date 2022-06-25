@@ -419,24 +419,35 @@ search.addEventListener("focusout", () => {
 search.addEventListener("input", () => {
   let inputval = search.value.toLowerCase();
   let noteCard = document.getElementsByClassName("card");
+  let ismatch = false;
   Array.from(noteCard).forEach((element) => {
-    let cardtxt
+    let cardtxt;
     if(element.getElementsByTagName("p").length === 0)
     {
       cardtxt = element.getElementsByTagName("ul")[0].innerText;
-      console.log(cardtxt);
     }
     else
     {
       cardtxt = element.getElementsByTagName("p")[0].innerText;
-    }   
+    }  
     let titletxt = element.getElementsByTagName("h5")[0].innerText;
     if (cardtxt.toLowerCase().includes(inputval)) {
       element.style.display = "block";
+      ismatch = true;
     } else if (titletxt.toLowerCase().includes(inputval)) {
       element.style.display = "block";
+      ismatch = true;
     } else {
       element.style.display = "none";
     }
   });
+  let match = document.getElementsByClassName('Nomatch');
+  if(!ismatch)
+   {
+     match[0].style.display = 'block';
+   }
+   else
+   {
+    match[0].style.display = 'none';
+   }
 });

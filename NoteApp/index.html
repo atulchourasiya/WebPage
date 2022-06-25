@@ -20,34 +20,50 @@
       href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
         <a class="navbar-brand fw-bold">Caveman Notes</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a id="taskToDoBtn" onclick="toggleTaskTodo()" title="To Do List" class=" nav-link active" aria-current="page" href="#">To Do List</a>
+              <a
+                id="taskToDoBtn"
+                onclick="toggleTaskTodo()"
+                title="To Do List"
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                >To Do List</a
+              >
             </li>
           </ul>
-          <form id="form"class="d-flex" role="search">
+          <form id="form" class="d-flex" role="search">
             <i class="bi bi-search"></i>
             <input
-            id="searchtxt"
-            title="Search"
-            class="searchbox form-control"
-            type="search"
-            placeholder=""
-            aria-label="Search"
+              id="searchtxt"
+              title="Search"
+              class="searchbox form-control"
+              type="search"
+              placeholder=""
+              aria-label="Search"
             />
-            <span  class="stabletxt srchtxt">Search Note By</span>
-            <span id="flip1" class="fliptxt srchtxt ">Title</span>
+            <span class="stabletxt srchtxt">Search Note By</span>
+            <span id="flip1" class="fliptxt srchtxt">Title</span>
             <span id="flip2" class="fliptxt srchtxt">Text</span>
           </form>
         </div>
@@ -55,9 +71,7 @@
     </nav>
     <!-- welcome  -->
     <div class="type container d-flex justify-content-center">
-      <h3
-        class="my-4 mt-1"
-      >
+      <h3 class="my-4 mt-1">
         <span id="textline"></span>
       </h3>
     </div>
@@ -87,28 +101,43 @@
         ></textarea>
       </div>
       <div class="container">
-        <button id="addbtn" title="Add Note" type="button" class="btn btn-primary my-2" onclick="addNote(-1,'notes')">
+        <button
+          id="addbtn"
+          title="Add Note"
+          type="button"
+          class="btn btn-primary my-2"
+          onclick="addNote(-1,'notes')"
+        >
           Add Note
         </button>
-        <button id="addtask" title="Add Task" type="button" class="btn btn-primary my-2" onclick="addNote(-2,'task')">
+        <button
+          id="addtask"
+          title="Add Task"
+          type="button"
+          class="btn btn-primary my-2"
+          onclick="addNote(-2,'task')"
+        >
           Add Task
         </button>
         <button id="savebtn" title="Save Edit" class="btn btn-primary my-2">
           Save Edit
         </button>
       </div>
-      <hr/>
+      <hr />
     </div>
     <!-- Notes -->
     <div class="container">
-      <h4 class="px-2">Your Notes</h4>    
-      
+      <h4 class="px-2">Your Notes</h4>
     </div>
     <!-- Notes container -->
+    <div class="Nomatch container">
+      <p>No matches were found</p>
+    </div>
     <div
       id="note"
       class="container d-flex flex-wrap justify-content-start mb-4"
-    ></div>
+    >
+    </div>
     <!-- Copywrite -->
     <div class="copyright d-flex justify-content-center">
       <span> Copyright &copy;2022 Designed By Atul Chourasiya </span>
@@ -126,7 +155,7 @@
           "Welcome to Caveman Notes",
           "Best Web Application For Taking Notes",
           "Add Search And Delete Note In Just One Click",
-          "Make To-Do-List To Organize Your Task"
+          "Make To-Do-List To Organize Your Task",
         ],
         startDelay: 500,
         typeSpeed: 50,

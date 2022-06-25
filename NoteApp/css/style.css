@@ -19,6 +19,9 @@ body {
 .bi-pin-angle-fill{
   color: rgba(164, 180, 185, 0.527);
 }
+.Nomatch{
+  display: none;
+}
 #addtask{
   display: none;
 }
