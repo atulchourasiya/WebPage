@@ -420,7 +420,16 @@ search.addEventListener("input", () => {
   let inputval = search.value.toLowerCase();
   let noteCard = document.getElementsByClassName("card");
   Array.from(noteCard).forEach((element) => {
-    let cardtxt = element.getElementsByTagName("p")[0].innerText;
+    let cardtxt
+    if(element.getElementsByTagName("p").length === 0)
+    {
+      cardtxt = element.getElementsByTagName("ul")[0].innerText;
+      console.log(cardtxt);
+    }
+    else
+    {
+      cardtxt = element.getElementsByTagName("p")[0].innerText;
+    }   
     let titletxt = element.getElementsByTagName("h5")[0].innerText;
     if (cardtxt.toLowerCase().includes(inputval)) {
       element.style.display = "block";
