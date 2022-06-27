@@ -1,4 +1,5 @@
 import * as themefunction from "./theme.js";
+sessionStorage.setItem("state","notes");
 console.log("Welcome to Caveman notes");
 themefunction.theme();
 showNotes(-1);
@@ -231,7 +232,6 @@ export function showImpcard(keyValue,theme) {
       {
         card[index].style.backgroundColor = "white";
       }
-
     }
   });
 }
@@ -414,6 +414,7 @@ function taskListShow(index) {
   return html;
 }
 window.toggleTaskTodo = function () {
+  sessionStorage.setItem("state","notes");
   let stabletxt = document.getElementsByClassName("stabletxt");
   let noteCard = document.getElementsByClassName("card");
   if (taskToDoBtn.innerText === "Note") {
@@ -433,6 +434,7 @@ window.toggleTaskTodo = function () {
     });
     showNotes(-1);
   } else {
+    sessionStorage.setItem("state","task");
     taskToDoBtn.innerText = "Note";
     taskToDoBtn.title = "Note";
     addANote.innerText = "Add Your Task";

@@ -20,10 +20,10 @@ const Sound = new Audio('./asset/click.mp3');
     }
     localStorage.setItem("theme",JSON.stringify(themeObj));
     showTheme();
-  });
+  }); 
 }
  function showTheme(){
-   let theme = localStorage.getItem("theme");
+  let theme = localStorage.getItem("theme");
   let themeObj;
   if (theme === null) {
     themeObj = { mode: false };
@@ -60,15 +60,15 @@ const Sound = new Audio('./asset/click.mp3');
      searchtxt.style.color = 'white';
      footer.style.background = '#0f2d4b';
      footer.style.color ='white';
-     if(taskList){
-      showImpcard(-1,"dark");
-     }
-     else
-     {
+     if(sessionStorage.getItem("state")==="task"){
        Array.from(taskList).forEach((ele,index)=>{
          ele.style.borderColor = '#ced4da';
        });
        showImpcard(-2,"dark");
+      }
+      else
+      {
+       showImpcard(-1,"dark");
      }
   }
   else
@@ -88,9 +88,6 @@ const Sound = new Audio('./asset/click.mp3');
       cardBody[index].style.background = 'white';
       cardBody[index].style.borderColor = '#0000002d';
    }) 
-   Array.from(taskList).forEach((ele,index)=>{
-    ele.style.borderColor ='#0000002d';
-  });
    navbar.style.background = 'none';
    navbar.classList.replace('navbar-dark','navbar-light');
    navbar.classList.add('bg-light');
@@ -98,15 +95,15 @@ const Sound = new Audio('./asset/click.mp3');
    searchtxt.style.color = 'black';
    footer.style.background = '#f5f9fa';
    footer.style.color = 'black';
-   if(taskList){
-    showImpcard(-1,"light");
-   }
-   else
-   {
+   if(sessionStorage.getItem("state")==="task"){
     Array.from(taskList).forEach((ele,index)=>{
       ele.style.borderColor ='#0000002d';
     });
      showImpcard(-2,"light");
+    }
+    else
+    {
+     showImpcard(-1,"light");
    }
   }
 }
