@@ -1,8 +1,10 @@
+import * as themefunction from "./theme.js";
 console.log("Welcome to Caveman notes");
+themefunction.theme();
 showNotes(-1);
-let markedimp = document.getElementsByClassName("bi-star-fill");
-// Btn Add event Listner
-function addNote(index, key) {
+let editingIndex = -1;
+//  Add Note
+window.addNote = function (key) {
   let addtxt = document.getElementById("txt");
   let addtxtvalue = addtxt.value.split("\n");
   if (key != "task") {
@@ -16,44 +18,85 @@ function addNote(index, key) {
   } else {
     cardObj = JSON.parse(cards);
   }
-  if (index < 0) {
-    let imp = false;
-    let pinned = false;
-    if (key === "task") {
-      for (let i = 0; i < addtxtvalue.length; i++) {
-        addtxtvalue[i] = [addtxtvalue[i], false];
-      }
+  let imp = false;
+  let pinned = false;
+  if (key === "task") {
+    for (let i = 0; i < addtxtvalue.length; i++) {
+      addtxtvalue[i] = [addtxtvalue[i], false];
     }
-    cardObj.push([addtitle.value, addtxtvalue, imp, pinned]);
-  } else {
-    cardObj[index][0] = addtitle.value;
-    if(key != 'task')
-    {
-      cardObj[index][1] = addtxtvalue;
-    }
-    else
-    {
-      let j;
-      let i;
-      let newArr = [];
-      for (i = 0; i < addtxtvalue.length; i++) {
-        for (j = 0; j < cardObj[index][1].length; j++) {
-          if(addtxtvalue[i] === cardObj[index][1][j][0])
-          {
-             newArr.push([addtxtvalue[i],cardObj[index][1][j][1]]);
-             cardObj[index][1][j][0] = 'NULL';
-             break;
-          } 
-        }
-        if(j === cardObj[index][1].length)
-        {
-          newArr.push([addtxtvalue[i],false]);
-        }
-      }
-      cardObj[index][1] = newArr;
-    }  
   }
-  localStorage.setItem(key, JSON.stringify(cardObj));
+  cardObj.push([addtitle.value, addtxtvalue, imp, pinned]);
+  let index = cardObj.length - 1;
+  if ((cardObj[index][0] === "" && cardObj[index][1] === "")||(cardObj[index][0] === "" && cardObj[index][1].length === 1 && cardObj[index][1][0][0]==='')) {
+    alert(
+      `⚠️Access Denied! You Can't Add Empty ${
+        key === "task" ? "Task" : "Note"
+      }`
+    );
+  }
+  else
+  {
+    localStorage.setItem(key, JSON.stringify(cardObj));
+  }
+  addtxt.value = "";
+  addtitle.value = "";
+  if (key === "task") {
+    showNotes(-2);
+  } else {
+    showNotes(-1);
+  }
+  editingIndex = -1;
+};
+//  Save Edit
+window.saveEdit = function (key) {
+  if (editingIndex === -1) {
+    alert("⚠️Access Denied! You have to edit something to Save Edit");
+    return;
+  }
+  let index = editingIndex;
+  let addtxt = document.getElementById("txt");
+  let addtxtvalue = addtxt.value.split("\n");
+  if (key != "task") {
+    addtxtvalue = addtxtvalue.join("<br/>");
+  }
+  let addtitle = document.getElementById("titleTxt");
+  let cards = localStorage.getItem(key);
+  let cardObj;
+  if (cards === null) {
+    cardObj = [];
+  } else {
+    cardObj = JSON.parse(cards);
+  }
+  cardObj[index][0] = addtitle.value;
+  if (key != "task") {
+    cardObj[index][1] = addtxtvalue;
+  } else {
+    let j;
+    let i;
+    let newArr = [];
+    for (i = 0; i < addtxtvalue.length; i++) {
+      for (j = 0; j < cardObj[index][1].length; j++) {
+        if (addtxtvalue[i] === cardObj[index][1][j][0]) {
+          newArr.push([addtxtvalue[i], cardObj[index][1][j][1]]);
+          cardObj[index][1][j][0] = "NULL";
+          break;
+        }
+      }
+      if (j === cardObj[index][1].length) {
+        newArr.push([addtxtvalue[i], false]);
+      }
+    }
+    cardObj[index][1] = newArr;
+  }
+  if (cardObj[index][0] === "" && cardObj[index][1].length === 0) {
+    alert(
+      `⚠️Access Denied! You Can Delete ${
+        key === "task" ? "Task" : "Note"
+      } Instead`
+    );
+  } else {
+    localStorage.setItem(key, JSON.stringify(cardObj));
+  }
   addtxt.value = "";
   addtitle.value = "";
   if (key === "task") {
@@ -61,7 +104,8 @@ function addNote(index, key) {
   } else {
     showNotes(index);
   }
-}
+  editingIndex = -1;
+};
 // ShowNotes
 function showNotes(keyValue) {
   let key;
@@ -91,7 +135,7 @@ function showNotes(keyValue) {
            <a href="#titleTxt"> <button type="button" title="Edit" class="mb-2 btn btn-primary" onclick="editNote(${index},-2)">Edit</button></a>  
            <button id=${index} type="button" title="Delete" class="mb-2 btn btn-primary" onclick="deleteNote(this.id,-2)">Delete</button>
            <button  type="button" title="Clone"class="mb-2 btn btn-primary" onclick="Clone(${index},-2)"><i class=" bi-back"></i></button>
-           <button id="pin" title="Pin" type="button" onclick="pin(${index},-2)" class="mb-2 btn btn-light"> <i class=" bi-pin-angle-fill"></i></button>
+           <button  title="Pin" type="button" onclick="pin(${index},-2)" class="mb-2 btn btn-light"> <i class=" bi-pin-angle-fill"></i></button>
         </div>
       </div>`;
     });
@@ -108,7 +152,7 @@ function showNotes(keyValue) {
          <a href="#titleTxt"> <button type="button" title="Edit" class="mb-2 btn btn-primary" onclick="editNote(${index},-1)">Edit</button></a>  
          <button id=${index} type="button" title="Delete" class="mb-2 btn btn-primary" onclick="deleteNote(this.id,-1)">Delete</button>
          <button  type="button" title="Clone"class="mb-2 btn btn-primary" onclick="Clone(${index},-1)"><i class=" bi-back"></i></button>
-         <button id="pin" title="Pin" type="button" onclick="pin(${index},-1)" class="mb-2 btn btn-light"> <i class=" bi-pin-angle-fill"></i></button>
+         <button title="Pin" type="button" onclick="pin(${index},-1)" class="mb-2 btn btn-light"> <i class=" bi-pin-angle-fill"></i></button>
       </div>
     </div>`;
     });
@@ -122,16 +166,15 @@ function showNotes(keyValue) {
     </div>`;
   }
   if (keyValue === -2) {
-    showImpcard(-2);
     showPin(-2);
     ShowChecked();
   } else {
-    showImpcard(-1);
     showPin(-1);
   }
+  themefunction.showTheme();
 }
 // Mark Important
-function handleMarkImp(index, keyValue) {
+window.handleMarkImp = function (index, keyValue) {
   let key;
   if (keyValue === -2) {
     key = "task";
@@ -147,13 +190,13 @@ function handleMarkImp(index, keyValue) {
   }
   localStorage.setItem(key, JSON.stringify(cardObj));
   if (keyValue === -2) {
-    showImpcard(-2);
+    showNotes(-2);
   } else {
-    showImpcard(-1);
+    showNotes(-1);
   }
-}
+};
 //show Important card
-function showImpcard(keyValue) {
+export function showImpcard(keyValue,theme) {
   let key;
   if (keyValue === -2) {
     key = "task";
@@ -172,15 +215,28 @@ function showImpcard(keyValue) {
     let card = document.getElementsByClassName("card-body");
     if (element[2] === true) {
       markedimp[index].style.color = "rgba(0, 255, 0)";
-      card[index].style.backgroundColor = "rgba(245, 255, 245, 0.788)";
+      if(theme=== "dark"){
+        card[index].style.backgroundColor = "#0a3560";
+      }
+      else
+      {
+        card[index].style.backgroundColor = "#f2fff2";
+      }
     } else {
       markedimp[index].style.color = "rgba(214, 222, 225, 0.725)";
-      card[index].style.backgroundColor = "white";
+      if(theme=== "dark"){
+        card[index].style.backgroundColor = "#061f38";
+      }
+      else
+      {
+        card[index].style.backgroundColor = "white";
+      }
+
     }
   });
 }
 // Pin
-function pin(index, keyValue) {
+window.pin = function (index, keyValue) {
   let key;
   if (keyValue === -2) {
     key = "task";
@@ -212,7 +268,7 @@ function pin(index, keyValue) {
   } else {
     showNotes(-1);
   }
-}
+};
 // Show pin
 function showPin(keyValue) {
   let key;
@@ -238,7 +294,7 @@ function showPin(keyValue) {
   });
 }
 // Clone
-function Clone(index, keyValue) {
+window.Clone = function (index, keyValue) {
   let key;
   if (keyValue === -2) {
     key = "task";
@@ -254,9 +310,9 @@ function Clone(index, keyValue) {
   } else {
     showNotes(-1);
   }
-}
+};
 //Edit Note
-function editNote(index, keyValue) {
+window.editNote = function (index, keyValue) {
   let key;
   if (keyValue === -2) {
     key = "task";
@@ -268,30 +324,19 @@ function editNote(index, keyValue) {
   let addtxt = document.getElementById("txt");
   let addtitle = document.getElementById("titleTxt");
   addtitle.value = cardObj[index][0];
-  let splitArray =[];
+  let splitArray = [];
   if (keyValue != -2) {
     splitArray = cardObj[index][1].split("<br/>");
-  }
-  else
-  {
+  } else {
     for (let i = 0; i < cardObj[index][1].length; i++) {
-      splitArray.push(cardObj[index][1][i][0])
+      splitArray.push(cardObj[index][1][i][0]);
     }
   }
-  addtxt.value = splitArray.join("\n");;
-  let save = document.getElementById("savebtn");
-  save.addEventListener(
-    "click",
-    function () {
-      if (addtxt.value != "" && addtitle.value != "") {
-        addNote(index, key);
-      }
-    },
-    { once: true }
-  );
-}
+  addtxt.value = splitArray.join("\n");
+  editingIndex = index;
+};
 // if Checked
-function Checked(index, item) {
+window.Checked = function (index, item) {
   let cards = localStorage.getItem("task");
   let cardObj = JSON.parse(cards);
   if (cardObj[index][1][item][1] === false) {
@@ -303,7 +348,7 @@ function Checked(index, item) {
   }
   localStorage.setItem("task", JSON.stringify(cardObj));
   ShowChecked();
-}
+};
 //show checked
 function ShowChecked() {
   let cards = localStorage.getItem("task");
@@ -326,7 +371,7 @@ function ShowChecked() {
   });
 }
 // DeleteNote
-function deleteNote(event, keyValue) {
+window.deleteNote = function (event, keyValue) {
   let key;
   if (keyValue === -2) {
     key = "task";
@@ -347,7 +392,7 @@ function deleteNote(event, keyValue) {
   } else {
     showNotes(-1);
   }
-}
+};
 //Add CheckBox to Tasklist
 function taskListShow(index) {
   let cards = localStorage.getItem("task");
@@ -360,7 +405,7 @@ function taskListShow(index) {
   let html = "";
   for (let i = 0; i < cardObj[index][1].length; i++) {
     html += `<li class="taskList" onclick="Checked(${index},${i})" >
-    <input class="form-check-input me-1" type="checkbox" value="" aria-label="...">
+    <input class="form-check-input me-1 strike" type="checkbox" value="" aria-label="...">
     <span>
        ${cardObj[index][1][i][0]}
     </span>
@@ -368,7 +413,7 @@ function taskListShow(index) {
   }
   return html;
 }
-function toggleTaskTodo() {
+window.toggleTaskTodo = function () {
   let stabletxt = document.getElementsByClassName("stabletxt");
   let noteCard = document.getElementsByClassName("card");
   if (taskToDoBtn.innerText === "Note") {
@@ -381,6 +426,8 @@ function toggleTaskTodo() {
     stabletxt[0].innerText = "Search Note By";
     addtask.style.display = "none";
     addbtn.style.display = "inline";
+    savebtnnotes.style.display = "inline";
+    savebtntask.style.display = "none";
     Array.from(noteCard).forEach((element) => {
       element.style.display = "block";
     });
@@ -395,17 +442,19 @@ function toggleTaskTodo() {
     stabletxt[0].innerText = "Search Task By";
     addbtn.style.display = "none";
     addtask.style.display = "inline";
+    savebtnnotes.style.display = "none";
+    savebtntask.style.display = "inline";
     Array.from(noteCard).forEach((element) => {
       element.style.display = "none";
     });
     showNotes(-2);
-    ShowChecked();
   }
-}
+};
 // Search text
 let srchtxt = document.getElementsByClassName("srchtxt");
 let search = document.getElementById("searchtxt");
-search.addEventListener("focusout", () => {
+search.addEventListener("input", hideFilptxt);
+function hideFilptxt() {
   if (search.value === "") {
     for (let i = 0; i < srchtxt.length; i++) {
       srchtxt[i].style.display = "inline-block";
@@ -415,21 +464,18 @@ search.addEventListener("focusout", () => {
       srchtxt[i].style.display = "none";
     }
   }
-});
+}
 search.addEventListener("input", () => {
   let inputval = search.value.toLowerCase();
   let noteCard = document.getElementsByClassName("card");
   let ismatch = false;
   Array.from(noteCard).forEach((element) => {
     let cardtxt;
-    if(element.getElementsByTagName("p").length === 0)
-    {
+    if (element.getElementsByTagName("p").length === 0) {
       cardtxt = element.getElementsByTagName("ul")[0].innerText;
-    }
-    else
-    {
+    } else {
       cardtxt = element.getElementsByTagName("p")[0].innerText;
-    }  
+    }
     let titletxt = element.getElementsByTagName("h5")[0].innerText;
     if (cardtxt.toLowerCase().includes(inputval)) {
       element.style.display = "block";
@@ -441,13 +487,10 @@ search.addEventListener("input", () => {
       element.style.display = "none";
     }
   });
-  let match = document.getElementsByClassName('Nomatch');
-  if(!ismatch)
-   {
-     match[0].style.display = 'block';
-   }
-   else
-   {
-    match[0].style.display = 'none';
-   }
+  let match = document.getElementsByClassName("Nomatch");
+  if (!ismatch) {
+    match[0].style.display = "block";
+  } else {
+    match[0].style.display = "none";
+  }
 });
