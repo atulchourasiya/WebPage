@@ -490,7 +490,7 @@ search.addEventListener("input", () => {
     }
   });
   let match = document.getElementsByClassName("Nomatch");
-  if (!ismatch) {
+  if (!ismatch && noteCard.length!=0) {
     match[0].style.display = "block";
   } else {
     match[0].style.display = "none";
