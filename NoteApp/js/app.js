@@ -237,6 +237,10 @@ export function showImpcard(keyValue,theme) {
 }
 // Pin
 window.pin = function (index, keyValue) {
+  if(editingIndex!=-1){
+    alert("⚠️Access Denied! You have to Save Edit");
+    return;
+  }
   let key;
   if (keyValue === -2) {
     key = "task";
@@ -295,6 +299,10 @@ function showPin(keyValue) {
 }
 // Clone
 window.Clone = function (index, keyValue) {
+  if(editingIndex!=-1){
+    alert("⚠️Access Denied! You have to Save Edit");
+    return;
+  }
   let key;
   if (keyValue === -2) {
     key = "task";
@@ -372,6 +380,10 @@ function ShowChecked() {
 }
 // DeleteNote
 window.deleteNote = function (event, keyValue) {
+  if(editingIndex!=-1){
+    alert("⚠️Access Denied! You have to Save Edit");
+    return;
+  }
   let key;
   if (keyValue === -2) {
     key = "task";
