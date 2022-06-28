@@ -4,6 +4,9 @@ body {
   box-sizing: border-box;
   overflow-y:scroll;
 }
+.letterspacing{
+  letter-spacing: 1px;
+}
 .bi {
   position: absolute;
   padding: 0.5rem;
