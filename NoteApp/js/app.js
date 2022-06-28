@@ -1,5 +1,5 @@
 import * as themefunction from "./theme.js";
-sessionStorage.setItem("state","notes");
+sessionStorage.setItem("state", "notes");
 console.log("Welcome to Caveman notes");
 themefunction.theme();
 showNotes(-1);
@@ -7,8 +7,7 @@ let editingIndex = -1;
 let searching = false;
 //  Add Note
 window.addNote = function (key) {
-  if(searching===true)
-  {
+  if (searching === true) {
     alert("⚠️Access Denied! Searching is in process");
     return;
   }
@@ -34,30 +33,28 @@ window.addNote = function (key) {
   }
   cardObj.push([addtitle.value, addtxtvalue, imp, pinned]);
   let index = cardObj.length - 1;
-  if ((cardObj[index][0] === "" && cardObj[index][1] === "")||(cardObj[index][0] === "" && cardObj[index][1].length === 1 && cardObj[index][1][0][0]==='')) {
+  if (
+    cardObj[index][1] === "" ||
+    (cardObj[index][1].length === 1 && cardObj[index][1][0][0] === "")
+  ) {
     alert(
-      `⚠️Access Denied! You Can't Add Empty ${
-        key === "task" ? "Task" : "Note"
-      }`
+      `⚠️Access Denied! You Can't Add Empty ${key === "task" ? "Task" : "Note"}`
     );
-  }
-  else
-  {
-    localStorage.setItem(key, JSON.stringify(cardObj));
-  }
-  addtxt.value = "";
-  addtitle.value = "";
-  if (key === "task") {
-    showNotes(-2);
   } else {
-    showNotes(-1);
+    localStorage.setItem(key, JSON.stringify(cardObj));
+    addtxt.value = "";
+    addtitle.value = "";
+    if (key === "task") {
+      showNotes(-2);
+    } else {
+      showNotes(-1);
+    }
+    editingIndex = -1;
   }
-  editingIndex = -1;
 };
 //  Save Edit
 window.saveEdit = function (key) {
-  if(searching===true)
-  {
+  if (searching === true) {
     alert("⚠️Access Denied! Searching is in process");
     return;
   }
@@ -100,23 +97,26 @@ window.saveEdit = function (key) {
     }
     cardObj[index][1] = newArr;
   }
-  if (cardObj[index][0] === "" && cardObj[index][1].length === 0) {
+  if (
+    cardObj[index][1] === "" ||
+    (cardObj[index][1].length === 1 && cardObj[index][1][0][0] === "")
+  ) {
     alert(
-      `⚠️Access Denied! You Can Delete ${
+      `⚠️Access Denied! You Can't Save Empty ${
         key === "task" ? "Task" : "Note"
-      } Instead`
+      }`
     );
   } else {
     localStorage.setItem(key, JSON.stringify(cardObj));
+    addtxt.value = "";
+    addtitle.value = "";
+    if (key === "task") {
+      showNotes(-2);
+    } else {
+      showNotes(index);
+    }
+    editingIndex = -1;
   }
-  addtxt.value = "";
-  addtitle.value = "";
-  if (key === "task") {
-    showNotes(-2);
-  } else {
-    showNotes(index);
-  }
-  editingIndex = -1;
 };
 // ShowNotes
 function showNotes(keyValue) {
@@ -208,7 +208,7 @@ window.handleMarkImp = function (index, keyValue) {
   }
 };
 //show Important card
-export function showImpcard(keyValue,theme) {
+export function showImpcard(keyValue, theme) {
   let key;
   if (keyValue === -2) {
     key = "task";
@@ -227,20 +227,16 @@ export function showImpcard(keyValue,theme) {
     let card = document.getElementsByClassName("card-body");
     if (element[2] === true) {
       markedimp[index].style.color = "rgba(0, 255, 0)";
-      if(theme=== "dark"){
+      if (theme === "dark") {
         card[index].style.backgroundColor = "#0a3560";
-      }
-      else
-      {
+      } else {
         card[index].style.backgroundColor = "#f2fff2";
       }
     } else {
       markedimp[index].style.color = "rgba(214, 222, 225, 0.725)";
-      if(theme=== "dark"){
+      if (theme === "dark") {
         card[index].style.backgroundColor = "#061f38";
-      }
-      else
-      {
+      } else {
         card[index].style.backgroundColor = "white";
       }
     }
@@ -248,7 +244,7 @@ export function showImpcard(keyValue,theme) {
 }
 // Pin
 window.pin = function (index, keyValue) {
-  if(editingIndex!=-1){
+  if (editingIndex != -1) {
     alert("⚠️Access Denied! You have to Save Edit");
     return;
   }
@@ -310,7 +306,7 @@ function showPin(keyValue) {
 }
 // Clone
 window.Clone = function (index, keyValue) {
-  if(editingIndex!=-1){
+  if (editingIndex != -1) {
     alert("⚠️Access Denied! You have to Save Edit");
     return;
   }
@@ -391,7 +387,7 @@ function ShowChecked() {
 }
 // DeleteNote
 window.deleteNote = function (event, keyValue) {
-  if(editingIndex!=-1){
+  if (editingIndex != -1) {
     alert("⚠️Access Denied! You have to Save Edit");
     return;
   }
@@ -437,7 +433,7 @@ function taskListShow(index) {
   return html;
 }
 window.toggleTaskTodo = function () {
-  sessionStorage.setItem("state","notes");
+  sessionStorage.setItem("state", "notes");
   let stabletxt = document.getElementsByClassName("stabletxt");
   let noteCard = document.getElementsByClassName("card");
   if (taskToDoBtn.innerText === "Note") {
@@ -457,7 +453,7 @@ window.toggleTaskTodo = function () {
     });
     showNotes(-1);
   } else {
-    sessionStorage.setItem("state","task");
+    sessionStorage.setItem("state", "task");
     taskToDoBtn.innerText = "Note";
     taskToDoBtn.title = "Note";
     addANote.innerText = "Add Your Task";
@@ -484,7 +480,7 @@ function hideFilptxt() {
     for (let i = 0; i < srchtxt.length; i++) {
       srchtxt[i].style.display = "inline-block";
     }
-    searching =false;
+    searching = false;
   } else {
     for (let i = 0; i < srchtxt.length; i++) {
       srchtxt[i].style.display = "none";
@@ -515,7 +511,7 @@ search.addEventListener("input", () => {
     }
   });
   let match = document.getElementsByClassName("Nomatch");
-  if (!ismatch && noteCard.length!=0) {
+  if (!ismatch && noteCard.length != 0) {
     match[0].style.display = "block";
   } else {
     match[0].style.display = "none";
