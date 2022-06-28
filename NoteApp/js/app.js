@@ -4,8 +4,14 @@ console.log("Welcome to Caveman notes");
 themefunction.theme();
 showNotes(-1);
 let editingIndex = -1;
+let searching = false;
 //  Add Note
 window.addNote = function (key) {
+  if(searching===true)
+  {
+    alert("⚠️Access Denied! Searching is in process");
+    return;
+  }
   let addtxt = document.getElementById("txt");
   let addtxtvalue = addtxt.value.split("\n");
   if (key != "task") {
@@ -50,6 +56,11 @@ window.addNote = function (key) {
 };
 //  Save Edit
 window.saveEdit = function (key) {
+  if(searching===true)
+  {
+    alert("⚠️Access Denied! Searching is in process");
+    return;
+  }
   if (editingIndex === -1) {
     alert("⚠️Access Denied! You have to edit something to Save Edit");
     return;
@@ -473,10 +484,12 @@ function hideFilptxt() {
     for (let i = 0; i < srchtxt.length; i++) {
       srchtxt[i].style.display = "inline-block";
     }
+    searching =false;
   } else {
     for (let i = 0; i < srchtxt.length; i++) {
       srchtxt[i].style.display = "none";
     }
+    searching = true;
   }
 }
 search.addEventListener("input", () => {
