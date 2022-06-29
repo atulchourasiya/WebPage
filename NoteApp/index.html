@@ -26,7 +26,9 @@
     <!-- navbar -->
     <nav id="navbarBackground" class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand fw-bold me-2 letterspacing" href="./index.html">QuickNote</a>
+        <a class="navbar-brand fw-bold me-2 letterspacing" href="./index.html"
+          >QuickNote</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -39,8 +41,11 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <div class="form-check form-switch me-2" title="Switch Theme">
+          <ul class="navbar-nav me-auto mb-lg-0">
+            <div
+              class="form-check form-switch mb-2 me-2 mb-lg-0"
+              title="Switch Theme"
+            >
               <input
                 class="form-check-input Togglebtn"
                 type="checkbox"
@@ -53,14 +58,62 @@
                 id="taskToDoBtn"
                 onclick="toggleTaskTodo()"
                 title="To Do List"
-                class="nav-link active"
+                class="nav-link active p-0"
                 aria-current="page"
                 href="#"
                 >To Do List</a
               >
             </li>
           </ul>
-          <form id="form" class="d-flex" role="search">
+          <div class="py-2 pe-2 py-lg-0">
+            <div id="userContainer" class="d-inline">
+              <select
+              id="userbox"
+              class="form-select"
+              onchange="handleSelect()"
+              required
+              >
+              <option selected>Guest</option>
+              <option>Login</option>
+            </select>
+            <i id="downarrow"class="bi-caret-down"></i>
+            <div id="dropdownMenu" class="dropdown">
+                  <form class="px-2 px-sm-4 py-3 px-lg-4">
+                    <div class="mb-3">
+                      <label for="exampleDropdownFormEmail1" class="form-label"
+                        >Username</label
+                      >
+                      <input
+                        class="form-control"
+                        id="exampleDropdownFormEmail1"
+                        placeholder="Username"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label
+                        for="exampleDropdownFormPassword1"
+                        class="form-label"
+                        >Password:</label
+                      >
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="exampleDropdownFormPassword1"
+                        placeholder="Password"
+                      />
+                    </div> 
+                    <button type="submit" class="btn btn-primary mb-2">
+                      Login
+                    </button>
+                    <hr>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">New around here? Sign up</a>
+                    <a class="dropdown-item" href="#">Forgot password?</a>
+                  </div>
+                  </form>
+              </div>
+          </div>
+          <form id="form" class="d-flex me-2" role="search">
             <i class="bi bi-search"></i>
             <input
               id="searchtxt"
@@ -168,6 +221,7 @@
       crossorigin="anonymous"
     ></script>
     <script type="module" src="./js/app.js"></script>
+    <script src="./js/login.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
       var typed = new Typed("#textline", {

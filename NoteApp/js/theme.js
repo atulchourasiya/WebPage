@@ -44,6 +44,9 @@ const Sound = new Audio('./asset/click.mp3');
      titleTxt.style.color = 'white';
      txt.style.background = '#061f38';
      txt.style.color = 'white';
+     userbox.style.background = '#0f2d4bd0';
+     userbox.style.color = 'white';
+     dropdownMenu.style.background = '#184a7c';
      Array.from(strike).forEach((ele)=>{
         ele.classList.add('strikedark');
         ele.classList.remove('strikelight'); 
@@ -79,6 +82,9 @@ const Sound = new Audio('./asset/click.mp3');
    titleTxt.style.color =  'black';
    txt.style.background =  'white';
    txt.style.color = 'black';
+   userbox.style.background = '#ffffffcc';
+   userbox.style.color = 'black';
+   dropdownMenu.style.background = '#eaf8f8';
    Array.from(strike).forEach((ele)=>{
     ele.classList.remove('strikedark');
     ele.classList.add('strikelight'); 

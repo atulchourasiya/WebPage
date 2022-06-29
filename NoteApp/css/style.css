@@ -22,9 +22,36 @@ body {
 .bi-pin-angle-fill{
   color: rgba(164, 180, 185, 0.527);
 }
+.bi-caret-down{
+  position:absolute;
+  top: 23%;
+  right: .8rem; 
+  opacity: .8;
+  z-index: 0;
+ }
 .Nomatch{
   padding-left: 1.5rem;
   display: none;
+}
+.form-select{
+  background-image: none;
+}
+#userbox{
+  position: relative;
+  z-index: 1;
+}
+#userContainer{
+  position: relative;
+}
+#dropdownMenu
+{
+  display: none;
+  position: absolute;
+  margin: .2rem;
+  width: max-content;
+  border-radius: 5%;
+  background-color: #184a7c;
+  z-index: 3;
 }
 #addtask{
   display: none;

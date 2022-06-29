@@ -230,7 +230,7 @@ export function showImpcard(keyValue, theme) {
       if (theme === "dark") {
         card[index].style.backgroundColor = "#0a3560";
       } else {
-        card[index].style.backgroundColor = "#f2fff2";
+        card[index].style.backgroundColor = "#efffff";
       }
     } else {
       markedimp[index].style.color = "rgba(214, 222, 225, 0.725)";
