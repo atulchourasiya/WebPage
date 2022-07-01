@@ -74,50 +74,9 @@
                 required
               >
                 <option selected>Guest</option>
-                <option>Sign up</option>
+                <option>Login</option>
               </select>
               <i class="bi-caret-down"></i>
-              <div class="dropdown dropdownMenu">
-                <form class="px-2 px-sm-4 py-3 px-lg-4 ">
-                  <div class="mb-3">
-                    <label for="exampleDropdownFormEmail1" class="form-label"
-                      >Username</label
-                    >
-                    <div class="input-group flex-nowrap">
-                      <span class="input-group-text" id="addon-wrapping"
-                        >@</span
-                      >
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Enter Username"
-                        aria-label="Username"
-                        aria-describedby="addon-wrapping"
-                      />
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="exampleDropdownFormPassword1" class="form-label"
-                      >Password</label
-                    >
-                    <input
-                      type="password"
-                      class="form-control"
-                      id="exampleDropdownFormPassword1"
-                      placeholder="Enter Password"
-                    />
-                  </div>
-                  <button type="submit" class="btn btn-primary mb-2">
-                    Login
-                  </button>
-                  <hr />
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" onclick="showSignup()" href="#"
-                    >New around here? Sign up</a
-                  >
-                  <a class="dropdown-item" href="#">Forgot password?</a>
-                </form>
-              </div>
             </div>
           </div>
           <form id="form" class="d-flex me-2" role="search">
@@ -137,7 +96,45 @@
         </div>
       </div>
     </nav>
-    <!-- login -->
+    <!-- login  -->
+    <div class="container d-flex justify-content-center">
+      <div class="w-50 mw-90 dropdownMenu rounded">
+        <form class="px-2 px-sm-4 py-3 px-lg-4">
+          <div class="mb-3">
+            <label for="exampleDropdownFormEmail1" class="form-label"
+              >Username</label
+            >
+            <div class="input-group flex-nowrap">
+              <span class="input-group-text" id="addon-wrapping">@</span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Enter Username"
+                aria-label="Username"
+                aria-describedby="addon-wrapping"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleDropdownFormPassword1" class="form-label"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="exampleDropdownFormPassword1"
+              placeholder="Enter Password"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary mb-2">Login</button>
+          <hr />
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">New around here? Sign up</a>
+          <a class="dropdown-item" href="#">Forgot password?</a>
+        </form>
+      </div>
+    </div>
+    <!-- Sign up -->
     <div class="container d-flex justify-content-center">
       <form
         class="row g-3 needs-validation dropdownMenu p-3 rounded mw-90"
@@ -218,13 +215,9 @@
         validate
       >
         <div class="col-md-4 position-relative">
-          <label for="forgetUsername" class="form-label"
-            >Username</label
-          >
+          <label for="forgetUsername" class="form-label">Username</label>
           <div class="input-group has-validation">
-            <span class="input-group-text"
-              >@</span
-            >
+            <span class="input-group-text">@</span>
             <input
               type="text"
               class="form-control"
@@ -248,15 +241,13 @@
           </select>
         </div>
         <div class="col-md-4 position-relative">
-          <label for="forgetAnswer" class="form-label"
-            >Your Answer</label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="forgetAnswer"
-            required
-          />
+          <label for="forgetAnswer" class="form-label">Your Answer</label>
+          <input type="text" class="form-control" id="forgetAnswer" required />
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" onclick="signUp()" type="submit">
+            Submit
+          </button>
         </div>
         <div class="col-md-6 position-relative d-none">
           <label for="validationTooltip01" class="form-label">Password</label>
@@ -280,7 +271,7 @@
         </div>
         <div class="col-12">
           <button class="btn btn-primary" onclick="signUp()" type="submit">
-            Sign up
+            Change Password
           </button>
         </div>
       </form>
