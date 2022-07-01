@@ -29,12 +29,10 @@ body {
   opacity: .8;
   z-index: 0;
  }
+
 .Nomatch{
   padding-left: 1.5rem;
   display: none;
-}
-.form-select{
-  background-image: none;
 }
 #userbox{
   position: relative;
@@ -43,15 +41,18 @@ body {
 #userContainer{
   position: relative;
 }
-#dropdownMenu
+.dropdownMenu
 {
   display: none;
   position: absolute;
   margin: .2rem;
-  width: max-content;
+  /* width: max-content; */
   border-radius: 5%;
   background-color: #184a7c;
   z-index: 3;
+}
+.mw-90{
+  max-width: 90%;
 }
 #addtask{
   display: none;
@@ -233,6 +234,9 @@ hr {
   }
   .copyright {
     font-size: 0.6rem;
+  }
+  .mw-90{
+    max-width: 100%;
   }
 }
 

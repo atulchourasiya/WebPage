@@ -1,12 +1,15 @@
+let dropdownMenu = document.getElementsByClassName('dropdownMenu');
+let id = document.getElementById("userbox");
  function handleSelect() {
-  let id = document.getElementById("userbox");
-  if (id.value === "Login") {
-      dropdownMenu.style.display = "block";
+  if (id.value === "Sign up") {
+      dropdownMenu[0].style.display = "block";
   }
   else
   {
-   dropdownMenu.style.display = "none";
+   dropdownMenu[0].style.display = "none";
   }
 }
-
-
+function showSignup(){
+  dropdownMenu[0].style.display = "none";
+  dropdownMenu[2].style.display = "flex";
+}

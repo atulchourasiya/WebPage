@@ -68,50 +68,57 @@
           <div class="py-2 pe-2 py-lg-0">
             <div id="userContainer" class="d-inline">
               <select
-              id="userbox"
-              class="form-select"
-              onchange="handleSelect()"
-              required
+                id="userbox"
+                class="form-select"
+                onchange="handleSelect()"
+                required
               >
-              <option selected>Guest</option>
-              <option>Login</option>
-            </select>
-            <i id="downarrow"class="bi-caret-down"></i>
-            <div id="dropdownMenu" class="dropdown">
-                  <form class="px-2 px-sm-4 py-3 px-lg-4">
-                    <div class="mb-3">
-                      <label for="exampleDropdownFormEmail1" class="form-label"
-                        >Username</label
+                <option selected>Guest</option>
+                <option>Sign up</option>
+              </select>
+              <i class="bi-caret-down"></i>
+              <div class="dropdown dropdownMenu">
+                <form class="px-2 px-sm-4 py-3 px-lg-4 ">
+                  <div class="mb-3">
+                    <label for="exampleDropdownFormEmail1" class="form-label"
+                      >Username</label
+                    >
+                    <div class="input-group flex-nowrap">
+                      <span class="input-group-text" id="addon-wrapping"
+                        >@</span
                       >
                       <input
+                        type="text"
                         class="form-control"
-                        id="exampleDropdownFormEmail1"
-                        placeholder="Username"
+                        placeholder="Enter Username"
+                        aria-label="Username"
+                        aria-describedby="addon-wrapping"
                       />
                     </div>
-                    <div class="mb-3">
-                      <label
-                        for="exampleDropdownFormPassword1"
-                        class="form-label"
-                        >Password:</label
-                      >
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="exampleDropdownFormPassword1"
-                        placeholder="Password"
-                      />
-                    </div> 
-                    <button type="submit" class="btn btn-primary mb-2">
-                      Login
-                    </button>
-                    <hr>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">New around here? Sign up</a>
-                    <a class="dropdown-item" href="#">Forgot password?</a>
                   </div>
-                  </form>
+                  <div class="mb-3">
+                    <label for="exampleDropdownFormPassword1" class="form-label"
+                      >Password</label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="exampleDropdownFormPassword1"
+                      placeholder="Enter Password"
+                    />
+                  </div>
+                  <button type="submit" class="btn btn-primary mb-2">
+                    Login
+                  </button>
+                  <hr />
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" onclick="showSignup()" href="#"
+                    >New around here? Sign up</a
+                  >
+                  <a class="dropdown-item" href="#">Forgot password?</a>
+                </form>
               </div>
+            </div>
           </div>
           <form id="form" class="d-flex me-2" role="search">
             <i class="bi bi-search"></i>
@@ -130,6 +137,154 @@
         </div>
       </div>
     </nav>
+    <!-- login -->
+    <div class="container d-flex justify-content-center">
+      <form
+        class="row g-3 needs-validation dropdownMenu p-3 rounded mw-90"
+        validate
+      >
+        <div class="col-md-4 position-relative">
+          <label for="validationTooltipUsername" class="form-label"
+            >Username</label
+          >
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="validationTooltipUsernamePrepend"
+              >@</span
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="validationTooltipUsername"
+              aria-describedby="validationTooltipUsernamePrepend"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-md-4 position-relative">
+          <label for="validationTooltip01" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="validationTooltip01"
+            required
+          />
+        </div>
+        <div class="col-md-4 position-relative">
+          <label for="validationTooltip02" class="form-label"
+            >Confirm Password</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="validationTooltip02"
+            required
+          />
+        </div>
+        <div class="col-md-6 position-relative">
+          <label for="validationTooltip04" class="form-label"
+            >Security Question</label
+          >
+          <select class="form-select" id="validationTooltip04" required>
+            <option selected disabled value="">Select</option>
+            <option>What is your pet's name?</option>
+            <option>Who was your childhood hero?</option>
+            <option>What is your favorite animal?</option>
+            <option>What was your childhood nickname?</option>
+            <option>What is your mother's middle name?</option>
+          </select>
+        </div>
+        <div class="col-md-6 position-relative">
+          <label for="validationTooltip05" class="form-label"
+            >Your Answer</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="validationTooltip05"
+            required
+          />
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" onclick="signUp()" type="submit">
+            Sign up
+          </button>
+        </div>
+      </form>
+    </div>
+    <!-- Forget Password -->
+    <div class="container d-flex justify-content-center">
+      <form
+        class="row g-3 needs-validation dropdownMenu p-3 rounded mw-90"
+        validate
+      >
+        <div class="col-md-4 position-relative">
+          <label for="forgetUsername" class="form-label"
+            >Username</label
+          >
+          <div class="input-group has-validation">
+            <span class="input-group-text"
+              >@</span
+            >
+            <input
+              type="text"
+              class="form-control"
+              readonly
+              id="forgetUsername"
+              required
+            />
+          </div>
+        </div>
+        <div class="col-md-4 position-relative">
+          <label for="forgetSecurity" class="form-label"
+            >Security Question</label
+          >
+          <select class="form-select" id="forgetSecurity" required>
+            <option selected disabled value="">Select</option>
+            <option>What is your pet's name?</option>
+            <option>Who was your childhood hero?</option>
+            <option>What is your favorite animal?</option>
+            <option>What was your childhood nickname?</option>
+            <option>What is your mother's middle name?</option>
+          </select>
+        </div>
+        <div class="col-md-4 position-relative">
+          <label for="forgetAnswer" class="form-label"
+            >Your Answer</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="forgetAnswer"
+            required
+          />
+        </div>
+        <div class="col-md-6 position-relative d-none">
+          <label for="validationTooltip01" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="validationTooltip01"
+            required
+          />
+        </div>
+        <div class="col-md-6 position-relative d-none">
+          <label for="validationTooltip02" class="form-label"
+            >Confirm Password</label
+          >
+          <input
+            type="password"
+            class="form-control"
+            id="validationTooltip02"
+            required
+          />
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" onclick="signUp()" type="submit">
+            Sign up
+          </button>
+        </div>
+      </form>
+    </div>
     <!-- welcome  -->
     <div class="type container d-flex justify-content-center">
       <h3 class="my-4 mt-1">
