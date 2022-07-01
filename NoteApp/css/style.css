@@ -29,7 +29,10 @@ body {
   opacity: .8;
   z-index: 0;
  }
-
+ .closebtn{
+   right: 2%;
+   top: 2%;
+ }
 .Nomatch{
   padding-left: 1.5rem;
   display: none;

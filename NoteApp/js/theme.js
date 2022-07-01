@@ -36,6 +36,7 @@ function showTheme() {
   let taskList = document.getElementsByClassName("taskList");
   let navbar = document.getElementById("navbarBackground");
   let dropdownMenu = document.getElementsByClassName("dropdownMenu");
+  let closebtn = document.getElementsByClassName("closebtn");
   if (themeObj.mode === true) {
     flexSwitchCheckDefault.checked = true;
     document.body.style.background = "#061f38";
@@ -46,8 +47,9 @@ function showTheme() {
     txt.style.color = "white";
     userbox.style.background = "#0f2d4bd0";
     userbox.style.color = "white";
-    Array.from(dropdownMenu).forEach((ele) => {
+    Array.from(dropdownMenu).forEach((ele,index) => {
       ele.style.background = "#184a7c";
+      closebtn[index].classList.add("btn-close-white");
     });
     Array.from(strike).forEach((ele) => {
       ele.classList.add("strikedark");
@@ -82,8 +84,9 @@ function showTheme() {
     txt.style.color = "black";
     userbox.style.background = "#ffffffcc";
     userbox.style.color = "black";
-    Array.from(dropdownMenu).forEach((ele) => {
+    Array.from(dropdownMenu).forEach((ele,index) => {
       ele.style.background = "#eaf8f8";
+      closebtn[index].classList.remove("btn-close-white");
     });
     Array.from(strike).forEach((ele) => {
       ele.classList.remove("strikedark");
