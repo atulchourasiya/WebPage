@@ -98,9 +98,13 @@
     </nav>
     <!-- login  -->
     <div class="container d-flex justify-content-center">
-      <div class=" mw-90 dropdownMenu rounded">
+      <div class="mw-90 dropdownMenu rounded">
         <form class="px-3 py-3 px-lg-4">
-          <button  type="button" class="position-absolute btn-close closebtn m-0" aria-label="Close"></button>
+          <button
+            type="button"
+            class="position-absolute btn-close closebtn m-0"
+            aria-label="Close"
+          ></button>
           <div class="mb-3">
             <label for="exampleDropdownFormEmail1" class="form-label"
               >Username</label
@@ -138,52 +142,58 @@
     <!-- Sign up -->
     <div class="container d-flex justify-content-center">
       <form
-      class="row g-3 needs-validation dropdownMenu p-3 rounded mw-90"
-      validate
+        class="row g-3 needs-validation dropdownMenu p-3 rounded mw-90"
+        validate
       >
-        <button  type="button" class="position-absolute btn-close closebtn m-0" aria-label="Close"></button>
+        <button
+          type="button"
+          class="position-absolute btn-close closebtn m-0"
+          aria-label="Close"
+        ></button>
         <div class="col-md-4 position-relative">
-          <label for="validationTooltipUsername" class="form-label"
+          <label for="signUsername" class="form-label"
             >Username</label
           >
           <div class="input-group has-validation">
-            <span class="input-group-text" id="validationTooltipUsernamePrepend"
+            <span class="input-group-text"
               >@</span
             >
             <input
               type="text"
               class="form-control"
-              id="validationTooltipUsername"
-              aria-describedby="validationTooltipUsernamePrepend"
+              id="signUsername"
               required
             />
+            <div class="invalid-tooltip">
+              Please choose a unique and valid username.
+            </div>
           </div>
         </div>
         <div class="col-md-4 position-relative">
-          <label for="validationTooltip01" class="form-label">Password</label>
+          <label for="signPassword" class="form-label">Password</label>
           <input
             type="password"
             class="form-control"
-            id="validationTooltip01"
+            id="signPassword"
             required
           />
         </div>
         <div class="col-md-4 position-relative">
-          <label for="validationTooltip02" class="form-label"
+          <label for="signCPassword" class="form-label"
             >Confirm Password</label
           >
           <input
             type="password"
             class="form-control"
-            id="validationTooltip02"
+            id="signCPassword"
             required
           />
         </div>
         <div class="col-md-6 position-relative">
-          <label for="validationTooltip04" class="form-label"
+          <label for="signSecurity" class="form-label"
             >Security Question</label
           >
-          <select class="form-select" id="validationTooltip04" required>
+          <select class="form-select" id="signSecurity" required>
             <option selected disabled value="">Select</option>
             <option>What is your pet's name?</option>
             <option>Who was your childhood hero?</option>
@@ -193,13 +203,13 @@
           </select>
         </div>
         <div class="col-md-6 position-relative">
-          <label for="validationTooltip05" class="form-label"
+          <label for="signAnswer" class="form-label"
             >Your Answer</label
           >
           <input
             type="text"
             class="form-control"
-            id="validationTooltip05"
+            id="signAnswer"
             required
           />
         </div>
@@ -216,18 +226,25 @@
         class="row g-3 needs-validation dropdownMenu p-3 rounded mw-90"
         validate
       >
-      <button  type="button" class="position-absolute btn-close closebtn m-0" aria-label="Close"></button>
+        <button
+          type="button"
+          class="position-absolute btn-close closebtn m-0"
+          aria-label="Close"
+        ></button>
         <div class="col-md-4 position-relative">
           <label for="forgetUsername" class="form-label">Username</label>
           <div class="input-group has-validation">
             <span class="input-group-text">@</span>
             <input
               type="text"
-              class="form-control"
+              class="form-control bg-light"
               readonly
               id="forgetUsername"
               required
             />
+            <div class="invalid-tooltip">
+              Please choose a unique and valid username.
+            </div>
           </div>
         </div>
         <div class="col-md-4 position-relative">
@@ -248,32 +265,32 @@
           <input type="text" class="form-control" id="forgetAnswer" required />
         </div>
         <div class="col-12">
-          <button class="btn btn-primary" onclick="signUp()" type="submit">
+          <button class="btn btn-primary" type="submit">
             Submit
           </button>
         </div>
         <div class="col-md-6 position-relative d-none">
-          <label for="validationTooltip01" class="form-label">Password</label>
+          <label for="forgetPassword" class="form-label">Password</label>
           <input
             type="password"
             class="form-control"
-            id="validationTooltip01"
+            id="forgetPassword"
             required
           />
         </div>
         <div class="col-md-6 position-relative d-none">
-          <label for="validationTooltip02" class="form-label"
+          <label for="forgetCPassword" class="form-label"
             >Confirm Password</label
           >
           <input
             type="password"
             class="form-control"
-            id="validationTooltip02"
+            id="forgetCPassword"
             required
           />
         </div>
         <div class="col-12">
-          <button class="btn btn-primary" onclick="signUp()" type="submit">
+          <button class="btn btn-primary" type="submit">
             Change Password
           </button>
         </div>

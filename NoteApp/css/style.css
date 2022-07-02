@@ -14,6 +14,7 @@ body {
   z-index: 2;
 }
 .bi-star-fill{
+  cursor: pointer;
  position: absolute;
  color: rgba(214, 222, 225, 0.725);
  top: 1rem;
@@ -32,6 +33,7 @@ body {
  .closebtn{
    right: .5rem;
    top: .5rem;
+   cursor: pointer;
  }
 .Nomatch{
   padding-left: 1.5rem;
@@ -39,6 +41,7 @@ body {
 }
 #userbox{
   position: relative;
+  cursor: pointer;
   z-index: 1;
 }
 #userContainer{
@@ -98,6 +101,9 @@ body {
 .form-switch{
  display: flex;
  align-items: center;
+}
+.form-check-input{
+  cursor: pointer;
 }
 .nav-link{
   font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
