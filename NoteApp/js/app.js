@@ -432,6 +432,7 @@ function taskListShow(index) {
   }
   return html;
 }
+//Toggle between task and notes
 window.toggleTaskTodo = function () {
   sessionStorage.setItem("state", "notes");
   let stabletxt = document.getElementsByClassName("stabletxt");

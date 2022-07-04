@@ -1,5 +1,7 @@
 import { showImpcard } from "./app.js";
 const Sound = new Audio("./asset/click.mp3");
+
+// setting Theme 
 function theme() {
   let theme = localStorage.getItem("theme");
   let themeObj;
@@ -22,6 +24,8 @@ function theme() {
     showTheme();
   });
 }
+
+//theme Function
 function showTheme() {
   let theme = localStorage.getItem("theme");
   let themeObj;

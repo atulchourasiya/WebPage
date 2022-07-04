@@ -73,8 +73,6 @@
                 onchange="handleSelect()"
                 required
               >
-                <option selected>Guest</option>
-                <option>Login</option>
               </select>
               <i class="bi-caret-down"></i>
             </div>
@@ -106,12 +104,13 @@
             aria-label="Close"
           ></button>
           <div class="mb-3">
-            <label for="exampleDropdownFormEmail1" class="form-label"
+            <label for="loginUsername" class="form-label"
               >Username</label
             >
             <div class="input-group flex-nowrap">
               <span class="input-group-text" id="addon-wrapping">@</span>
               <input
+                id="loginUsername"
                 type="text"
                 class="form-control"
                 placeholder="Enter Username"
@@ -121,13 +120,14 @@
             </div>
           </div>
           <div class="mb-3">
-            <label for="exampleDropdownFormPassword1" class="form-label"
+            <label for="loginpassword" class="form-label"
               >Password</label
             >
             <input
               type="password"
+              autocomplete="on"
               class="form-control"
-              id="exampleDropdownFormPassword1"
+              id="loginpassword"
               placeholder="Enter Password"
             />
           </div>
@@ -164,8 +164,8 @@
               id="signUsername"
               required
             />
-            <div class="invalid-tooltip">
-              Please choose a unique and valid username.
+            <div id="validationUsername" class="valid-tooltip">
+              Looks amazing!
             </div>
           </div>
         </div>
@@ -173,10 +173,15 @@
           <label for="signPassword" class="form-label">Password</label>
           <input
             type="password"
-            class="form-control"
+            autocomplete="on"
+            class="form-control w-password"
             id="signPassword"
             required
           />
+          <i class="bi-eye" onclick="showPassword('signPassword')"></i>
+          <div id="validationPassword" class="valid-tooltip">
+            Looks amazing!
+          </div>
         </div>
         <div class="col-md-4 position-relative">
           <label for="signCPassword" class="form-label"
@@ -184,10 +189,15 @@
           >
           <input
             type="password"
-            class="form-control"
+            autocomplete="on"
+            class="form-control w-password"
             id="signCPassword"
             required
           />
+          <i class="bi-eye" onclick="showPassword('signCPassword')"></i>
+          <div id="validationCPassword" class="valid-tooltip">
+            Looks amazing!
+          </div>
         </div>
         <div class="col-md-6 position-relative">
           <label for="signSecurity" class="form-label"
@@ -197,10 +207,14 @@
             <option selected disabled value="">Select</option>
             <option>What is your pet's name?</option>
             <option>Who was your childhood hero?</option>
+            <option>Who is your favorite person?</option>
             <option>What is your favorite animal?</option>
             <option>What was your childhood nickname?</option>
             <option>What is your mother's middle name?</option>
           </select>
+          <div id="validationSecurity" class="valid-tooltip">
+            Looks amazing!
+          </div>
         </div>
         <div class="col-md-6 position-relative">
           <label for="signAnswer" class="form-label"
@@ -212,9 +226,12 @@
             id="signAnswer"
             required
           />
+          <div id="validationAnswer" class="valid-tooltip">
+            Looks amazing!
+          </div>
         </div>
         <div class="col-12">
-          <button class="btn btn-primary" onclick="signUp()" type="submit">
+          <button class="btn btn-primary" onclick="signUp()" type="button">
             Sign up
           </button>
         </div>
@@ -273,6 +290,7 @@
           <label for="forgetPassword" class="form-label">Password</label>
           <input
             type="password"
+            autocomplete="off"
             class="form-control"
             id="forgetPassword"
             required
@@ -284,6 +302,7 @@
           >
           <input
             type="password"
+            autocomplete="off"
             class="form-control"
             id="forgetCPassword"
             required
