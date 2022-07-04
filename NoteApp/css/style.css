@@ -39,13 +39,13 @@ body {
    width: 2.3em;
    border-radius: .375rem;
    top: 46.3%;
-   right: 0;
+   right: calc(1rem *.5);
    color: rgba(80, 80, 80, 0.801);
    background-color: white;
    cursor: pointer;
  }
  .w-password{
-  width: calc(100% - 1.9rem);
+  width: calc(100% - 2.4rem);
  }
  .closebtn{
    right: .5rem;

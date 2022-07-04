@@ -4,24 +4,25 @@ let closebtn = document.getElementsByClassName('closebtn');
 let id = document.getElementById('userbox');
 //On blur select button
 id.onblur = function () {
-	// if (
-	// 	id.value === 'Sign up' &&
-	// 	dropdownMenu[1].style.display != 'flex' &&
-	// 	dropdownMenu[2].style.display != 'flex'
-	// ) {
-	// 	dropdownMenu[0].style.display = 'block';
-	// }
+	if (id.value === 'Sign up') {
+		dropdownMenu[1].style.display = 'flex';
+		dropdownMenu[2].style.display = 'none';
+	}
+	else if(id.value === 'Login' && dropdownMenu[1].style.display !== 'flex'&&dropdownMenu[2].style.display!== 'flex')
+	{
+		dropdownMenu[0].style.display = 'block';
+	}
 };
 // handle select
 function handleSelect() {
 	if (id.value === 'Sign up') {
 		dropdownMenu[1].style.display = 'flex';
-	} else if (id.value === 'Guest') {
 		dropdownMenu[0].style.display = 'none';
-		dropdownMenu[1].style.display = 'none';
 		dropdownMenu[2].style.display = 'none';
 	} else {
     dropdownMenu[0].style.display = 'block';
+    dropdownMenu[1].style.display = 'none';
+    dropdownMenu[2].style.display = 'none';
 	}
 }
 // signup and forget password
@@ -209,16 +210,17 @@ let signAnswer = document.getElementById('signAnswer');
 let returnanswer = false;
 function validateAnswer(){
   let validationAnswer = document.getElementById('validationAnswer');
+  let regexAnswer = /[a-zA-Z ]{4,20}/;
   signAnswer.addEventListener('blur', function () {
-    if(signAnswer.value === '')
-    {
-      addValidation(signAnswer,validationAnswer,"Please enter a valid answer!",false);
-      returnanswer = false;
-    }
-    else
+    if(regexAnswer.test(signAnswer.value))
     {
       addValidation(signAnswer,validationAnswer,"Looks amazing!",true);
       returnanswer = true;
+    }
+    else
+    {
+		addValidation(signAnswer,validationAnswer,"Answer must be 4 character long!",false);
+      returnanswer = false;
     }
   })
 }
@@ -266,7 +268,7 @@ function signUp()
       task: [],
     });
     localStorage.setItem('User',JSON.stringify(userObj));
-    alert('Congrats🎉!You have Sucessfully created your account');
+    alert('congratulations🎉!You have successfully created your account');
     signUsername.value ='';
     signPassword.value ='';
     signCPassword.value = '';
@@ -282,7 +284,7 @@ function signUp()
   }
   else
   {
-    alert('Please enter valid info before Sign up')
+	alert("⚠️Access Denied! Please enter valid info before Sign up");
   }
 }
 
@@ -298,9 +300,10 @@ function ShowUser(){
 	{
 		userObj = JSON.parse(user);
 	}
-	let html = '<option>Guest</option>';
+	let html = '';
 	userObj.forEach(element=> html += `<option>${element.name}</option>`)
-	html += '<option>Sign up</option>';
+	html += `<option>Login</option>
+	<option>Sign up</option>`;
 	userbox.innerHTML = html;
 }
 ShowUser();
