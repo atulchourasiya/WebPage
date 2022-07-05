@@ -8,7 +8,7 @@ id.onblur = function () {
 		dropdownMenu[1].style.display = 'flex';
 		dropdownMenu[2].style.display = 'none';
 	}
-	else if(id.value === 'Login' && dropdownMenu[1].style.display !== 'flex'&&dropdownMenu[2].style.display!== 'flex')
+	else if(id.value === 'Sign in' && dropdownMenu[1].style.display !== 'flex'&&dropdownMenu[2].style.display!== 'flex')
 	{
 		dropdownMenu[0].style.display = 'block';
 	}
@@ -302,7 +302,7 @@ function ShowUser(){
 	}
 	let html = '';
 	userObj.forEach(element=> html += `<option>${element.name}</option>`)
-	html += `<option>Login</option>
+	html += `<option>Sign in</option>
 	<option>Sign up</option>`;
 	userbox.innerHTML = html;
 }
