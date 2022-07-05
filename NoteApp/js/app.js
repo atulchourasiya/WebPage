@@ -8,7 +8,7 @@ let searching = false;
 //  Add Note
 window.addNote = function (key) {
   if (searching === true) {
-    alert("⚠️Access Denied! Searching is in process");
+    alert("⚠️ Searching is in process");
     return;
   }
   let addtxt = document.getElementById("txt");
@@ -38,7 +38,7 @@ window.addNote = function (key) {
     (cardObj[index][1].length === 1 && cardObj[index][1][0][0] === "")
   ) {
     alert(
-      `⚠️Access Denied! You Can't Add Empty ${key === "task" ? "Task" : "Note"}`
+      `⚠️ You Can't Add Empty ${key === "task" ? "Task" : "Note"}`
     );
   } else {
     localStorage.setItem(key, JSON.stringify(cardObj));
@@ -55,11 +55,11 @@ window.addNote = function (key) {
 //  Save Edit
 window.saveEdit = function (key) {
   if (searching === true) {
-    alert("⚠️Access Denied! Searching is in process");
+    alert("⚠️ Searching is in process");
     return;
   }
   if (editingIndex === -1) {
-    alert("⚠️Access Denied! You have to edit something to Save Edit");
+    alert("⚠️ You have to edit something to Save Edit");
     return;
   }
   let index = editingIndex;
@@ -102,7 +102,7 @@ window.saveEdit = function (key) {
     (cardObj[index][1].length === 1 && cardObj[index][1][0][0] === "")
   ) {
     alert(
-      `⚠️Access Denied! You Can't Save Empty ${
+      `⚠️ You Can't Save Empty ${
         key === "task" ? "Task" : "Note"
       }`
     );
@@ -245,7 +245,7 @@ export function showImpcard(keyValue, theme) {
 // Pin
 window.pin = function (index, keyValue) {
   if (editingIndex != -1) {
-    alert("⚠️Access Denied! You have to Save Edit");
+    alert("⚠️ You have to Save Edit");
     return;
   }
   let key;
@@ -307,7 +307,7 @@ function showPin(keyValue) {
 // Clone
 window.Clone = function (index, keyValue) {
   if (editingIndex != -1) {
-    alert("⚠️Access Denied! You have to Save Edit");
+    alert("⚠️ You have to Save Edit");
     return;
   }
   let key;
@@ -388,7 +388,7 @@ function ShowChecked() {
 // DeleteNote
 window.deleteNote = function (event, keyValue) {
   if (editingIndex != -1) {
-    alert("⚠️Access Denied! You have to Save Edit");
+    alert("⚠️ You have to Save Edit");
     return;
   }
   let key;
@@ -476,6 +476,7 @@ window.toggleTaskTodo = function () {
 let srchtxt = document.getElementsByClassName("srchtxt");
 let search = document.getElementById("searchtxt");
 search.addEventListener("input", hideFilptxt);
+
 function hideFilptxt() {
   if (search.value === "") {
     for (let i = 0; i < srchtxt.length; i++) {

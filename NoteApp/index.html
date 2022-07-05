@@ -1,272 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="./asset/icon.png" type="image/x-icon" />
-    <title>QuickNote</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/style.css" />
-  </head>
-  <body>
-    <!-- navbar -->
-    <nav id="navbarBackground" class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-bold me-2 letterspacing" href="./index.html"
-          >QuickNote</a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-lg-0">
-            <div
-              class="form-check form-switch mb-2 me-2 mb-lg-0"
-              title="Switch Theme"
-            >
-              <input
-                class="form-check-input Togglebtn"
-                type="checkbox"
-                role="switch"
-                id="flexSwitchCheckDefault"
-              />
-            </div>
-            <li class="nav-item">
-              <a
-                id="taskToDoBtn"
-                onclick="toggleTaskTodo()"
-                title="To Do List"
-                class="nav-link active p-0"
-                aria-current="page"
-                href="#"
-                >To Do List</a
-              >
-            </li>
-          </ul>
-          <div class="py-2 pe-2 py-lg-0">
-            <div id="userContainer" class="d-inline">
-              <select
-                id="userbox"
-                class="form-select"
-                onchange="handleSelect()"
-                required
-              >
-              </select>
-              <i class="bi-caret-down"></i>
-            </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./asset/icon.png" type="image/x-icon" />
+  <title>QuickNote</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <!-- navbar -->
+  <nav id="navbarBackground" class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold me-2 letterspacing" href="./index.html">QuickNote</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-lg-0">
+          <div class="form-check form-switch mb-2 me-2 mb-lg-0" title="Switch Theme">
+            <input class="form-check-input Togglebtn" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
           </div>
-          <form id="form" class="d-flex me-2" role="search">
-            <i class="bi bi-search"></i>
-            <input
-              id="searchtxt"
-              title="Search"
-              class="searchbox form-control"
-              type="search"
-              placeholder=""
-              aria-label="Search"
-            />
-            <span class="stabletxt srchtxt">Search Note By</span>
-            <span id="flip1" class="fliptxt srchtxt">Title</span>
-            <span id="flip2" class="fliptxt srchtxt">Text</span>
-          </form>
+          <li class="nav-item">
+            <a id="taskToDoBtn" onclick="toggleTaskTodo()" title="To Do List" class="nav-link active p-0"
+              aria-current="page" href="#">To Do List</a>
+          </li>
+        </ul>
+        <div class="py-2 pe-2 py-lg-0">
+          <div id="userContainer" class="d-inline">
+            <select id="userbox" class="form-select" onchange="handleSelect()" required>
+            </select>
+            <i class="bi-caret-down"></i>
+          </div>
         </div>
-      </div>
-    </nav>
-    <!-- login  -->
-    <div class="container d-flex justify-content-center">
-      <div class="mw-90 dropdownMenu rounded">
-        <form class="px-3 py-3 px-lg-4">
-          <button
-            type="button"
-            class="position-absolute btn-close closebtn m-0"
-            aria-label="Close"
-          ></button>
-          <div class="mb-3">
-            <label for="loginUsername" class="form-label"
-              >Username</label
-            >
-            <div class="input-group flex-nowrap">
-              <span class="input-group-text" id="addon-wrapping">@</span>
-              <input
-                id="loginUsername"
-                type="text"
-                class="form-control"
-                placeholder="Enter Username"
-                aria-label="Username"
-                aria-describedby="addon-wrapping"
-              />
-            </div>
-          </div>
-          <div class="mb-3">
-            <label for="loginpassword" class="form-label"
-              >Password</label
-            >
-            <input
-              type="password"
-              autocomplete="off"
-              class="form-control"
-              id="loginpassword"
-              placeholder="Enter Password"
-            />
-          </div>
-          <button type="submit" class="btn btn-primary mb-2">Login</button>
-          <hr />
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">New around here? Sign up</a>
-          <a class="dropdown-item" href="#">Forgot password?</a>
+        <form id="form" class="d-flex me-2" role="search">
+          <i class="bi bi-search"></i>
+          <input id="searchtxt" title="Search" class="searchbox form-control" type="search" placeholder=""
+            aria-label="Search" />
+          <span class="stabletxt srchtxt">Search Note By</span>
+          <span id="flip1" class="fliptxt srchtxt">Title</span>
+          <span id="flip2" class="fliptxt srchtxt">Text</span>
         </form>
       </div>
     </div>
-    <!-- Sign up -->
-    <div class="container d-flex justify-content-center">
-      <form
-        class="row g-3 needs-validation dropdownMenu p-3 rounded mw-90"
-        validate
-      >
-        <button
-          type="button"
-          class="position-absolute btn-close closebtn m-0"
-          aria-label="Close"
-        ></button>
-        <div class="col-md-4 position-relative">
-          <label for="signUsername" class="form-label"
-            >Username</label
-          >
-          <div class="input-group has-validation">
-            <span class="input-group-text"
-              >@</span
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="signUsername"
-              required
-            />
-            <div id="validationUsername" class="valid-tooltip">
-              Looks amazing!
-            </div>
+  </nav>
+  <!-- login  -->
+  <div class="container d-flex justify-content-center">
+    <div class="mw-90 dropdownMenu rounded">
+      <form class="px-3 py-3 px-lg-4">
+        <button type="button" class="position-absolute btn-close closebtn m-0" aria-label="Close"></button>
+        <div class="mb-3">
+          <label for="loginUsername" class="form-label">Username</label>
+          <div class="input-group flex-nowrap">
+            <span class="input-group-text" id="addon-wrapping">@</span>
+            <input id="loginUsername" type="text" class="form-control" placeholder="Enter Username"
+              aria-label="Username" aria-describedby="addon-wrapping" />
           </div>
         </div>
-        <div class="col-md-4 position-relative">
-          <label for="signPassword" class="form-label">Password</label>
-          <input
-            type="password"
-            autocomplete="off"
-            class="form-control w-password"
-            id="signPassword"
-            required
-          />
-          <i class="bi-eye" onclick="showPassword('signPassword')"></i>
-          <div id="validationPassword" class="valid-tooltip">
-            Looks amazing!
-          </div>
+        <div class="mb-3">
+          <label for="loginpassword" class="form-label">Password</label>
+          <input type="password" autocomplete="off" class="form-control" id="loginpassword"
+            placeholder="Enter Password" />
         </div>
-        <div class="col-md-4 position-relative">
-          <label for="signCPassword" class="form-label"
-            >Confirm Password</label
-          >
-          <input
-            type="password"
-            autocomplete="off"
-            class="form-control w-password"
-            id="signCPassword"
-            required
-          />
-          <i class="bi-eye" onclick="showPassword('signCPassword')"></i>
-          <div id="validationCPassword" class="valid-tooltip">
-            Looks amazing!
-          </div>
-        </div>
-        <div class="col-md-6 position-relative">
-          <label for="signSecurity" class="form-label"
-            >Security Question</label
-          >
-          <select class="form-select" id="signSecurity" required>
-            <option selected disabled value="">Select</option>
-            <option>What is your pet's name?</option>
-            <option>Who was your childhood hero?</option>
-            <option>Who is your favorite person?</option>
-            <option>What is your favorite animal?</option>
-            <option>What was your childhood nickname?</option>
-            <option>What is your mother's middle name?</option>
-          </select>
-          <div id="validationSecurity" class="valid-tooltip">
-            Looks amazing!
-          </div>
-        </div>
-        <div class="col-md-6 position-relative">
-          <label for="signAnswer" class="form-label"
-            >Your Answer</label
-          >
-          <input
-            type="text"
-            class="form-control"
-            id="signAnswer"
-            required
-          />
-          <div id="validationAnswer" class="valid-tooltip">
-            Looks amazing!
-          </div>
-        </div>
-        <div class="col-12">
-          <button class="btn btn-primary" onclick="signUp()" type="button">
-            Sign up
-          </button>
-        </div>
+        <button type="submit" class="btn btn-primary mb-2">Login</button>
+        <hr />
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#">New around here? Sign up</a>
+        <a class="dropdown-item" href="#">Forgot password?</a>
       </form>
     </div>
-    <!-- Forget Password -->
-    <div class="container d-flex justify-content-center">
-      <form
-        class="row g-3 needs-validation dropdownMenu p-3 rounded mw-90"
-        validate
-      >
-        <button
-          type="button"
-          class="position-absolute btn-close closebtn m-0"
-          aria-label="Close"
-        ></button>
-        <div class="col-md-4 position-relative">
+  </div>
+  <!-- Sign up -->
+  <div class="container d-flex justify-content-center">
+    <form class="row g-3 needs-validation dropdownMenu p-3 rounded mw-90" validate>
+      <button type="button" class="position-absolute btn-close closebtn m-0" aria-label="Close"></button>
+      <div class="col-md-4 position-relative">
+        <label for="signUsername" class="form-label">Username</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text">@</span>
+          <input type="text" class="form-control" id="signUsername" required />
+          <div id="validationUsername" class="valid-tooltip">
+            Looks amazing!
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 position-relative">
+        <label for="signPassword" class="form-label">Password</label>
+        <input type="password" autocomplete="off" class="form-control w-password" id="signPassword" required />
+        <i class="bi-eye" onclick="showPassword('signPassword')"></i>
+        <div id="validationPassword" class="valid-tooltip">
+          Looks amazing!
+        </div>
+      </div>
+      <div class="col-md-4 position-relative">
+        <label for="signCPassword" class="form-label">Confirm Password</label>
+        <input type="password" autocomplete="off" class="form-control w-password" id="signCPassword" required />
+        <i class="bi-eye" onclick="showPassword('signCPassword')"></i>
+        <div id="validationCPassword" class="valid-tooltip">
+          Looks amazing!
+        </div>
+      </div>
+      <div class="col-md-6 position-relative">
+        <label for="signSecurity" class="form-label">Security Question</label>
+        <select class="form-select" id="signSecurity" required>
+          <option selected disabled value="">Select</option>
+          <option>What is your pet's name?</option>
+          <option>Who was your childhood hero?</option>
+          <option>Who is your favorite person?</option>
+          <option>What is your favorite animal?</option>
+          <option>What was your childhood nickname?</option>
+          <option>What is your mother's middle name?</option>
+        </select>
+        <div id="validationSecurity" class="valid-tooltip">
+          Looks amazing!
+        </div>
+      </div>
+      <div class="col-md-6 position-relative">
+        <label for="signAnswer" class="form-label">Your Answer</label>
+        <input type="text" class="form-control" id="signAnswer" required />
+        <div id="validationAnswer" class="valid-tooltip">
+          Looks amazing!
+        </div>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary" onclick="signUp()" type="button">
+          Sign up
+        </button>
+      </div>
+    </form>
+  </div>
+  <!-- Forget Password -->
+  <div class="container d-flex justify-content-center">
+    <form class="row g-3 needs-validation dropdownMenu p-3 rounded mw-90" validate>
+      <button type="button" class="position-absolute btn-close closebtn m-0" aria-label="Close"></button>
+     
+        <div class="col-md-4 position-relative forgetfirstContainer">
           <label for="forgetUsername" class="form-label">Username</label>
           <div class="input-group has-validation">
             <span class="input-group-text">@</span>
-            <input
-              type="text"
-              class="form-control bg-light"
-              id="forgetUsername"
-              required
-            />
-            <div class="invalid-tooltip">
-              Please choose a unique and valid username.
+            <input type="text" class="form-control bg-light" id="forgetUsername" required />
+            <div id="validationForgetUsername" class="invalid-tooltip">
             </div>
           </div>
         </div>
-        <div class="col-md-4 position-relative">
-          <label for="forgetSecurity" class="form-label"
-            >Security Question</label
-          >
+        <div class="col-md-4 position-relative forgetfirstContainer">
+          <label for="forgetSecurity" class="form-label">Security Question</label>
           <select class="form-select" id="forgetSecurity" required>
             <option selected disabled value="">Select</option>
             <option>What is your pet's name?</option>
@@ -275,154 +160,113 @@
             <option>What was your childhood nickname?</option>
             <option>What is your mother's middle name?</option>
           </select>
+          <div id="validationForgetSecurity" class="invalid-tooltip">
+          </div>
         </div>
-        <div class="col-md-4 position-relative">
+        <div class="col-md-4 position-relative forgetfirstContainer">
           <label for="forgetAnswer" class="form-label">Your Answer</label>
           <input type="text" class="form-control" id="forgetAnswer" required />
+          <div id="validationForgetAnswer" class="invalid-tooltip">
+          </div>
         </div>
-        <div class="col-12">
-          <button class="btn btn-primary" type="submit">
+        <div class="col-12 forgetfirstContainer">
+          <button class="btn btn-primary" onclick="Submit()" type="button">
             Submit
           </button>
         </div>
-        <div class="col-md-6 position-relative d-none">
-          <label for="forgetPassword" class="form-label">Password</label>
-          <input
-            type="password"
-            autocomplete="off"
-            class="form-control"
-            id="forgetPassword"
-            required
-          />
+        <div class="col-md-6 position-relative forgetSecondContainer">
+          <label for="forgetPassword" class="form-label">New Password</label>
+          <input type="password" autocomplete="off" class="form-control w-password" id="forgetPassword" required />
+          <i class="bi-eye" onclick="showPassword('forgetPassword')"></i>
+          <div id="validationForgetPassword" class="invalid-tooltip">
+          </div>
         </div>
-        <div class="col-md-6 position-relative d-none">
-          <label for="forgetCPassword" class="form-label"
-            >Confirm Password</label
-          >
-          <input
-            type="password"
-            autocomplete="off"
-            class="form-control"
-            id="forgetCPassword"
-            required
-          />
+        <div class="col-md-6 position-relative forgetSecondContainer">
+          <label for="forgetCPassword" class="form-label">Confirm New Password</label>
+          <input type="password" autocomplete="off" class="form-control w-password" id="forgetCPassword" required />
+          <i class="bi-eye" onclick="showPassword('forgetCPassword')"></i>
+          <div id="validationForgetCPassword" class="invalid-tooltip">
+          </div>
         </div>
-        <div class="col-12">
-          <button class="btn btn-primary" type="submit">
+        <div class="col-12 forgetSecondContainer ">
+          <button class="btn btn-primary" onclick="changePassword()" type="button">
             Change Password
           </button>
         </div>
-      </form>
-    </div>
-    <!-- welcome  -->
-    <div class="type container d-flex justify-content-center">
-      <h3 class="my-4 mt-1">
-        <span id="textline"></span>
-      </h3>
-    </div>
-    <!-- textarea -->
+    </form>
+  </div>
+  <!-- welcome  -->
+  <div class="type container d-flex justify-content-center">
+    <h3 class="my-4 mt-1">
+      <span id="textline"></span>
+    </h3>
+  </div>
+  <!-- textarea -->
+  <div class="container">
     <div class="container">
-      <div class="container">
-        <h4 id="addAtitle">Add A Title</h4>
-      </div>
-      <div class="d-flex justify-content-center">
-        <textarea
-          id="titleTxt"
-          class="form-control"
-          placeholder="Write your title"
-          rows="1"
-          required
-        ></textarea>
-      </div>
-      <div class="container">
-        <h4 id="addANote">Add A Note</h4>
-      </div>
-      <div class="d-flex justify-content-center">
-        <textarea
-          id="txt"
-          class="form-control"
-          placeholder="Write your note"
-          rows="8"
-        ></textarea>
-      </div>
-      <div class="container">
-        <button
-          id="addbtn"
-          title="Add Note"
-          type="button"
-          class="btn btn-primary my-2"
-          onclick="addNote('notes')"
-        >
-          Add Note
-        </button>
-        <button
-          id="addtask"
-          title="Add Task"
-          type="button"
-          class="btn btn-primary my-2"
-          onclick="addNote('task')"
-        >
-          Add Task
-        </button>
-        <button
-          id="savebtnnotes"
-          title="Save Edit"
-          class="btn btn-primary my-2"
-          onclick="saveEdit('notes')"
-        >
-          Save Edit
-        </button>
-        <button
-          id="savebtntask"
-          title="Save Edit"
-          class="btn btn-primary my-2"
-          onclick="saveEdit('task')"
-        >
-          Save Edit
-        </button>
-      </div>
-      <hr />
+      <h4 id="addAtitle">Add A Title</h4>
     </div>
-    <!-- Notes -->
+    <div class="d-flex justify-content-center">
+      <textarea id="titleTxt" class="form-control" placeholder="Write your title" rows="1" required></textarea>
+    </div>
     <div class="container">
-      <h4 class="px-2">Your Notes</h4>
+      <h4 id="addANote">Add A Note</h4>
     </div>
-    <!-- Notes container -->
-    <div class="Nomatch container">
-      <p>No matches were found</p>
+    <div class="d-flex justify-content-center">
+      <textarea id="txt" class="form-control" placeholder="Write your note" rows="8"></textarea>
     </div>
-    <div
-      id="note"
-      class="container d-flex flex-wrap justify-content-start mb-4"
-    ></div>
-    <!-- Copywrite -->
-    <div id="footer" class="copyright d-flex justify-content-center">
-      <span> Copyright &copy;2022 Designed By Atul Chourasiya </span>
+    <div class="container">
+      <button id="addbtn" title="Add Note" type="button" class="btn btn-primary my-2" onclick="addNote('notes')">
+        Add Note
+      </button>
+      <button id="addtask" title="Add Task" type="button" class="btn btn-primary my-2" onclick="addNote('task')">
+        Add Task
+      </button>
+      <button id="savebtnnotes" title="Save Edit" class="btn btn-primary my-2" onclick="saveEdit('notes')">
+        Save Edit
+      </button>
+      <button id="savebtntask" title="Save Edit" class="btn btn-primary my-2" onclick="saveEdit('task')">
+        Save Edit
+      </button>
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-      crossorigin="anonymous"
-    ></script>
-    <script type="module" src="./js/app.js"></script>
-    <script src="./js/login.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script>
-      var typed = new Typed("#textline", {
-        strings: [
-          "Welcome to Quick Note",
-          "Best Web Application For Taking Notes",
-          "Add Search And Delete Note In Just One Click",
-          "Make To-Do-List To Organize Your Task",
-        ],
-        startDelay: 500,
-        typeSpeed: 50,
-        backSpeed: 50,
-        backDelay: 500,
-        showCursor: true,
-        loop: true,
-        loopCount: Infinity,
-      });
-    </script>
-  </body>
+    <hr />
+  </div>
+  <!-- Notes -->
+  <div class="container">
+    <h4 class="px-2">Your Notes</h4>
+  </div>
+  <!-- Notes container -->
+  <div class="Nomatch container">
+    <p>No matches were found</p>
+  </div>
+  <div id="note" class="container d-flex flex-wrap justify-content-start mb-4"></div>
+  <!-- Copywrite -->
+  <div id="footer" class="copyright d-flex justify-content-center">
+    <span> Copyright &copy;2022 Designed By Atul Chourasiya </span>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+  </script>
+  <script type="module" src="./js/app.js"></script>
+  <script src="./js/login.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typed = new Typed("#textline", {
+      strings: [
+        "Welcome to Quick Note",
+        "Best Web Application For Taking Notes",
+        "Add Search And Delete Note In Just One Click",
+        "Make To-Do-List To Organize Your Task",
+      ],
+      startDelay: 500,
+      typeSpeed: 50,
+      backSpeed: 50,
+      backDelay: 500,
+      showCursor: true,
+      loop: true,
+      loopCount: Infinity,
+    });
+  </script>
+</body>
+
 </html>
