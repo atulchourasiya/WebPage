@@ -99,7 +99,7 @@ function validateUserName(elementId, ValidationText) {
                     returnusername = false;
                 }
             } else {
-                let space = /(?=.*[" "])/;
+                let space = /(?=.*[ \!\@\#\$\%\^\&\*\(\)\+\=\{\}\[\]\;\:\'\"\?\/\>\<\,\~\`\\\|])/;
                 if (space.test(elementId.value)) {
                     addValidation(
                         elementId,
@@ -127,7 +127,7 @@ function validateUserName(elementId, ValidationText) {
                 );
                 returnusername = true;
             } else {
-                let space = /(?=.*[" "])/;
+                let space = /(?=.*[ \!\@\#\$\%\^\&\*\(\)\+\=\{\}\[\]\;\:\'\"\?\/\>\<\,\~\`\\\|])/;
                 if (space.test(elementId.value)) {
                     addValidation(
                         elementId,
