@@ -167,7 +167,6 @@ function validatePassword(elementId, ValidationText) {
                 'Looks amazing!',
                 true
             );
-            (elementId === signPassword) ? validateCPassword(signCPassword, validationCPassword): validateCPassword(forgetCPassword, validationForgetCPassword);
             returnpassword = true;
         } else {
             let space = /(?=.*[" "])/;
@@ -177,19 +176,20 @@ function validatePassword(elementId, ValidationText) {
                     ValidationText,
                     `Password can't contain space!`,
                     false
-                );
-            } else {
-                addValidation(
-                    elementId,
-                    ValidationText,
-                    'Password must be atleast 8 character long and contain atleast one digit[0-9]!',
-                    false
-                );
-            }
-            returnpassword = false;
+                    );
+                } else {
+                    addValidation(
+                        elementId,
+                        ValidationText,
+                        'Password must be atleast 8 character long and contain atleast one digit[0-9]!',
+                        false
+                        );
+                    }
+                    returnpassword = false;
+                }
+                (elementId === signPassword) ? validateCPassword(signCPassword, validationCPassword): validateCPassword(forgetCPassword, validationForgetCPassword);
+            });
         }
-    });
-}
 validatePassword(signPassword, validationPassword);
 validatePassword(forgetPassword, validationForgetPassword);
 // Confirm Password Validation
@@ -248,6 +248,15 @@ function validateCPassword(elementId, ValidationText) {
             true
         );
         returncpassword = true;
+    }
+    else if(elementId.value !== ((elementId === signCPassword) ? signPassword.value : forgetPassword.value) && elementId.value !== ''){
+        addValidation(
+            elementId,
+            ValidationText,
+            'Confirm password must match with password!',
+            false 
+        );
+        returncpassword = false;
     }
 }
 validateCPassword(signCPassword, validationCPassword);
