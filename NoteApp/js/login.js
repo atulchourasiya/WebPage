@@ -3,7 +3,7 @@ let dropdownItem = document.getElementsByClassName('dropdown-item');
 let closebtn = document.getElementsByClassName('closebtn');
 let id = document.getElementById('userbox');
 //On blur select button
-id.onblur = function () {
+id.onfocus = function () {
     if (id.value === 'Sign up') {
         dropdownMenu[1].style.display = 'flex';
         dropdownMenu[2].style.display = 'none';
@@ -60,7 +60,7 @@ function validateUserName(elementId, ValidationText) {
     let regexUsername = /^[a-zA-Z0-9][\w\.-]{1,15}[a-zA-Z0-9]$/;
     let user = localStorage.getItem('User');
     let userObj;
-    elementId.addEventListener('blur', function () {
+    elementId.addEventListener('input', function () {
         if (elementId === signUsername) {
             if (regexUsername.test(elementId.value) && user === null) {
                 addValidation(
@@ -99,12 +99,22 @@ function validateUserName(elementId, ValidationText) {
                     returnusername = false;
                 }
             } else {
-                addValidation(
-                    elementId,
-                    ValidationText,
-                    'Username must be unique and only start/end with a letter or number and can include [ . - _ ]',
-                    false
-                );
+                let space = /(?=.*[" "])/;
+                if (space.test(elementId.value)) {
+                    addValidation(
+                        elementId,
+                        ValidationText,
+                        `Username can't contain space and can only include . -  _ in between!`,
+                        false
+                    );
+                } else {
+                    addValidation(
+                        elementId,
+                        ValidationText,
+                        'Username must be unique and only start/end with a letter or number and can include . -  _ in between!',
+                        false
+                    );
+                }
                 returnusername = false;
             }
         } else {
@@ -117,12 +127,22 @@ function validateUserName(elementId, ValidationText) {
                 );
                 returnusername = true;
             } else {
-                addValidation(
-                    elementId,
-                    ValidationText,
-                    'Username must be unique and only start/end with a letter or number and can include [ . - _ ]',
-                    false
-                );
+                let space = /(?=.*[" "])/;
+                if (space.test(elementId.value)) {
+                    addValidation(
+                        elementId,
+                        ValidationText,
+                        `Username can't contain space and can only include . -  _ in between!`,
+                        false
+                    );
+                } else {
+                    addValidation(
+                        elementId,
+                        ValidationText,
+                        'Username must be unique and only start/end with a letter or number and can include . -  _ in between!',
+                        false
+                    );
+                }
                 returnusername = false;
             }
         }
@@ -138,8 +158,8 @@ let validationForgetPassword = document.getElementById('validationForgetPassword
 let returnpassword = false;
 
 function validatePassword(elementId, ValidationText) {
-    let regexPassword = /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!%@#$&\-\*\._]).{8,20}$/;
-    elementId.addEventListener('blur', function () {
+    let regexPassword = /(?=.*[0-9]).{8,20}/;
+    elementId.addEventListener('input', function () {
         if (regexPassword.test(elementId.value)) {
             addValidation(
                 elementId,
@@ -150,12 +170,22 @@ function validatePassword(elementId, ValidationText) {
             (elementId === signPassword) ? validateCPassword(signCPassword, validationCPassword): validateCPassword(forgetCPassword, validationForgetCPassword);
             returnpassword = true;
         } else {
-            addValidation(
-                elementId,
-                ValidationText,
-                'Password must have Small letter[a-z] Capital letter[A-Z] Number[0-9] Special character[ ! % @ # $ & - * . _ ]',
-                false
-            );
+            let space = /(?=.*[" "])/;
+            if (space.test(elementId.value)) {
+                addValidation(
+                    elementId,
+                    ValidationText,
+                    `Password can't contain space!`,
+                    false
+                );
+            } else {
+                addValidation(
+                    elementId,
+                    ValidationText,
+                    'Password must be atleast 8 character long and contain atleast one digit[0-9]!',
+                    false
+                );
+            }
             returnpassword = false;
         }
     });
@@ -170,16 +200,14 @@ let validationForgetCPassword = document.getElementById('validationForgetCPasswo
 let returncpassword = false;
 
 function validateCPassword(elementId, ValidationText) {
-    console.log(elementId, ValidationText);
-    let regexCPassword =
-        /(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!%@#$&\-\*\._]).{8,20}$/;
-    elementId.addEventListener('blur', function () {
+    let regexCPassword = /(?=.*[0-9]).{8,20}/;
+    elementId.addEventListener('input', function () {
         if (regexCPassword.test(elementId.value)) {
             if ((elementId === signCPassword) ? (elementId.value !== signPassword.value) : (elementId.value !== forgetPassword.value)) {
                 addValidation(
                     elementId,
                     ValidationText,
-                    'Confirm password must match with password',
+                    'Confirm password must match with password!',
                     false
                 );
                 returncpassword = false;
@@ -193,12 +221,22 @@ function validateCPassword(elementId, ValidationText) {
                 returncpassword = true;
             }
         } else {
-            addValidation(
-                elementId,
-                ValidationText,
-                'Password must have Small letter[a-z] Capital letter[A-Z] Number[0-9] Special character[ ! % @ # $ & - * . _ ]',
-                false
-            );
+            let space = /(?=.*[" "])/;
+            if (space.test(elementId.value)) {
+                addValidation(
+                    elementId,
+                    ValidationText,
+                    `Password can't contain space!`,
+                    false
+                );
+            } else {
+                addValidation(
+                    elementId,
+                    ValidationText,
+                    'Password must be atleast 8 character long and contain atleast one digit[0-9]!',
+                    false
+                );
+            }
             returncpassword = false;
         }
     });
@@ -206,7 +244,7 @@ function validateCPassword(elementId, ValidationText) {
         addValidation(
             elementId,
             ValidationText,
-            'Looks amazing',
+            'Looks amazing!',
             true
         );
         returncpassword = true;
@@ -242,13 +280,14 @@ let validationForgetAnswer = document.getElementById('validationForgetAnswer');
 let returnanswer = false;
 
 function validateAnswer(elementId, ValidationText) {
-    let regexAnswer = /[a-zA-Z ]{4,20}/;
-    elementId.addEventListener('blur', function () {
+    let regexAnswer = /^[a-zA-Z ]{3,20}$/;
+    elementId.addEventListener('input', function () {
+        console.log(regexAnswer.test(elementId.value));
         if (regexAnswer.test(elementId.value)) {
             addValidation(elementId, ValidationText, "Looks amazing!", true);
             returnanswer = true;
         } else {
-            addValidation(elementId, ValidationText, "Answer must be 4 character long!", false);
+            addValidation(elementId, ValidationText, "Answer must be atleast 3 character long and only contain letters and spaces!", false);
             returnanswer = false;
         }
     })
@@ -293,7 +332,7 @@ function signUp() {
             task: [],
         });
         localStorage.setItem('User', JSON.stringify(userObj));
-        alert('congratulations🎉!You have successfully created your account');
+        alert('congratulations🎉!You have successfully created your account!');
         signUsername.value = '';
         signPassword.value = '';
         signCPassword.value = '';
@@ -305,9 +344,10 @@ function signUp() {
         signSecurity.classList.remove('is-valid');
         signAnswer.classList.remove('is-valid');
         dropdownMenu[1].style.display = 'none';
+        resetreturnvalue();
         ShowUser();
     } else {
-        alert("⚠️ Please enter valid info before Sign up");
+        alert("⚠️ Please enter valid info before Sign up!");
     }
 }
 
@@ -336,7 +376,7 @@ function Submit() {
         let user = localStorage.getItem('User');
         let userObj;
         if (user === null) {
-            alert("⚠️ User information not available");
+            alert("⚠️ User information not available!");
         } else {
             userObj = JSON.parse(user);
         }
@@ -351,11 +391,11 @@ function Submit() {
             }
         });
         if (!ispresent) {
-            alert("⚠️ User information not available");
+            alert("⚠️ User information not available!");
         }
 
     } else {
-        alert("⚠️ Please enter valid info before Submit");
+        alert("⚠️ Please enter valid info before Submit!");
     }
 }
 //changePassword
@@ -371,7 +411,7 @@ function changePassword() {
             }
         });
         localStorage.setItem('User', JSON.stringify(userObj));
-        alert('congratulations🎉!You have successfully change your password');
+        alert('congratulations🎉!You have successfully change your password!');
         forgetUsername.value = '';
         forgetPassword.value = '';
         forgetCPassword.value = '';
@@ -385,5 +425,14 @@ function changePassword() {
         Array.from(FirstContainer).forEach(Element => Element.style.display = 'block');
         Array.from(SecondContainer).forEach(Element => Element.style.display = 'none');
         dropdownMenu[2].style.display = 'none';
+        resetreturnvalue();
     }
+}
+
+function resetreturnvalue() {
+    returnusername = false;
+    returnpassword = false;
+    returncpassword = false;
+    returnsecurity = false;
+    returnanswer = false;
 }
