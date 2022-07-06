@@ -52,8 +52,10 @@ function showPassword(id) {
 // Username validation
 let signUsername = document.getElementById('signUsername');
 let forgetUsername = document.getElementById('forgetUsername');
+let loginUsername = document.getElementById('loginUsername');
 let validationUsername = document.getElementById('validationUsername');
 let validationForgetUsername = document.getElementById('validationForgetUsername');
+let validationLoginUsername = document.getElementById('validationLoginUsername');
 let returnusername = false;
 
 function validateUserName(elementId, ValidationText) {
@@ -150,11 +152,14 @@ function validateUserName(elementId, ValidationText) {
 }
 validateUserName(signUsername, validationUsername);
 validateUserName(forgetUsername, validationForgetUsername);
+validateUserName(loginUsername,validationLoginUsername);
 // Password Validation
 let signPassword = document.getElementById('signPassword');
 let forgetPassword = document.getElementById('forgetPassword');
+let loginPassword = document.getElementById('loginpassword');
 let validationPassword = document.getElementById('validationPassword');
 let validationForgetPassword = document.getElementById('validationForgetPassword');
+let validationLoginPassword = document.getElementById('validationLoginPassword');
 let returnpassword = false;
 
 function validatePassword(elementId, ValidationText) {
@@ -192,6 +197,7 @@ function validatePassword(elementId, ValidationText) {
         }
 validatePassword(signPassword, validationPassword);
 validatePassword(forgetPassword, validationForgetPassword);
+validatePassword(loginPassword, validationLoginPassword);
 // Confirm Password Validation
 let signCPassword = document.getElementById('signCPassword');
 let forgetCPassword = document.getElementById('forgetCPassword');
@@ -200,6 +206,10 @@ let validationForgetCPassword = document.getElementById('validationForgetCPasswo
 let returncpassword = false;
 
 function validateCPassword(elementId, ValidationText) {
+    if(elementId === loginPassword)
+    {
+        return;
+    }
     let regexCPassword = /^(?=\S*[0-9])\S{8,20}$/;
     elementId.addEventListener('input', function () {
         if (regexCPassword.test(elementId.value)) {

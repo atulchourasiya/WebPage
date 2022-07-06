@@ -60,16 +60,20 @@
           <label for="loginUsername" class="form-label">Username</label>
           <div class="input-group flex-nowrap">
             <span class="input-group-text" id="addon-wrapping">@</span>
-            <input id="loginUsername" type="text" class="form-control" placeholder="Enter Username"
+            <input id="loginUsername" type="text" class="form-control rounded-end" placeholder="Enter Username"
               aria-label="Username" aria-describedby="addon-wrapping" />
+              <div id="validationLoginUsername" class="valid-tooltip">
+              </div>
           </div>
         </div>
-        <div class="mb-3">
+        <div class="mb-3 position-relative">
           <label for="loginpassword" class="form-label">Password</label>
           <input type="password" autocomplete="off" class="form-control" id="loginpassword"
             placeholder="Enter Password" />
+            <div id="validationLoginPassword" class="valid-tooltip">
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Login</button>
+        <button type="button" class="btn btn-primary mb-2">Login</button>
         <hr />
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">New around here? Sign up</a>
@@ -87,7 +91,6 @@
           <span class="input-group-text">@</span>
           <input type="text" class="form-control" id="signUsername" required />
           <div id="validationUsername" class="valid-tooltip">
-            Looks amazing!
           </div>
         </div>
       </div>
@@ -96,7 +99,6 @@
         <input type="password" autocomplete="off" class="form-control w-password" id="signPassword" required />
         <i class="bi-eye" onclick="showPassword('signPassword')"></i>
         <div id="validationPassword" class="valid-tooltip">
-          Looks amazing!
         </div>
       </div>
       <div class="col-md-4 position-relative">
@@ -104,7 +106,6 @@
         <input type="password" autocomplete="off" class="form-control w-password" id="signCPassword" required />
         <i class="bi-eye" onclick="showPassword('signCPassword')"></i>
         <div id="validationCPassword" class="valid-tooltip">
-          Looks amazing!
         </div>
       </div>
       <div class="col-md-6 position-relative">
@@ -119,14 +120,12 @@
           <option>What is your mother's middle name?</option>
         </select>
         <div id="validationSecurity" class="valid-tooltip">
-          Looks amazing!
         </div>
       </div>
       <div class="col-md-6 position-relative">
         <label for="signAnswer" class="form-label">Your Answer</label>
         <input type="text" class="form-control" id="signAnswer" required />
         <div id="validationAnswer" class="valid-tooltip">
-          Looks amazing!
         </div>
       </div>
       <div class="col-12">
