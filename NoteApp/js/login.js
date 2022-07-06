@@ -111,7 +111,7 @@ function validateUserName(elementId, ValidationText) {
                     addValidation(
                         elementId,
                         ValidationText,
-                        'Username must be unique and only start/end with a letter or number and can include . -  _ in between!',
+                        'Username must be atleast 3 character long and only start/end with a letter or number and can include . -  _ in between!',
                         false
                     );
                 }
@@ -139,7 +139,7 @@ function validateUserName(elementId, ValidationText) {
                     addValidation(
                         elementId,
                         ValidationText,
-                        'Username must be unique and only start/end with a letter or number and can include . -  _ in between!',
+                        'Username must be atleast 3 character long and only start/end with a letter or number and can include . -  _ in between!',
                         false
                     );
                 }
