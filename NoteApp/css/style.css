@@ -61,6 +61,8 @@ body {
 }
 #userbox{
   position: relative;
+  width: 7rem;
+  overflow: hidden;
   cursor: pointer;
   z-index: 1;
 }
@@ -267,6 +269,9 @@ hr {
   .mw-90{
     max-width: 100%;
   }
+  #userbox{
+    width: 100%;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 575.98px) {
@@ -275,6 +280,9 @@ hr {
   }
   .copyright {
     font-size: 0.7rem;
+  }
+  #userbox{
+    width: 100%;
   }
 }
 
@@ -285,9 +293,15 @@ hr {
   .copyright {
     font-size: 0.8rem;
   }
+  #userbox{
+    width: 100%;
+  }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .type {
     height: 4rem;
+  }
+  #userbox{
+    width: 100%;
   }
 }
