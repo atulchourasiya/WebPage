@@ -158,7 +158,7 @@ let validationForgetPassword = document.getElementById('validationForgetPassword
 let returnpassword = false;
 
 function validatePassword(elementId, ValidationText) {
-    let regexPassword = /(?=.*[0-9])\S{8,20}/;
+    let regexPassword = /^(?=\S*[0-9])\S{8,20}$/;
     elementId.addEventListener('input', function () {
         if (regexPassword.test(elementId.value)) {
             addValidation(
@@ -200,7 +200,7 @@ let validationForgetCPassword = document.getElementById('validationForgetCPasswo
 let returncpassword = false;
 
 function validateCPassword(elementId, ValidationText) {
-    let regexCPassword = /(?=.*[0-9])\S{8,20}/;
+    let regexCPassword = /^(?=\S*[0-9])\S{8,20}$/;
     elementId.addEventListener('input', function () {
         if (regexCPassword.test(elementId.value)) {
             if ((elementId === signCPassword) ? (elementId.value !== signPassword.value) : (elementId.value !== forgetPassword.value)) {
