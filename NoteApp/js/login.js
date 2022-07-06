@@ -111,7 +111,7 @@ function validateUserName(elementId, ValidationText) {
                     addValidation(
                         elementId,
                         ValidationText,
-                        'Username must be atleast 3 character long and only start/end with a letter or number and can include . -  _ in between!',
+                        'Username must be atleast 3 character long and only start/end with a letter or number!',
                         false
                     );
                 }
@@ -139,7 +139,7 @@ function validateUserName(elementId, ValidationText) {
                     addValidation(
                         elementId,
                         ValidationText,
-                        'Username must be atleast 3 character long and only start/end with a letter or number and can include . -  _ in between!',
+                        'Username must be atleast 3 character long and only start/end with a letter or number!',
                         false
                     );
                 }
@@ -260,7 +260,7 @@ let validationForgetSecurity = document.getElementById('validationForgetSecurity
 let returnsecurity = false;
 
 function validateSecurity(elementId, ValidationText) {
-    elementId.addEventListener('blur', function () {
+    elementId.addEventListener('click', function () {
         if (elementId.value === '') {
             addValidation(elementId, ValidationText, "Please select a valid question!", false);
             returnsecurity = false;
