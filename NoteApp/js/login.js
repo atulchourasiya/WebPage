@@ -315,7 +315,7 @@ let validationForgetSecurity = document.getElementById('validationForgetSecurity
 let returnsecurity = false;
 
 function validateSecurity(elementId, ValidationText) {
-    elementId.addEventListener('click', function () {
+    elementId.addEventListener('change', function () {
         if (elementId.value === '') {
             addValidation(elementId, ValidationText, "Please select a valid question!", false);
             returnsecurity = false;
@@ -323,7 +323,13 @@ function validateSecurity(elementId, ValidationText) {
             addValidation(elementId, ValidationText, "Looks amazing!", true);
             returnsecurity = true;
         }
-    })
+    });
+    elementId.addEventListener('click', function () {
+        if (elementId.value === '') {
+            addValidation(elementId, ValidationText, "Please select a valid question!", false);
+            returnsecurity = false;
+        }
+    });
 }
 validateSecurity(signSecurity, validationSecurity);
 validateSecurity(forgetSecurity, validationForgetSecurity);
