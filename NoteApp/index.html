@@ -60,7 +60,7 @@
           <label for="loginUsername" class="form-label">Username</label>
           <div class="input-group flex-nowrap">
             <span class="input-group-text" id="addon-wrapping">@</span>
-            <input id="loginUsername" type="text" class="form-control rounded-end" placeholder="Enter Username"
+            <input id="loginUsername" type="text" class="form-control rounded-end bg-white" placeholder="Enter Username"
               aria-label="Username" aria-describedby="addon-wrapping" />
               <div id="validationLoginUsername" class="valid-tooltip">
               </div>
@@ -68,12 +68,13 @@
         </div>
         <div class="mb-3 position-relative">
           <label for="loginpassword" class="form-label">Password</label>
-          <input type="password" autocomplete="off" class="form-control" id="loginpassword"
+          <input type="password" autocomplete="off" class="form-control w-passwordlogin" id="loginpassword"
             placeholder="Enter Password" />
             <div id="validationLoginPassword" class="valid-tooltip">
             </div>
+            <i class="bi-eye" onclick="showPassword('loginpassword')"></i>
         </div>
-        <button type="button" class="btn btn-primary mb-2">Login</button>
+        <button type="button" onclick="Login()" class="btn btn-primary mb-2">Login</button>
         <hr />
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">New around here? Sign up</a>

@@ -47,6 +47,9 @@ body {
  .w-password{
   width: calc(100% - 2.4rem);
  }
+ .w-passwordlogin{
+  width: calc(100% - 2.9rem);
+ }
  .closebtn{
    right: .5rem;
    top: .5rem;
@@ -163,6 +166,9 @@ body {
 #flip2 {
   animation: textflip 8s linear infinite;
   backface-visibility: hidden;
+}
+.bg-white{
+  background-color: white;
 }
 @keyframes textflip {
   0% {
