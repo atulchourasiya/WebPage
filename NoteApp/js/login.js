@@ -1,3 +1,4 @@
+import {showNotes} from './app.js';
 let dropdownMenu = document.getElementsByClassName('dropdownMenu');
 let dropdownItem = document.getElementsByClassName('dropdown-item');
 let closebtn = document.getElementsByClassName('closebtn');
@@ -12,7 +13,7 @@ id.onfocus = function () {
     }
 };
 // handle select
-function handleSelect() {
+window.handleSelect = function() {
     resetInputField(signUsername, signPassword, signCPassword, signSecurity, signAnswer);
     resetInputField(forgetUsername, forgetPassword, forgetCPassword, forgetSecurity, forgetAnswer);
     resetLogin();
@@ -78,8 +79,8 @@ Array.from(closebtn).forEach((element, index) => {
         dropdownMenu[index].style.display = 'none';
     });
 });
-
-function showPassword(id) {
+// showpassword 
+window.showPassword = function(id) {
     id = document.getElementById(id);
     id.setAttribute('type', 'text');
     setTimeout(() => {
@@ -373,7 +374,7 @@ function addValidation(elementId, ValidationText, invalidTextString, state) {
 }
 
 //Signup 
-function signUp() {
+window.signUp = function() {
     if (returnusername && returnpassword && returncpassword && returnsecurity && returnanswer) {
         let user = localStorage.getItem('User');
         let userObj;
@@ -395,6 +396,7 @@ function signUp() {
         localStorage.setItem('loggedUser', signUsername.value);
         resetInputField(signUsername, signPassword, signCPassword, signSecurity, signAnswer);
         dropdownMenu[1].style.display = 'none';
+        showNotes();
         ShowUser();
         selectLoggedUser();
     } else {
@@ -423,7 +425,7 @@ ShowUser();
 let FirstContainer = document.getElementsByClassName('forgetfirstContainer');
 let SecondContainer = document.getElementsByClassName('forgetSecondContainer');
 
-function Submit() {
+window.Submit = function() {
     if (returnusername && returnsecurity && returnanswer) {
         let user = localStorage.getItem('User');
         let userObj;
@@ -451,7 +453,7 @@ function Submit() {
     }
 }
 //changePassword
-function changePassword() {
+window.changePassword = function() {
     if (returnpassword && returncpassword) {
         let user = localStorage.getItem('User');
         let userObj = JSON.parse(user);
@@ -469,7 +471,7 @@ function changePassword() {
     }
 }
 //Login 
-function Login() {
+window.Login = function() {
     let ispresent = false;
     if (returnusername && returnpassword) {
         let user = localStorage.getItem('User');
@@ -487,6 +489,7 @@ function Login() {
                 resetLogin();
                 resetreturnvalue();
                 dropdownMenu[0].style.display = 'none';
+                showNotes();
                 selectLoggedUser();
             }
         });

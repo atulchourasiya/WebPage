@@ -109,7 +109,7 @@ window.saveEdit = function () {
   }
 };
 // ShowNotes
-function showNotes() {
+export function showNotes() {
   let User = getUser();
   let noteElement = document.getElementById("note");
   if (User !== null) {
