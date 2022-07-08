@@ -75,9 +75,9 @@ function showTheme() {
       Array.from(taskList).forEach((ele, index) => {
         ele.style.borderColor = "#ced4da";
       });
-      showImpcard(-2, "dark");
+      showImpcard("dark");
     } else {
-      showImpcard(-1, "dark");
+      showImpcard("dark");
     }
   } else {
     document.body.style.background = "white";
@@ -112,9 +112,9 @@ function showTheme() {
       Array.from(taskList).forEach((ele, index) => {
         ele.style.borderColor = "#0000002d";
       });
-      showImpcard(-2, "light");
+      showImpcard("light");
     } else {
-      showImpcard(-1, "light");
+      showImpcard("light");
     }
   }
 }

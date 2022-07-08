@@ -85,12 +85,6 @@ body {
 .mw-90{
   max-width: 90%;
 }
-#addtask{
-  display: none;
-}
-#savebtntask{
-  display: none;
-}
 .card-text-task{
   padding: 0;
 }

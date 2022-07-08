@@ -18,7 +18,7 @@
   <!-- navbar -->
   <nav id="navbarBackground" class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand fw-bold me-2 letterspacing" href="./index.html">QuickNote</a>
+      <a class="navbar-brand fw-bold me-2 letterspacing" title="QuickNote" href="./index.html">QuickNote</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,7 @@
         </ul>
         <div class="py-2 pe-2 py-lg-0">
           <div id="userContainer" class="d-inline">
-            <select id="userbox" class="form-select" onchange="handleSelect()" required>
+            <select id="userbox" title="User" class="form-select" onchange="handleSelect()" required>
             </select>
             <i class="bi-caret-down"></i>
           </div>
@@ -217,16 +217,10 @@
       <textarea id="txt" class="form-control" placeholder="Write your note" rows="8"></textarea>
     </div>
     <div class="container">
-      <button id="addbtn" title="Add Note" type="button" class="btn btn-primary my-2" onclick="addNote('notes')">
+      <button id="addbtn" title="Add Note" type="button" class="btn btn-primary my-2" onclick="addNote()">
         Add Note
       </button>
-      <button id="addtask" title="Add Task" type="button" class="btn btn-primary my-2" onclick="addNote('task')">
-        Add Task
-      </button>
-      <button id="savebtnnotes" title="Save Edit" class="btn btn-primary my-2" onclick="saveEdit('notes')">
-        Save Edit
-      </button>
-      <button id="savebtntask" title="Save Edit" class="btn btn-primary my-2" onclick="saveEdit('task')">
+      <button id="savebtn" title="Save Edit" class="btn btn-primary my-2" onclick="saveEdit()">
         Save Edit
       </button>
     </div>

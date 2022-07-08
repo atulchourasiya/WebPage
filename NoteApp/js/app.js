@@ -2,58 +2,58 @@ import * as themefunction from "./theme.js";
 sessionStorage.setItem("state", "notes");
 console.log("Welcome to Caveman notes");
 themefunction.theme();
-showNotes(-1);
+showNotes();
 let editingIndex = -1;
 let searching = false;
 //  Add Note
-window.addNote = function (key) {
+window.addNote = function () {
+  let User = getUser();
+  if (User === null) {
+    alert(`⚠️Please sign up to create an account first!`)
+    return;
+  }
   if (searching === true) {
     alert("⚠️ Searching is in process!");
     return;
   }
+  let state = sessionStorage.getItem("state");
   let addtxt = document.getElementById("txt");
   let addtxtvalue = addtxt.value.split("\n");
-  if (key != "task") {
+  if (state != "task") {
     addtxtvalue = addtxtvalue.join("<br/>");
   }
   let addtitle = document.getElementById("titleTxt");
-  let cards = localStorage.getItem(key);
-  let cardObj;
-  if (cards === null) {
-    cardObj = [];
-  } else {
-    cardObj = JSON.parse(cards);
-  }
   let imp = false;
   let pinned = false;
-  if (key === "task") {
+  if (state === "task") {
     for (let i = 0; i < addtxtvalue.length; i++) {
       addtxtvalue[i] = [addtxtvalue[i], false];
     }
   }
-  cardObj.push([addtitle.value, addtxtvalue, imp, pinned]);
-  let index = cardObj.length - 1;
+  User[state].push([addtitle.value, addtxtvalue, imp, pinned]);
+  let index = User[state].length - 1;
   if (
-    cardObj[index][1] === "" ||
-    (cardObj[index][1].length === 1 && cardObj[index][1][0][0] === "")
+    User[state][index][1] === "" ||
+    (User[state][index][1].length === 1 && User[state][index][1][0][0] === "")
   ) {
     alert(
-      `⚠️ You Can't Add Empty ${key === "task" ? "Task" : "Note"}!`
+      `⚠️ You Can't Add Empty ${state === "task" ? "Task" : "Note"}!`
     );
   } else {
-    localStorage.setItem(key, JSON.stringify(cardObj));
+    setUser(User);
     addtxt.value = "";
     addtitle.value = "";
-    if (key === "task") {
-      showNotes(-2);
-    } else {
-      showNotes(-1);
-    }
+    showNotes();
     editingIndex = -1;
   }
 };
 //  Save Edit
-window.saveEdit = function (key) {
+window.saveEdit = function () {
+  let User = getUser();
+  if (User === null) {
+    alert(`⚠️Please sign up to create an account first!`)
+    return;
+  }
   if (searching === true) {
     alert("⚠️ Searching is in process!");
     return;
@@ -62,240 +62,192 @@ window.saveEdit = function (key) {
     alert("⚠️ You have to edit something to Save Edit!");
     return;
   }
+  let state = sessionStorage.getItem("state");
   let index = editingIndex;
   let addtxt = document.getElementById("txt");
   let addtxtvalue = addtxt.value.split("\n");
-  if (key != "task") {
+  if (state != "task") {
     addtxtvalue = addtxtvalue.join("<br/>");
   }
   let addtitle = document.getElementById("titleTxt");
-  let cards = localStorage.getItem(key);
-  let cardObj;
-  if (cards === null) {
-    cardObj = [];
-  } else {
-    cardObj = JSON.parse(cards);
-  }
-  cardObj[index][0] = addtitle.value;
-  if (key != "task") {
-    cardObj[index][1] = addtxtvalue;
+  User[state][index][0] = addtitle.value;
+  if (state != "task") {
+    User[state][index][1] = addtxtvalue;
   } else {
     let j;
     let i;
     let newArr = [];
     for (i = 0; i < addtxtvalue.length; i++) {
-      for (j = 0; j < cardObj[index][1].length; j++) {
-        if (addtxtvalue[i] === cardObj[index][1][j][0]) {
-          newArr.push([addtxtvalue[i], cardObj[index][1][j][1]]);
-          cardObj[index][1][j][0] = "NULL";
+      for (j = 0; j < User[state][index][1].length; j++) {
+        if (addtxtvalue[i] === User[state][index][1][j][0]) {
+          newArr.push([addtxtvalue[i], User[state][index][1][j][1]]);
+          User[state][index][1][j][0] = "NULL";
           break;
         }
       }
-      if (j === cardObj[index][1].length) {
+      if (j === User[state][index][1].length) {
         newArr.push([addtxtvalue[i], false]);
       }
     }
-    cardObj[index][1] = newArr;
+    User[state][index][1] = newArr;
   }
   if (
-    cardObj[index][1] === "" ||
-    (cardObj[index][1].length === 1 && cardObj[index][1][0][0] === "")
+    User[state][index][1] === "" ||
+    (User[state][index][1].length === 1 && User[state][index][1][0][0] === "")
   ) {
     alert(
       `⚠️ You Can't Save Empty ${
-        key === "task" ? "Task" : "Note"
+        state === "task" ? "Task" : "Note"
       }!`
     );
   } else {
-    localStorage.setItem(key, JSON.stringify(cardObj));
+    setUser(User);
     addtxt.value = "";
     addtitle.value = "";
-    if (key === "task") {
-      showNotes(-2);
-    } else {
-      showNotes(index);
-    }
+    showNotes()
     editingIndex = -1;
   }
 };
 // ShowNotes
-function showNotes(keyValue) {
-  let key;
-  if (keyValue === -2) {
-    key = "task";
-  } else {
-    key = "notes";
-  }
-  let cards = localStorage.getItem(key);
-  let cardObj;
-  if (cards === null) {
-    cardObj = [];
-  } else {
-    cardObj = JSON.parse(cards);
-  }
-  let html = "";
-  if (keyValue === -2) {
-    cardObj.forEach((element, index) => {
-      html += `<div class=" card m-2" >
+function showNotes() {
+  let User = getUser();
+  let noteElement = document.getElementById("note");
+  if (User !== null) {
+    let state = sessionStorage.getItem("state");
+    let html = "";
+    if (state === 'task') {
+      User[state].forEach((element, index) => {
+        html += `<div class=" card m-2" >
+          <div class="card-body">
+            <h5 class="card-title">${
+              element[0] === "" ? "To Do " + (index + 1) : element[0]
+            } <i title="Mark Important"class=" bi-star-fill" onclick="handleMarkImp(${index})"></i></h5>
+            <ul  class="card-text  card-text-task">
+            ${taskListShow(index)}
+          </ul>
+             <a href="#titleTxt"> <button type="button" title="Edit" class="mb-2 btn btn-primary" onclick="editNote(${index})">Edit</button></a>  
+             <button id=${index} type="button" title="Delete" class="mb-2 btn btn-primary" onclick="deleteNote(this.id)">Delete</button>
+             <button  type="button" title="Clone"class="mb-2 btn btn-primary" onclick="Clone(${index})"><i class=" bi-back"></i></button>
+             <button  title="Pin" type="button" onclick="pin(${index})" class="mb-2 btn btn-light"> <i class=" bi-pin-angle-fill"></i></button>
+          </div>
+        </div>`;
+      });
+    } else {
+      User[state].forEach((element, index) => {
+        html += `<div class=" card m-2" >
         <div class="card-body">
           <h5 class="card-title">${
-            element[0] === "" ? "To Do " + (index + 1) : element[0]
-          } <i title="Mark Important"class=" bi-star-fill" onclick="handleMarkImp(${index},-2)"></i></h5>
-          <ul  class="card-text  card-text-task">
-          ${taskListShow(index)}
-        </ul>
-           <a href="#titleTxt"> <button type="button" title="Edit" class="mb-2 btn btn-primary" onclick="editNote(${index},-2)">Edit</button></a>  
-           <button id=${index} type="button" title="Delete" class="mb-2 btn btn-primary" onclick="deleteNote(this.id,-2)">Delete</button>
-           <button  type="button" title="Clone"class="mb-2 btn btn-primary" onclick="Clone(${index},-2)"><i class=" bi-back"></i></button>
-           <button  title="Pin" type="button" onclick="pin(${index},-2)" class="mb-2 btn btn-light"> <i class=" bi-pin-angle-fill"></i></button>
+            element[0] === "" ? "Note " + (index + 1) : element[0]
+          } <i title="Mark Important"class=" bi-star-fill" onclick="handleMarkImp(${index})"></i></h5>
+          <p class="card-text">
+          ${element[1]}
+          </p>
+           <a href="#titleTxt"> <button type="button" title="Edit" class="mb-2 btn btn-primary" onclick="editNote(${index})">Edit</button></a>  
+           <button id=${index} type="button" title="Delete" class="mb-2 btn btn-primary" onclick="deleteNote(this.id)">Delete</button>
+           <button  type="button" title="Clone"class="mb-2 btn btn-primary" onclick="Clone(${index})"><i class=" bi-back"></i></button>
+           <button title="Pin" type="button" onclick="pin(${index})" class="mb-2 btn btn-light"> <i class=" bi-pin-angle-fill"></i></button>
         </div>
       </div>`;
-    });
-  } else {
-    cardObj.forEach((element, index) => {
-      html += `<div class=" card m-2" >
-      <div class="card-body">
-        <h5 class="card-title">${
-          element[0] === "" ? "Note " + (index + 1) : element[0]
-        } <i title="Mark Important"class=" bi-star-fill" onclick="handleMarkImp(${index},-1)"></i></h5>
-        <p class="card-text">
-        ${element[1]}
-        </p>
-         <a href="#titleTxt"> <button type="button" title="Edit" class="mb-2 btn btn-primary" onclick="editNote(${index},-1)">Edit</button></a>  
-         <button id=${index} type="button" title="Delete" class="mb-2 btn btn-primary" onclick="deleteNote(this.id,-1)">Delete</button>
-         <button  type="button" title="Clone"class="mb-2 btn btn-primary" onclick="Clone(${index},-1)"><i class=" bi-back"></i></button>
-         <button title="Pin" type="button" onclick="pin(${index},-1)" class="mb-2 btn btn-light"> <i class=" bi-pin-angle-fill"></i></button>
-      </div>
-    </div>`;
-    });
-  }
-  let noteElement = document.getElementById("note");
-  if (cardObj.length != 0) {
-    noteElement.innerHTML = html;
-  } else {
-    noteElement.innerHTML = `<div class="container">
-      <p>Nothing to show add something to display it here</p>
-    </div>`;
-  }
-  if (keyValue === -2) {
-    showPin(-2);
+      });
+    }
+    if (User[state].length != 0) {
+      noteElement.innerHTML = html;
+    } else {
+      noteElement.innerHTML = `<div class="container">
+        <p>Nothing to show add something to display it here</p>
+      </div>`;
+    }
+    showPin();
+    if(state === 'task')
     ShowChecked();
-  } else {
-    showPin(-1);
+  }
+  else{
+    noteElement.innerHTML = `<div class="container">
+        <p>Nothing to show add something to display it here</p>
+      </div>`;
   }
   themefunction.showTheme();
 }
 // Mark Important
-window.handleMarkImp = function (index, keyValue) {
-  let key;
-  if (keyValue === -2) {
-    key = "task";
-  } else {
-    key = "notes";
+window.handleMarkImp = function (index) {
+  let User = getUser();
+  if (User === null) {
+    return;
   }
-  let cards = localStorage.getItem(key);
-  let cardObj = JSON.parse(cards);
-  if (cardObj[index][2] === false) {
-    cardObj[index][2] = true;
-  } else if (cardObj[index][2] === true) {
-    cardObj[index][2] = false;
+  let state = sessionStorage.getItem("state");
+  if (User[state][index][2] === false) {
+    User[state][index][2] = true;
+  } else if (User[state][index][2] === true) {
+    User[state][index][2] = false;
   }
-  localStorage.setItem(key, JSON.stringify(cardObj));
-  if (keyValue === -2) {
-    showNotes(-2);
-  } else {
-    showNotes(-1);
-  }
+  setUser(User);
+  showNotes();
 };
 //show Important card
-export function showImpcard(keyValue, theme) {
-  let key;
-  if (keyValue === -2) {
-    key = "task";
-  } else {
-    key = "notes";
-  }
-  let cards = localStorage.getItem(key);
-  let cardObj;
-  if (cards === null) {
-    cardObj = [];
-  } else {
-    cardObj = JSON.parse(cards);
-  }
-  cardObj.forEach((element, index) => {
-    let markedimp = document.getElementsByClassName("bi-star-fill");
-    let card = document.getElementsByClassName("card-body");
-    if (element[2] === true) {
-      markedimp[index].style.color = "rgba(0, 255, 0)";
-      if (theme === "dark") {
-        card[index].style.backgroundColor = "#0a3560";
+export function showImpcard(theme) {
+  let User = getUser();
+  if (User !== null) {
+    let state = sessionStorage.getItem("state");
+    User[state].forEach((element, index) => {
+      let markedimp = document.getElementsByClassName("bi-star-fill");
+      let card = document.getElementsByClassName("card-body");
+      if (element[2] === true) {
+        markedimp[index].style.color = "rgba(0, 255, 0)";
+        if (theme === "dark") {
+          card[index].style.backgroundColor = "#0a3560";
+        } else {
+          card[index].style.backgroundColor = "#efffff";
+        }
       } else {
-        card[index].style.backgroundColor = "#efffff";
+        markedimp[index].style.color = "rgba(214, 222, 225, 0.725)";
+        if (theme === "dark") {
+          card[index].style.backgroundColor = "#061f38";
+        } else {
+          card[index].style.backgroundColor = "white";
+        }
       }
-    } else {
-      markedimp[index].style.color = "rgba(214, 222, 225, 0.725)";
-      if (theme === "dark") {
-        card[index].style.backgroundColor = "#061f38";
-      } else {
-        card[index].style.backgroundColor = "white";
-      }
-    }
-  });
+    });
+  }
 }
 // Pin
-window.pin = function (index, keyValue) {
+window.pin = function (index) {
+  let User = getUser();
+  if (User === null) {
+    return;
+  }
+  let state = sessionStorage.getItem("state");
   if (editingIndex != -1) {
     alert("⚠️ You have to Save Edit!");
     return;
   }
-  let key;
-  if (keyValue === -2) {
-    key = "task";
+  if (User[state][index][3] === false) {
+    let pinnedIndex = User[state][index];
+    User[state].splice(index, 1);
+    User[state].unshift(pinnedIndex);
+    User[state][0][3] = true;
   } else {
-    key = "notes";
-  }
-  let cards = localStorage.getItem(key);
-  let cardObj = JSON.parse(cards);
-  if (cardObj[index][3] === false) {
-    let pinnedIndex = cardObj[index];
-    cardObj.splice(index, 1);
-    cardObj.unshift(pinnedIndex);
-    cardObj[0][3] = true;
-  } else {
-    cardObj[index][3] = false;
+    User[state][index][3] = false;
     let i;
-    for (i = index; i < cardObj.length - 1; i++) {
-      if (cardObj[i + 1][3] === false) {
+    for (i = index; i < User[state].length - 1; i++) {
+      if (User[state][i + 1][3] === false) {
         break;
       }
     }
-    let insert = cardObj[index];
-    cardObj.splice(index, 1);
-    cardObj.splice(i, 0, insert);
+    let insert = User[state][index];
+    User[state].splice(index, 1);
+    User[state].splice(i, 0, insert);
   }
-  localStorage.setItem(key, JSON.stringify(cardObj));
-  if (keyValue === -2) {
-    showNotes(-2);
-  } else {
-    showNotes(-1);
-  }
+   setUser(User);
+   showNotes();
 };
 // Show pin
-function showPin(keyValue) {
-  let key;
-  if (keyValue === -2) {
-    key = "task";
-  } else {
-    key = "notes";
+function showPin() {
+  let User = getUser();
+  if (User === null) {
+    return;
   }
-  let cards = localStorage.getItem(key);
-  let cardObj;
-  if (cards === null) {
-    cardObj = [];
-  } else {
-    cardObj = JSON.parse(cards);
-  }
-  cardObj.forEach((element, index) => {
+  let state = sessionStorage.getItem("state");
+  User[state].forEach((element, index) => {
     let pin = document.getElementsByClassName("bi-pin-angle-fill");
     if (element[3] === true) {
       pin[index].style.color = "red";
@@ -305,46 +257,36 @@ function showPin(keyValue) {
   });
 }
 // Clone
-window.Clone = function (index, keyValue) {
+window.Clone = function (index) {
+  let User = getUser();
+  if (User === null) {
+    return;
+  }
+  let state = sessionStorage.getItem("state");
   if (editingIndex != -1) {
     alert("⚠️ You have to Save Edit!");
     return;
   }
-  let key;
-  if (keyValue === -2) {
-    key = "task";
-  } else {
-    key = "notes";
-  }
-  let cards = localStorage.getItem(key);
-  let cardObj = JSON.parse(cards);
-  cardObj.splice(index + 1, 0, cardObj[index]);
-  localStorage.setItem(key, JSON.stringify(cardObj));
-  if (keyValue === -2) {
-    showNotes(-2);
-  } else {
-    showNotes(-1);
-  }
+  User[state].splice(index + 1, 0, User[state][index]);
+  setUser(User);
+  showNotes();
 };
 //Edit Note
-window.editNote = function (index, keyValue) {
-  let key;
-  if (keyValue === -2) {
-    key = "task";
-  } else {
-    key = "notes";
+window.editNote = function (index) {
+  let User = getUser();
+  if (User === null) {
+    return;
   }
-  let cards = localStorage.getItem(key);
-  let cardObj = JSON.parse(cards);
+  let state = sessionStorage.getItem("state");
   let addtxt = document.getElementById("txt");
   let addtitle = document.getElementById("titleTxt");
-  addtitle.value = cardObj[index][0];
+  addtitle.value = User[state][index][0];
   let splitArray = [];
-  if (keyValue != -2) {
-    splitArray = cardObj[index][1].split("<br/>");
+  if (state != -2) {
+    splitArray = User[state][index][1].split("<br/>");
   } else {
-    for (let i = 0; i < cardObj[index][1].length; i++) {
-      splitArray.push(cardObj[index][1][i][0]);
+    for (let i = 0; i < User[state][index][1].length; i++) {
+      splitArray.push(User[state][index][1][i][0]);
     }
   }
   addtxt.value = splitArray.join("\n");
@@ -352,32 +294,33 @@ window.editNote = function (index, keyValue) {
 };
 // if Checked
 window.Checked = function (index, item) {
-  let cards = localStorage.getItem("task");
-  let cardObj = JSON.parse(cards);
-  if (cardObj[index][1][item][1] === false) {
-    cardObj[index][1][item][1] = true;
-  } else if (!cardObj[index][1][item][1]) {
-    cardObj[index][1][item][1] = true;
-  } else {
-    cardObj[index][1][item][1] = false;
+  let User = getUser();
+  if (User === null) {
+    return;
   }
-  localStorage.setItem("task", JSON.stringify(cardObj));
+  let state = sessionStorage.getItem("state");
+  if (User[state][index][1][item][1] === false) {
+    User[state][index][1][item][1] = true;
+  } else if (!User[state][index][1][item][1]) {
+    User[state][index][1][item][1] = true;
+  } else {
+    User[state][index][1][item][1] = false;
+  }
+  setUser(User);
   ShowChecked();
 };
 //show checked
 function ShowChecked() {
-  let cards = localStorage.getItem("task");
-  let cardObj;
-  if (cards === null) {
-    cardObj = [];
-  } else {
-    cardObj = JSON.parse(cards);
+  let User = getUser();
+  if (User === null) {
+    return;
   }
+  let state = sessionStorage.getItem("state");
   let lists = document.getElementsByClassName("card-text");
   Array.from(lists).forEach((element, index) => {
     element = Array.from(element.children);
     for (let i = 0; i < element.length; i++) {
-      if (cardObj[index][1][i][1] === true) {
+      if (User[state][index][1][i][1] === true) {
         element[i].getElementsByTagName("input")[0].checked = true;
       } else {
         element[i].getElementsByTagName("input")[0].checked = false;
@@ -386,47 +329,33 @@ function ShowChecked() {
   });
 }
 // DeleteNote
-window.deleteNote = function (event, keyValue) {
+window.deleteNote = function (event) {
+  let User = getUser();
+  if (User === null) {
+    return;
+  }
+  let state = sessionStorage.getItem("state");
   if (editingIndex != -1) {
     alert("⚠️ You have to Save Edit!");
     return;
   }
-  let key;
-  if (keyValue === -2) {
-    key = "task";
-  } else {
-    key = "notes";
-  }
-  let cards = localStorage.getItem(key);
-  let cardObj;
-  if (cards === null) {
-    cardObj = [];
-  } else {
-    cardObj = JSON.parse(cards);
-  }
-  cardObj.splice(event, 1);
-  localStorage.setItem(key, JSON.stringify(cardObj));
-  if (keyValue === -2) {
-    showNotes(-2);
-  } else {
-    showNotes(-1);
-  }
+  User[state].splice(event, 1);
+  setUser(User);
+  showNotes()
 };
 //Add CheckBox to Tasklist
 function taskListShow(index) {
-  let cards = localStorage.getItem("task");
-  let cardObj;
-  if (cards === null) {
-    cardObj = [];
-  } else {
-    cardObj = JSON.parse(cards);
+  let User = getUser();
+  if (User === null) {
+    return;
   }
+  let state = sessionStorage.getItem("state");
   let html = "";
-  for (let i = 0; i < cardObj[index][1].length; i++) {
+  for (let i = 0; i < User[state][index][1].length; i++) {
     html += `<li class="taskList" onclick="Checked(${index},${i})" >
     <input class="form-check-input me-1 strike" type="checkbox" value="" aria-label="...">
     <span>
-       ${cardObj[index][1][i][0]}
+       ${User[state][index][1][i][0]}
     </span>
   </li>`;
   }
@@ -445,14 +374,11 @@ window.toggleTaskTodo = function () {
     txt.placeholder = "Write your note";
     titleTxt.placeholder = "Write your title";
     stabletxt[0].innerText = "Search Note By";
-    addtask.style.display = "none";
-    addbtn.style.display = "inline";
-    savebtnnotes.style.display = "inline";
-    savebtntask.style.display = "none";
+    addbtn.innerText = 'Add Note';
+    addbtn.title = 'Add Note';
     Array.from(noteCard).forEach((element) => {
       element.style.display = "block";
     });
-    showNotes(-1);
   } else {
     sessionStorage.setItem("state", "task");
     taskToDoBtn.innerText = "Note";
@@ -462,15 +388,13 @@ window.toggleTaskTodo = function () {
     txt.placeholder = "Add your task separated by new line";
     titleTxt.placeholder = "Add your title";
     stabletxt[0].innerText = "Search Task By";
-    addbtn.style.display = "none";
-    addtask.style.display = "inline";
-    savebtnnotes.style.display = "none";
-    savebtntask.style.display = "inline";
+    addbtn.innerText = 'Add Task';
+    addbtn.title = 'Add Task';
     Array.from(noteCard).forEach((element) => {
       element.style.display = "none";
     });
-    showNotes(-2);
   }
+  showNotes();
 };
 // Search text
 let srchtxt = document.getElementsByClassName("srchtxt");
@@ -519,3 +443,42 @@ search.addEventListener("input", () => {
     match[0].style.display = "none";
   }
 });
+//GetUser
+function getUser() {
+  let loggedUser = localStorage.getItem('loggedUser');
+  let returnUser;
+  if (loggedUser === null) {
+    return null;
+  } else {
+    let user = localStorage.getItem("User");
+    let userObj;
+    if (user === null) {
+      userObj = [];
+    } else {
+      userObj = JSON.parse(user);
+    }
+    userObj.forEach(Element => {
+      if (loggedUser === Element.name) {
+        returnUser = Element;
+        return;
+      }
+    });
+  }
+  return returnUser;
+}
+//set user
+function setUser(Object) {
+  let user = localStorage.getItem("User");
+  let userObj;
+  if (user === null) {
+    userObj = [];
+  } else {
+    userObj = JSON.parse(user);
+  }
+  userObj.forEach((Element,index)=> {
+    if (Element.name === Object.name) {
+      userObj[index]=Object;
+    }
+  });
+  localStorage.setItem('User',JSON.stringify(userObj));
+}
