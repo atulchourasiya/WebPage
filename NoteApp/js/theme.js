@@ -41,6 +41,7 @@ function showTheme() {
   let navbar = document.getElementById("navbarBackground");
   let dropdownMenu = document.getElementsByClassName("dropdownMenu");
   let closebtn = document.getElementsByClassName("closebtn");
+  let closebtnreplace = document.getElementsByClassName("closebtnreplace");
   if (themeObj.mode === true) {
     flexSwitchCheckDefault.checked = true;
     document.body.style.background = "#061f38";
@@ -51,6 +52,8 @@ function showTheme() {
     txt.style.color = "white";
     userbox.style.background = "#0f2d4bd0";
     userbox.style.color = "white";
+    replacemenu.style.background = "#184a7c";
+    closebtnreplace[0].classList.add("btn-close-white");
     Array.from(dropdownMenu).forEach((ele,index) => {
       ele.style.background = "#184a7c";
       closebtn[index].classList.add("btn-close-white");
@@ -88,6 +91,8 @@ function showTheme() {
     txt.style.color = "black";
     userbox.style.background = "#ffffffcc";
     userbox.style.color = "black";
+    replacemenu.style.background = "#eaf8f8";
+    closebtnreplace[0].classList.remove("btn-close-white");
     Array.from(dropdownMenu).forEach((ele,index) => {
       ele.style.background = "#eaf8f8";
       closebtn[index].classList.remove("btn-close-white");

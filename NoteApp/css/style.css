@@ -55,6 +55,11 @@ body {
    top: .5rem;
    cursor: pointer;
  }
+ .closebtnreplace{
+   right: .5rem;
+   top: .5rem;
+   cursor: pointer;
+ }
  .forgetSecondContainer{
    display: none;
  }
@@ -77,17 +82,16 @@ body {
   display: none;
   position: absolute;
   margin: .2rem;
-  /* width: max-content; */
   border-radius: 5%;
-  /* background-color: #184a7c; */
   z-index: 3;
 }
-.replacemenu{
+#replacemenu{
+  display: none;
   position: absolute;
   min-width: 25%;
   margin: .2rem;
-  background-color: #184a7c;
   border-radius: 5%;
+  z-index: 3;
 }
 .mw-90{
   max-width: 90%;

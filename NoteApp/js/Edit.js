@@ -1,3 +1,7 @@
+let closebtnreplace = document.getElementsByClassName("closebtnreplace");
+closebtnreplace[0].addEventListener('click',()=>{
+  document.getElementById('replacemenu').style.display ='none'
+});
 //Handle Copy
 function Copy(id){
  let button = document.getElementById('dropdownMenuButton1');   
@@ -55,4 +59,9 @@ function Format(id){
  textValue = textValue.split(/[ ]+/)
  textValue = textValue.join(" ");
  text.value = textValue;
+}
+//Handle Replace
+function Replace(id){
+  replacemenu.style.display = 'block';
+ let text = document.getElementById(id);
 }
