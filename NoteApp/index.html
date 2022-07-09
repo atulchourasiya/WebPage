@@ -198,7 +198,8 @@
   </div>
   <!-- Change occurance  -->
   <div class="container d-flex justify-content-center">
-    <form class="replacemenu p-3 rounded">
+    <form id="replacemenu" class="p-3 rounded">
+      <button type="button" class="position-absolute btn-close closebtnreplace m-0" aria-label="Close"></button>
       <div class="mb-3">
         <label for="replaceOldWord" class="form-label">Type a word</label>
         <input type="email" class="form-control" id="replaceOldWord" placeholder="Enter a existing word">
@@ -237,6 +238,16 @@
       <button id="savebtn" title="Save Edit" class="btn btn-primary mb-2" onclick="saveEdit()">
         Save Edit
       </button>
+      <div class="dropdown d-inline">
+        <button class="btn btn-primary mb-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Copy<i class="fa-solid fa-paste ps-1"></i>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" onclick="Copy('titleTxt')" href="#">Copy Title</a></li>
+          <li><a class="dropdown-item" onclick="Copy('txt')" href="#">Copy Text</a></li>
+        </ul>
+      </div>
       <div class="dropdown d-inline">
         <button class="btn btn-primary mb-2" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
           aria-expanded="false">
@@ -278,6 +289,16 @@
         </ul>
       </div>
       <div class="dropdown d-inline">
+        <button class="btn btn-primary mb-2" type="button" id="dropdownMenuButton7" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Replace Word
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton7">
+          <li><a class="dropdown-item" onclick="Replace('titleTxt')" href="#">Beautify Title</a></li>
+          <li><a class="dropdown-item" onclick="Replace('txt')" href="#">Beautify Text</a></li>
+        </ul>
+      </div>
+      <div class="dropdown d-inline">
         <button class="btn btn-primary mb-2" type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown"
           aria-expanded="false">
           Reset
@@ -285,16 +306,6 @@
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton6">
           <li><a class="dropdown-item" onclick="Reset('titleTxt')" href="#">Reset Title</a></li>
           <li><a class="dropdown-item" onclick="Reset('txt')" href="#">Reset Text</a></li>
-        </ul>
-      </div>
-      <div class="dropdown d-inline">
-        <button class="btn btn-primary mb-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-          aria-expanded="false">
-          Copy<i class="fa-solid fa-paste ps-1"></i>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" onclick="Copy('titleTxt')" href="#">Copy Title</a></li>
-          <li><a class="dropdown-item" onclick="Copy('txt')" href="#">Copy Text</a></li>
         </ul>
       </div>
     </div>
