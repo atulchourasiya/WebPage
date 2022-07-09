@@ -79,8 +79,15 @@ body {
   margin: .2rem;
   /* width: max-content; */
   border-radius: 5%;
-  background-color: #184a7c;
+  /* background-color: #184a7c; */
   z-index: 3;
+}
+.replacemenu{
+  position: absolute;
+  min-width: 25%;
+  margin: .2rem;
+  background-color: #184a7c;
+  border-radius: 5%;
 }
 .mw-90{
   max-width: 90%;
@@ -220,6 +227,36 @@ body {
 }
 
 /* scrollbar  */
+#titleTxt::-webkit-scrollbar {
+  width: 20px;
+}
+#titleTxt ::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#titleTxt::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+#titleTxt::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+#txt::-webkit-scrollbar {
+  width: 20px;
+}
+#txt ::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#txt::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+#txt::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
 .card-text::-webkit-scrollbar {
   width: 20px;
 }
@@ -251,6 +288,7 @@ body {
   background-color: #a8bbbf;
 }
 hr {
+  margin-top: .5rem;
   background-color: rgba(14, 21, 26, 0);
 }
 .type h3 {

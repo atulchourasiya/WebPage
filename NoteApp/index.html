@@ -9,7 +9,7 @@
   <title>QuickNote</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./css/style.css" />
 </head>
@@ -62,23 +62,23 @@
             <span class="input-group-text" id="addon-wrapping">@</span>
             <input id="loginUsername" type="text" class="form-control rounded-end bg-white" placeholder="Enter Username"
               aria-label="Username" aria-describedby="addon-wrapping" />
-              <div id="validationLoginUsername" class="valid-tooltip">
-              </div>
+            <div id="validationLoginUsername" class="valid-tooltip">
+            </div>
           </div>
         </div>
         <div class="mb-3 position-relative">
           <label for="loginpassword" class="form-label">Password</label>
           <input type="password" autocomplete="off" class="form-control w-passwordlogin" id="loginpassword"
             placeholder="Enter Password" />
-            <div id="validationLoginPassword" class="valid-tooltip">
-            </div>
-            <i class="bi-eye" onclick="showPassword('loginpassword')"></i>
+          <div id="validationLoginPassword" class="valid-tooltip">
+          </div>
+          <i class="bi-eye" onclick="showPassword('loginpassword')"></i>
         </div>
         <button type="button" onclick="Login()" class="btn btn-primary mb-2">Login</button>
         <hr />
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">New around here? Sign up</a>
-        <a class="dropdown-item" href="#">Forgot password?</a>
+        <a class="dropdown-item logindropdown" href="#">New around here? Sign up</a>
+        <a class="dropdown-item logindropdown" href="#">Forgot password?</a>
       </form>
     </div>
   </div>
@@ -140,60 +140,74 @@
   <div class="container d-flex justify-content-center">
     <form class="row g-3 needs-validation dropdownMenu p-3 rounded mw-90" validate>
       <button type="button" class="position-absolute btn-close closebtn m-0" aria-label="Close"></button>
-     
-        <div class="col-md-4 position-relative forgetfirstContainer">
-          <label for="forgetUsername" class="form-label">Username</label>
-          <div class="input-group has-validation">
-            <span class="input-group-text">@</span>
-            <input type="text" class="form-control" id="forgetUsername" required />
-            <div id="validationForgetUsername" class="invalid-tooltip">
-            </div>
+
+      <div class="col-md-4 position-relative forgetfirstContainer">
+        <label for="forgetUsername" class="form-label">Username</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text">@</span>
+          <input type="text" class="form-control" id="forgetUsername" required />
+          <div id="validationForgetUsername" class="invalid-tooltip">
           </div>
         </div>
-        <div class="col-md-4 position-relative forgetfirstContainer">
-          <label for="forgetSecurity" class="form-label">Security Question</label>
-          <select class="form-select" id="forgetSecurity" required>
-            <option selected disabled value="">Select</option>
+      </div>
+      <div class="col-md-4 position-relative forgetfirstContainer">
+        <label for="forgetSecurity" class="form-label">Security Question</label>
+        <select class="form-select" id="forgetSecurity" required>
+          <option selected disabled value="">Select</option>
           <option>What is your pet's name?</option>
           <option>Who was your childhood hero?</option>
           <option>Who is your favorite person?</option>
           <option>What is your favorite animal?</option>
           <option>What was your childhood nickname?</option>
           <option>What is your mother's middle name?</option>
-          </select>
-          <div id="validationForgetSecurity" class="invalid-tooltip">
-          </div>
+        </select>
+        <div id="validationForgetSecurity" class="invalid-tooltip">
         </div>
-        <div class="col-md-4 position-relative forgetfirstContainer">
-          <label for="forgetAnswer" class="form-label">Your Answer</label>
-          <input type="text" class="form-control" id="forgetAnswer" required />
-          <div id="validationForgetAnswer" class="invalid-tooltip">
-          </div>
+      </div>
+      <div class="col-md-4 position-relative forgetfirstContainer">
+        <label for="forgetAnswer" class="form-label">Your Answer</label>
+        <input type="text" class="form-control" id="forgetAnswer" required />
+        <div id="validationForgetAnswer" class="invalid-tooltip">
         </div>
-        <div class="col-12 forgetfirstContainer">
-          <button class="btn btn-primary" onclick="Submit()" type="button">
-            Submit
-          </button>
+      </div>
+      <div class="col-12 forgetfirstContainer">
+        <button class="btn btn-primary" onclick="Submit()" type="button">
+          Submit
+        </button>
+      </div>
+      <div class="col-md-6 position-relative forgetSecondContainer">
+        <label for="forgetPassword" class="form-label">New Password</label>
+        <input type="password" autocomplete="off" class="form-control w-password" id="forgetPassword" required />
+        <i class="bi-eye" onclick="showPassword('forgetPassword')"></i>
+        <div id="validationForgetPassword" class="invalid-tooltip">
         </div>
-        <div class="col-md-6 position-relative forgetSecondContainer">
-          <label for="forgetPassword" class="form-label">New Password</label>
-          <input type="password" autocomplete="off" class="form-control w-password" id="forgetPassword" required />
-          <i class="bi-eye" onclick="showPassword('forgetPassword')"></i>
-          <div id="validationForgetPassword" class="invalid-tooltip">
-          </div>
+      </div>
+      <div class="col-md-6 position-relative forgetSecondContainer">
+        <label for="forgetCPassword" class="form-label">Confirm New Password</label>
+        <input type="password" autocomplete="off" class="form-control w-password" id="forgetCPassword" required />
+        <i class="bi-eye" onclick="showPassword('forgetCPassword')"></i>
+        <div id="validationForgetCPassword" class="invalid-tooltip">
         </div>
-        <div class="col-md-6 position-relative forgetSecondContainer">
-          <label for="forgetCPassword" class="form-label">Confirm New Password</label>
-          <input type="password" autocomplete="off" class="form-control w-password" id="forgetCPassword" required />
-          <i class="bi-eye" onclick="showPassword('forgetCPassword')"></i>
-          <div id="validationForgetCPassword" class="invalid-tooltip">
-          </div>
-        </div>
-        <div class="col-12 forgetSecondContainer ">
-          <button class="btn btn-primary" onclick="changePassword()" type="button">
-            Change Password
-          </button>
-        </div>
+      </div>
+      <div class="col-12 forgetSecondContainer ">
+        <button class="btn btn-primary" onclick="changePassword()" type="button">
+          Change Password
+        </button>
+      </div>
+    </form>
+  </div>
+  <!-- Change occurance  -->
+  <div class="container d-flex justify-content-center">
+    <form class="replacemenu p-3 rounded">
+      <div class="mb-3">
+        <label for="replaceOldWord" class="form-label">Type a word</label>
+        <input type="email" class="form-control" id="replaceOldWord" placeholder="Enter a existing word">
+      </div>
+      <div class="mb-3">
+        <label for="replaceNewWord" class="form-label">Replace a word</label>
+        <input type="password" class="form-control" id="replaceNewWord" placeholder="Enter a new word">
+      </div>
+      <button type="button" class="btn btn-primary">Replace</button>
     </form>
   </div>
   <!-- welcome  -->
@@ -214,15 +228,75 @@
       <h4 id="addANote">Add A Note</h4>
     </div>
     <div class="d-flex justify-content-center">
-      <textarea id="txt" class="form-control" placeholder="Write your note" rows="8"></textarea>
+      <textarea id="txt" class="form-control mb-2" placeholder="Write your note" rows="8"></textarea>
     </div>
     <div class="container">
-      <button id="addbtn" title="Add Note" type="button" class="btn btn-primary my-2" onclick="addNote()">
+      <button id="addbtn" title="Add Note" type="button" class="btn btn-primary mb-2" onclick="addNote()">
         Add Note
       </button>
-      <button id="savebtn" title="Save Edit" class="btn btn-primary my-2" onclick="saveEdit()">
+      <button id="savebtn" title="Save Edit" class="btn btn-primary mb-2" onclick="saveEdit()">
         Save Edit
       </button>
+      <div class="dropdown d-inline">
+        <button class="btn btn-primary mb-2" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Uppercase
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+          <li><a class="dropdown-item" onclick="UpperCase('titleTxt')" href="#">UpperCase Title</a></li>
+          <li><a class="dropdown-item" onclick="UpperCase('txt')" href="#">UpperCase Text</a></li>
+        </ul>
+      </div>
+      <div class="dropdown d-inline">
+        <button class="btn btn-primary mb-2" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Lowercase
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+          <li><a class="dropdown-item" onclick="LowerCase('titleTxt')" href="#">LowerCase Title</a></li>
+          <li><a class="dropdown-item" onclick="LowerCase('txt')" href="#">LowerCase Text</a></li>
+        </ul>
+      </div>
+      <div class="dropdown d-inline">
+        <button class="btn btn-primary mb-2" type="button" id="dropdownMenuButton5" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Capitalize
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton5">
+          <li><a class="dropdown-item" onclick="capitalize('titleTxt')" href="#">Capitalize Title</a></li>
+          <li><a class="dropdown-item" onclick="capitalize('txt')" href="#">Capitalize Text</a></li>
+        </ul>
+      </div>
+      <div class="dropdown d-inline">
+        <button class="btn btn-primary mb-2" type="button" id="dropdownMenuButton4" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Beautify
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+          <li><a class="dropdown-item" onclick="Format('titleTxt')" href="#">Beautify Title</a></li>
+          <li><a class="dropdown-item" onclick="Format('txt')" href="#">Beautify Text</a></li>
+        </ul>
+      </div>
+      <div class="dropdown d-inline">
+        <button class="btn btn-primary mb-2" type="button" id="dropdownMenuButton6" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Reset
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton6">
+          <li><a class="dropdown-item" onclick="Reset('titleTxt')" href="#">Reset Title</a></li>
+          <li><a class="dropdown-item" onclick="Reset('txt')" href="#">Reset Text</a></li>
+        </ul>
+      </div>
+      <div class="dropdown d-inline">
+        <button class="btn btn-primary mb-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          Copy<i class="fa-solid fa-paste ps-1"></i>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" onclick="Copy('titleTxt')" href="#">Copy Title</a></li>
+          <li><a class="dropdown-item" onclick="Copy('txt')" href="#">Copy Text</a></li>
+        </ul>
+      </div>
     </div>
     <hr />
   </div>
@@ -242,8 +316,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
   </script>
+  <script src="https://kit.fontawesome.com/794f257dc8.js" crossorigin="anonymous"></script>
   <script type="module" src="./js/app.js"></script>
   <script type="module" src="./js/login.js"></script>
+  <script src="./js/Edit.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
     var typed = new Typed("#textline", {

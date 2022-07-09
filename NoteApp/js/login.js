@@ -1,6 +1,6 @@
 import {showNotes} from './app.js';
 let dropdownMenu = document.getElementsByClassName('dropdownMenu');
-let dropdownItem = document.getElementsByClassName('dropdown-item');
+let dropdownItem = document.getElementsByClassName('logindropdown');
 let closebtn = document.getElementsByClassName('closebtn');
 let id = document.getElementById('userbox');
 //On blur select button
