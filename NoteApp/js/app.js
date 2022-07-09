@@ -282,7 +282,7 @@ window.editNote = function (index) {
   let addtitle = document.getElementById("titleTxt");
   addtitle.value = User[state][index][0];
   let splitArray = [];
-  if (state != -2) {
+  if (state != 'task') {
     splitArray = User[state][index][1].split("<br/>");
   } else {
     for (let i = 0; i < User[state][index][1].length; i++) {
