@@ -202,13 +202,13 @@
       <button type="button" class="position-absolute btn-close closebtnreplace m-0" aria-label="Close"></button>
       <div class="mb-3">
         <label for="replaceOldWord" class="form-label">Type a word</label>
-        <input type="email" class="form-control" id="replaceOldWord" placeholder="Enter a existing word">
+        <input type="text" class="form-control" id="replaceOldWord" autocomplete="off" placeholder="Enter a existing word">
       </div>
       <div class="mb-3">
         <label for="replaceNewWord" class="form-label">Replace a word</label>
-        <input type="password" class="form-control" id="replaceNewWord" placeholder="Enter a new word">
+        <input type="text" class="form-control" id="replaceNewWord" autocomplete="off" placeholder="Enter a new word">
       </div>
-      <button type="button" class="btn btn-primary">Replace</button>
+      <button id="replacebtn" type="button" class="btn btn-primary">Replace</button>
     </form>
   </div>
   <!-- welcome  -->
@@ -291,11 +291,11 @@
       <div class="dropdown d-inline">
         <button class="btn btn-primary mb-2" type="button" id="dropdownMenuButton7" data-bs-toggle="dropdown"
           aria-expanded="false">
-          Replace Word
+          Replace
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton7">
-          <li><a class="dropdown-item" onclick="Replace('titleTxt')" href="#">Beautify Title</a></li>
-          <li><a class="dropdown-item" onclick="Replace('txt')" href="#">Beautify Text</a></li>
+          <li><a class="dropdown-item" onclick="Replace('titleTxt')" href="#replacemenu">Replace in Title</a></li>
+          <li><a class="dropdown-item" onclick="Replace('txt')" href="#replacemenu">Replace in Text</a></li>
         </ul>
       </div>
       <div class="dropdown d-inline">
@@ -304,8 +304,8 @@
           Reset
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton6">
-          <li><a class="dropdown-item" onclick="Reset('titleTxt')" href="#replacemenu">Reset Title</a></li>
-          <li><a class="dropdown-item" onclick="Reset('txt')" href="#replacemenu">Reset Text</a></li>
+          <li><a class="dropdown-item" onclick="Reset('titleTxt')" href="">Reset Title</a></li>
+          <li><a class="dropdown-item" onclick="Reset('txt')" href="">Reset Text</a></li>
         </ul>
       </div>
     </div>
