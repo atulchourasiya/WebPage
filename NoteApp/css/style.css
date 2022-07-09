@@ -2,6 +2,7 @@ body {
   font-family: "Crimson Text", serif;
   /* background-color: rgba(245, 255, 245, 0.788); */
   box-sizing: border-box;
+  scroll-behavior: smooth;
   overflow-y:scroll;
 }
 .letterspacing{
