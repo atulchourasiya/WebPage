@@ -2,14 +2,17 @@ import {showNotes} from './app.js';
 let dropdownMenu = document.getElementsByClassName('dropdownMenu');
 let dropdownItem = document.getElementsByClassName('logindropdown');
 let closebtn = document.getElementsByClassName('closebtn');
+sessionStorage.setItem('Open','false');
 let id = document.getElementById('userbox');
 //On blur select button
 id.onfocus = function () {
     if (id.value === 'Sign up') {
         dropdownMenu[1].style.display = 'flex';
         dropdownMenu[2].style.display = 'none';
+        sessionStorage.setItem('Open','true');
     } else if (id.value === 'Sign in' && dropdownMenu[1].style.display !== 'flex' && dropdownMenu[2].style.display !== 'flex') {
         dropdownMenu[0].style.display = 'block';
+        sessionStorage.setItem('Open','true');
     }
 };
 // handle select
@@ -21,6 +24,7 @@ window.handleSelect = function() {
         dropdownMenu[1].style.display = 'flex';
         dropdownMenu[0].style.display = 'none';
         dropdownMenu[2].style.display = 'none';
+        sessionStorage.setItem('Open','true');
     } else {
         dropdownMenu[0].style.display = 'block';
         dropdownMenu[1].style.display = 'none';
@@ -42,6 +46,7 @@ window.handleSelect = function() {
                 }
             }
         });
+        sessionStorage.setItem('Open','true');
     }
     selectLoggedUser();
 }
@@ -52,9 +57,11 @@ Array.from(dropdownItem).forEach((element, index) => {
         dropdownMenu[0].style.display = 'none';
         if (index === 0) {
             dropdownMenu[1].style.display = 'flex';
+            sessionStorage.setItem('Open','true');
             resetInputField(signUsername, signPassword, signCPassword, signSecurity, signAnswer);
         } else {
             dropdownMenu[2].style.display = 'flex';
+            sessionStorage.setItem('Open','true');
             resetInputField(forgetUsername, forgetPassword, forgetCPassword, forgetSecurity, forgetAnswer);
         }
     });
@@ -77,6 +84,7 @@ Array.from(closebtn).forEach((element, index) => {
                 break;
         }
         dropdownMenu[index].style.display = 'none';
+        sessionStorage.setItem('Open','false');
     });
 });
 // showpassword 
@@ -399,6 +407,7 @@ window.signUp = function() {
         showNotes();
         ShowUser();
         selectLoggedUser();
+        sessionStorage.setItem('Open','false');
     } else {
         alert("⚠️ Please enter valid information before Sign up!");
     }
@@ -468,6 +477,7 @@ window.changePassword = function() {
         Array.from(FirstContainer).forEach(Element => Element.style.display = 'block');
         Array.from(SecondContainer).forEach(Element => Element.style.display = 'none');
         dropdownMenu[2].style.display = 'none';
+        sessionStorage.setItem('Open','false');
     }
 }
 //Login 
@@ -491,6 +501,7 @@ window.Login = function() {
                 dropdownMenu[0].style.display = 'none';
                 showNotes();
                 selectLoggedUser();
+                sessionStorage.setItem('Open','false');
             }
         });
     }

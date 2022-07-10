@@ -57,8 +57,14 @@ function Format(id) {
 }
 //Handle Replace
 function Replace(identity) {
-   replacemenu.style.display = 'block';
-   id = document.getElementById(identity);
+   if(sessionStorage.getItem('Open')==='false')
+   {
+      replacemenu.style.display = 'block';
+      id = document.getElementById(identity);
+   }
+   else{
+      alert("⚠️ Signup/Login is in the processs!");
+   }
 }
 
 let replacebtn = document.getElementById('replacebtn');
