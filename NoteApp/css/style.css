@@ -73,9 +73,6 @@ body {
   justify-content:start;
   flex-wrap: wrap;
 }
-.editorbtn{
-  justify-content:start;
-}
 .editormargin{
   margin: .15rem;
 }
@@ -326,9 +323,6 @@ hr {
   #userbox{
     width: 100%;
   }
-  .editorbtn{
-    justify-content:center;
-  }
 }
 
 @media (min-width: 320px) and (max-width: 575.98px) {
@@ -340,9 +334,6 @@ hr {
   }
   #userbox{
     width: 100%;
-  }
-  .editorbtn{
-    justify-content:center;
   }
 }
 
@@ -356,9 +347,6 @@ hr {
   #userbox{
     width: 100%;
   }
-  .editorbtn{
-    justify-content:center;
-  }
 }
 @media (min-width: 768px) and (max-width: 991.98px) {
   .type {
@@ -366,8 +354,5 @@ hr {
   }
   #userbox{
     width: 100%;
-  }
-  .editorbtn{
-    justify-content:center;
   }
 }
