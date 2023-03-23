@@ -69,6 +69,10 @@ li {
 	width: 100%;
 	filter: brightness(0.4);
 }
+.main-section {
+	height: 100vh;
+	width: 100%;
+}
 .content {
 	display: flex;
 	align-items: center;
@@ -94,6 +98,7 @@ li {
 .heading {
 	font-size: var(--fs-700);
 }
+
 .main-heading-text {
 	margin: 0px 20vw;
 	text-align: center;
@@ -330,6 +335,9 @@ li {
 	.section-container {
 		margin: calc(var(--size-1000) * 1) 3rem !important;
 	}
+	.footerlink {
+		margin-left: 0rem;
+	}
 }
 @media (max-width: 575.98px) {
 	:root {
@@ -343,6 +351,10 @@ li {
 		width: 90vw;
 		height: inherit;
 	}
+	#partnerCarousel img {
+		width: 6rem;
+		height: 100%;
+	}
 	.heading {
 		font-size: var(--fs-600);
 	}
@@ -355,6 +367,17 @@ li {
 	}
 	.copyright {
 		font-size: 1rem;
+	}
+	.video {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		min-width: 100%;
+		min-height: 100%;
+		width: auto;
+		height: auto;
+		z-index: -100;
+		background-size: cover;
 	}
 }
 @media (min-width: 1400px) {
