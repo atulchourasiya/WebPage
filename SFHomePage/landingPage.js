@@ -283,7 +283,7 @@ const togglebtn = (event) => {
 				type: 'loop',
 				drag: 'free',
 				focus: 'center',
-				perPage: 6,
+				autoWidth : true,
 				gap: '1rem',
 				rewindByDrag: 'true',
 				arrows: false,
