@@ -265,7 +265,7 @@ li {
 }
 #tile-1 .nav-tabs li a {
 	position: relative;
-	font-size: 16px;
+	font-size: 1rem;
 	font-family: poppins;
 	border: none !important;
 	color: #333;
@@ -378,6 +378,9 @@ li {
 		height: auto;
 		z-index: -100;
 		background-size: cover;
+	}
+	#tile-1 .nav-tabs li a {
+		font-size: 0.7rem;
 	}
 }
 @media (min-width: 1400px) {
