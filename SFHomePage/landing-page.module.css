@@ -343,10 +343,6 @@ li {
 		width: 90vw;
 		height: inherit;
 	}
-	#partnerCarousel img {
-		width: 3rem;
-		height: 100%;
-	}
 	.heading {
 		font-size: var(--fs-600);
 	}
