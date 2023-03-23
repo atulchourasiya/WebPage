@@ -279,12 +279,12 @@ const togglebtn = (event) => {
 				autoplay: true
 			});
 			main.mount();
-			const splide = new Splide('#affilationCarousel', {
+			const splide = new Splide('#partnerCarousel', {
 				type: 'loop',
 				drag: 'free',
 				focus: 'center',
 				perPage: 6,
-				gap: '.5rem',
+				gap: '1rem',
 				rewindByDrag: 'true',
 				arrows: false,
 				pagination: false,

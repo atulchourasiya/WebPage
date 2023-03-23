@@ -57,9 +57,17 @@ body {
 li {
 	list-style: none;
 }
+.navbar-toggler,
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+	outline: none;
+	box-shadow: none;
+	border: none;
+}
 .video {
 	width: 100%;
-	filter: brightness(0.2);
+	filter: brightness(0.4);
 }
 .content {
 	display: flex;
@@ -79,11 +87,15 @@ li {
 	font-family: poppins;
 	text-decoration: none;
 }
+#nchhdlogo img {
+	width: 13rem;
+	height: 100%;
+}
 .heading {
 	font-size: var(--fs-700);
 }
 .main-heading-text {
-	margin: 0px 15rem;
+	margin: 0px 20vw;
 	text-align: center;
 	margin-bottom: 1rem;
 }
@@ -98,31 +110,7 @@ li {
 .table tr:nth-child(1) th {
 	border-top: none !important;
 }
-@media (hover: hover) and (pointer: fine) {
-	.banner-btn:hover {
-		color: white;
-		background-color: rgba(0, 0, 0, 0.198);
-	}
-}
 
-@media (max-width: 767.98px) {
-	:root {
-		font-size: 80%;
-	}
-	.main-heading-text {
-		margin: 0 !important;
-		text-align: center;
-		margin-bottom: 1rem;
-	}
-}
-@media (max-width: 575.98px) {
-	:root {
-		font-size: 62.5% !important;
-	}
-	.subtext {
-		width: 90%;
-	}
-}
 .links {
 	display: flex;
 	justify-content: center;
@@ -140,13 +128,6 @@ li {
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-.link:hover {
-	color: teal;
-	transition: all 200ms ease-in-out;
-	text-decoration: none;
-	border: 1px solid teal;
-}
-
 .about-list {
 	width: 80%;
 	margin-bottom: 0.5rem;
@@ -155,6 +136,9 @@ li {
 }
 .about-section {
 	background-color: #f3f3f3;
+}
+.staticsheading {
+	font-size: 6rem;
 }
 .linkcontainersection {
 	border-radius: 20px;
@@ -185,15 +169,7 @@ li {
 	height: 4.5rem;
 	font-size: var(--size-700);
 }
-.linksection:hover {
-	transform: translateY(-5%);
-	color: #262626;
-	text-decoration: none;
-	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-}
-.linksection:hover > i {
-	background-color: #ffc25279;
-}
+
 .footer-section {
 	font-family: lato;
 	font-weight: 400;
@@ -224,10 +200,9 @@ li {
 	border: none !important;
 	box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
-#affilationCarousel img{
- width: 6rem;
- height: 100%;
-
+#partnerCarousel img {
+	width: 6rem;
+	height: 100%;
 }
 /* NAVBAR */
 /* Color of the links BEFORE scroll */
@@ -290,10 +265,7 @@ li {
 	border: none !important;
 	color: #333;
 }
-#tile-1 .nav-tabs a:hover {
-	background-color: #fff !important;
-	border: none;
-}
+
 #tile-1 .slider {
 	display: inline-block;
 	width: 30px;
@@ -301,7 +273,6 @@ li {
 	border-radius: 3px;
 	background-color: #39bcd3;
 	position: absolute;
-	z-index: 1200;
 	bottom: 0;
 	transition: all 0.4s linear;
 }
@@ -317,4 +288,86 @@ li {
 }
 .btn {
 	border-radius: 20px !important;
+}
+.copyright {
+	font-size: var(--fs-400);
+}
+/* media query */
+@media (hover: hover) and (pointer: fine) {
+	.banner-btn:hover {
+		color: white;
+		background-color: rgba(0, 0, 0, 0.198);
+	}
+	.link:hover {
+		color: teal;
+		transition: all 200ms ease-in-out;
+		text-decoration: none;
+		border: 1px solid teal;
+	}
+	#tile-1 .nav-tabs a:hover {
+		background-color: #fff !important;
+		border: none;
+	}
+	.linksection:hover {
+		transform: translateY(-5%);
+		color: #262626;
+		text-decoration: none;
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+	}
+	.linksection:hover > i {
+		background-color: #ffc25279;
+	}
+}
+@media (max-width: 1199.98px) {
+	.section-container {
+		margin: calc(var(--size-1000) * 1) 5rem !important;
+	}
+}
+@media (max-width: 767.98px) {
+	.main-heading-text {
+		margin: 0 !important;
+	}
+	.section-container {
+		margin: calc(var(--size-1000) * 1) 3rem !important;
+	}
+}
+@media (max-width: 575.98px) {
+	:root {
+		font-size: 70%;
+	}
+	.main-heading {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+	}
+	#main-carousel {
+		width: 90vw;
+		height: inherit;
+	}
+	#partnerCarousel img {
+		width: 3rem;
+		height: 100%;
+	}
+	.heading {
+		font-size: var(--fs-600);
+	}
+	.about-list {
+		width: 100%;
+	}
+	.staticsheading {
+		font-size: 6rem;
+		font-family: lato;
+	}
+	.copyright {
+		font-size: .6rem;
+	}
+}
+@media (min-width: 1400px) {
+	:root {
+		font-size: 110% !important;
+	}
+}
+@media (min-width: 2000px) {
+	.main-heading-text {
+		margin: 0px 35rem;
+	}
 }
