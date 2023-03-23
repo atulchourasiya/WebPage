@@ -296,6 +296,9 @@ li {
 .copyright {
 	font-size: var(--fs-400);
 }
+.footerlink{
+	align-items: center;
+}
 /* media query */
 @media (hover: hover) and (pointer: fine) {
 	.banner-btn:hover {
@@ -335,7 +338,7 @@ li {
 		margin: calc(var(--size-1000) * 1) 3rem !important;
 	}
 	.footerlink {
-		align-items: center;
+		align-items: flex-start;
 	}
 	.main-section {
 		height: 100vh;
@@ -350,9 +353,6 @@ li {
 		height: auto;
 		z-index: -100;
 		background-size: cover;
-	}
-	.footerlink {
-		align-items: flex-start;
 	}
 }
 @media (max-width: 575.98px) {
