@@ -81,7 +81,7 @@ li {
 	height: 100%;
 	width: 100%;
 }
-.banner-btn {
+.banner-btn,.banner-btn:visited,.banner-btn:active {
 	padding: var(--size-200) var(--size-400);
 	border: 3px solid white;
 	border-radius: 5px;
@@ -114,24 +114,6 @@ li {
 .table tr:nth-child(1) th {
 	border-top: none !important;
 }
-
-.links {
-	display: flex;
-	justify-content: center;
-	position: relative;
-	z-index: 100000000;
-}
-.link {
-	background-color: #fff;
-	color: black;
-	/* min-width: 100px; */
-	border-radius: 40px;
-	text-decoration: none;
-	text-align: center;
-	border: 1px solid white;
-	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-}
-
 .about-list {
 	width: 80%;
 	margin-bottom: 0.5rem;
@@ -147,7 +129,7 @@ li {
 .linkcontainersection {
 	border-radius: 20px;
 }
-.linksection {
+.linksection,.linksection:visited,.linksection:active  {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -298,28 +280,28 @@ li {
 .footerlink{
 	align-items: center;
 }
+.footercontactlink:link,.footercontactlink:visited,.footercontactlink:active{
+	color: var(--secondary-color);
+}
 /* media query */
 @media (hover: hover) and (pointer: fine) {
 	.banner-btn:hover {
 		color: white;
 		background-color: rgba(0, 0, 0, 0.198);
 	}
-	.link:hover {
-		color: teal;
-		transition: all 200ms ease-in-out;
-		text-decoration: none;
-		border: 1px solid teal;
-	}
 	#tile-1 .nav-tabs a:hover {
 		background-color: #fff !important;
 		border: none;
 	}
-	.linksection:hover {
+	.linksection:hover{
 		transform: translateY(-5%);
 		color: #262626;
 		text-decoration: none;
 		box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 	}
+	.footercontactlink:hover{
+	color: var(--secondary-color);
+}
 	.linksection:hover > i {
 		background-color: #ffc25279;
 	}
