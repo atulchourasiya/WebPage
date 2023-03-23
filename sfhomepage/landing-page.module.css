@@ -156,15 +156,6 @@ li {
 .about-section {
 	background-color: #f3f3f3;
 }
-/* .nav-menu{
-	font-family: lato;
-	font-size: var(--fs-400);
-	padding: var(--size-100);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: max-content;
-} */
 .linkcontainersection {
 	border-radius: 20px;
 }
