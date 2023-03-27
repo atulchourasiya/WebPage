@@ -81,7 +81,9 @@ li {
 	height: 100%;
 	width: 100%;
 }
-.banner-btn,.banner-btn:visited,.banner-btn:active {
+.banner-btn,
+.banner-btn:visited,
+.banner-btn:active {
 	padding: var(--size-200) var(--size-400);
 	border: 3px solid white;
 	border-radius: 5px;
@@ -129,7 +131,9 @@ li {
 .linkcontainersection {
 	border-radius: 20px;
 }
-.linksection,.linksection:visited,.linksection:active  {
+.linksection,
+.linksection:visited,
+.linksection:active {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -186,7 +190,7 @@ li {
 	border: none !important;
 	box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
-.edimg{
+.edimg {
 	width: 5rem;
 }
 #partnerCarousel img {
@@ -257,7 +261,6 @@ li {
 
 #tile-1 .slider {
 	display: inline-block;
-	width: 30px;
 	height: 4px;
 	border-radius: 3px;
 	background-color: #39bcd3;
@@ -280,10 +283,12 @@ li {
 .copyright {
 	font-size: var(--fs-400);
 }
-.footerlink{
+.footerlink {
 	align-items: center;
 }
-.footercontactlink:link,.footercontactlink:visited,.footercontactlink:active{
+.footercontactlink:link,
+.footercontactlink:visited,
+.footercontactlink:active {
 	color: var(--secondary-color);
 }
 /* media query */
@@ -296,16 +301,19 @@ li {
 		background-color: #fff !important;
 		border: none;
 	}
-	.linksection:hover{
+	.linksection:hover {
 		transform: translateY(-5%);
 		color: #262626;
 		text-decoration: none;
 		box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 	}
-	.footercontactlink:hover{
-	color: var(--secondary-color);
-}
+	.footercontactlink:hover {
+		color: var(--secondary-color);
+	}
 	.linksection:hover > i {
+		background-color: #ffc25279;
+	}
+	.moduleDownloadBtn:hover {
 		background-color: #ffc25279;
 	}
 }
@@ -333,7 +341,7 @@ li {
 	}
 	.main-heading-text {
 		font-size: 1rem;
-		margin: 0 12vw!important;
+		margin: 0 12vw !important;
 	}
 	.video {
 		position: absolute;
@@ -353,8 +361,8 @@ li {
 		margin-bottom: 1rem;
 	}
 	.main-heading-text {
-		font-size: .8rem;
-		margin: 0 12vw!important;
+		font-size: 0.8rem;
+		margin: 0 12vw !important;
 	}
 	#main-carousel {
 		width: 90vw;
@@ -368,7 +376,6 @@ li {
 	}
 	.staticsheading {
 		font-size: 6rem;
-		font-family: lato;
 	}
 	.copyright {
 		font-size: 1rem;
@@ -386,4 +393,23 @@ li {
 	.main-heading-text {
 		margin: 0px 35rem;
 	}
+}
+
+/* contact  */
+.contactdivider {
+	position: absolute;
+	width: 3px;
+	height: 100%;
+	background-color: #ffa500;
+	display: flex;
+	flex-direction: column;
+}
+
+/* module */
+
+.moduleDownloadBtn {
+	font-family: poppins;
+	padding: 0.5rem 1rem !important;
+	box-shadow: none !important;
+	border: 2px solid black !important;
 }
