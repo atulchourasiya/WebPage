@@ -187,7 +187,7 @@ let response = [
 	}
 ];
 let moduleData = response.map((element) => {
-	return `<div class="mt-3 p-3" style="width:33%">
+	return `<div class="mt-3 p-3 modulecard">
             <div class="card" style="border-radius: 15px;">
                <div class="view overlay">
                   <img class="card-img-top "
@@ -201,7 +201,7 @@ let moduleData = response.map((element) => {
                   <p class="card-text">${createReadMore(element.description)}</p>
                   <a href=${
 										element.pdfFile
-									} class="btn moduleDownloadBtn">Download</a>
+									} class="btn moduleDownloadBtn" data-toggle="modal" data-target="#exampleModal" >Download</a>
                </div>
             </div>
          </div>`;

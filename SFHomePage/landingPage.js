@@ -1,14 +1,14 @@
 $('#tile-1 .nav-tabs a').click(function () {
 	var position = $(this).parent().position();
+	console.log(position);
 	var width = $(this).parent().width();
-	console.log(width)
 	$('#tile-1 .slider').css({ left: +position.left, width: width });
 });
 
 // const navTabs = document.querySelectorAll('#tile-1 .nav-tabs a');
 // navTabs.forEach(function (tab) {
 // 	tab.addEventListener('click', function () {
-// 		const position = this.parentNode.getBoundingClientRect();
+// 		const position = this.parentNode.offsetLeft();
 // 		console.log(position);
 // 		const width = this.parentNode.offsetWidth;
 // 		console.log(width);
@@ -269,6 +269,7 @@ function handleMeeting() {
 			});
 		});
 }
+
 handleMeeting();
 handleNotifications();
 handleEvent();

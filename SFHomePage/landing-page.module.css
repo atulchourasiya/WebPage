@@ -25,6 +25,7 @@
 	--primary-color: #ffffff;
 	--secondary-color: black;
 	--heading-color: #ffa500;
+	--hover-color: #ffc25279;
 	--subheading-color: #acacac;
 }
 .font-400 {
@@ -291,6 +292,9 @@ li {
 .footercontactlink:active {
 	color: var(--secondary-color);
 }
+.modulecard {
+	width: 33%;
+}
 /* media query */
 @media (hover: hover) and (pointer: fine) {
 	.banner-btn:hover {
@@ -311,10 +315,10 @@ li {
 		color: var(--secondary-color);
 	}
 	.linksection:hover > i {
-		background-color: #ffc25279;
+		background-color: var(--hover-color);
 	}
 	.moduleDownloadBtn:hover {
-		background-color: #ffc25279;
+		background-color: var(--hover-color);
 	}
 }
 @media (max-width: 1199.98px) {
@@ -383,6 +387,9 @@ li {
 	#tile-1 .nav-tabs li a {
 		font-size: 0.6rem;
 	}
+	.modulecard {
+		width: 100%;
+	}
 }
 @media (min-width: 1400px) {
 	:root {
@@ -412,4 +419,21 @@ li {
 	padding: 0.5rem 1rem !important;
 	box-shadow: none !important;
 	border: 2px solid black !important;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-control-underlined {
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-radius: 0;
+  padding-left: 0;
+}
+
+.form-control::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
 }
