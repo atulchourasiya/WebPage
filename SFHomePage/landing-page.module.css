@@ -315,6 +315,9 @@ li {
 .modulecard {
 	width: 33%;
 }
+.hamburgerSize{
+	width: 1.2rem;
+}
 .iconSize {
 	width: 1rem;
 }
