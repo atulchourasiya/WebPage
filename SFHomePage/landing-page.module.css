@@ -67,6 +67,12 @@ li {
 	box-shadow: none !important;
 	border: none !important;
 }
+.navbar .navbar-nav .nav-item a{
+	color: #000;
+}
+.btn{
+	text-transform: none!important;
+}
 .video {
 	width: 100%;
 	filter: brightness(0.4);
