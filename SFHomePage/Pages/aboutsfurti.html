@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta name="keywords" content="cohands" />
+   <meta name="description"
+      content="NCHHD is the first FMS and MIS web application aiding the function of the SFURTI scheme." />
+   <title>NCHHD: FMS & MIS For SFURTI Handcrafts & Handloom Clusters</title>
+   <link rel="stylesheet" href="../landing-page.module.css" />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+      <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+      <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+         crossorigin="anonymous"></script>
+   <script defer src="../cookieconsent.js"></script>
+   <script defer src="../navbardropdown.js"></script>
+</head>
+
+<body>
+   <nav class="navbar navbar-expand-lg sticky-top navbar-light"
+      style="background-color: #fff; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+      <div class="container">
+         <a class="navbar-brand" id="nchhdlogo" href="/"><img src="../assets/nchhdlogo.png" alt=""></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="iconSize" viewBox="0 0 448 512">
+               <path
+                  d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+            </svg>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto align-items-md-center align-items-start">
+               <li class="nav-item font-poppins">
+                  <a class="nav-link mx-1 d-flex justify-content-center align-items-center" href="/index.html"><svg
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="iconSize mr-1">
+                        <path
+                           d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
+                     </svg>Home</a>
+               </li>
+               <li id="navbarDropdown" class="nav-item font-poppins">
+                  <a class="nav-link mx-1  d-flex justify-content-center align-items-center" href="#" role="button"
+                     aria-haspopup="true" aria-expanded="false">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="iconSize mr-1">
+                        <path
+                           d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                     </svg>
+                     About Us
+                  </a>
+                  <ul id="dropdownContainer"
+                     class="rounded font-poppins p-0 py-2 d-flex flex-column position-absolute  justify-content-center align-items-start"
+                     style="background-color: #fff;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;z-index: 1000;top: -300%;">
+                     <li class="px-3 py-1"><a class="d-flex align-items-center" href="./aboutsfurti.html">About
+                           Sfurti</a></li>
+                     <li class="px-3 py-1"><a class="d-flex align-items-center" href="./faq.html">FAQ</a></li>
+                     <li class="px-3 py-1"><a class="d-flex align-items-center" href="./privacypolicy.html">Privacy
+                           Policy</a></li>
+                     <li class="px-3 py-1"><a class="d-flex align-items-center" href="./cookiepolicy.html">Cookie
+                           Policy</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item font-poppins">
+                  <a class="nav-link mx-1  d-flex justify-content-center align-items-center"
+                     href="/Pages/contact.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                        class="iconSize mr-1">
+                        <path
+                           d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64h96v80c0 6.1 3.4 11.6 8.8 14.3s11.9 2.1 16.8-1.5L309.3 416H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64z" />
+                     </svg>Contact Us</a>
+               </li>
+               <li class="nav-item font-poppins">
+                  <a class="nav-link mx-1  d-flex justify-content-center align-items-center" href="/Pages/Tender.html">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="iconSize mr-1">
+
+                        <path
+                           d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM112 256H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
+                     </svg>
+                     Tenders</a>
+               </li>
+               <li class="nav-item font-poppins">
+                  <a class="nav-link mx-1 d-flex justify-content-center align-items-center"
+                     href="/Pages/module.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                        class="iconSize mr-1">
+                        <path
+                           d="M0 32C0 14.3 14.3 0 32 0H160c17.7 0 32 14.3 32 32V416c0 53-43 96-96 96s-96-43-96-96V32zM223.6 425.9c.3-3.3 .4-6.6 .4-9.9V154l75.4-75.4c12.5-12.5 32.8-12.5 45.3 0l90.5 90.5c12.5 12.5 12.5 32.8 0 45.3L223.6 425.9zM182.8 512l192-192H480c17.7 0 32 14.3 32 32V480c0 17.7-14.3 32-32 32H182.8zM128 64H64v64h64V64zM64 192v64h64V192H64zM96 440a24 24 0 1 0 0-48 24 24 0 1 0 0 48z" />
+                     </svg>Modules</a>
+               </li>
+               <li class="nav-item font-poppins ms-3">
+                  <a class="btn rounded-pill px-3" href="https://www.cohandsindia.com/iafdashboard/#/login"
+                     style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(255, 170, 73, 0.23) 0px 3px 6px;background-color:#17a2b8;color:#fff">Sign
+                     in</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </nav>
+   <section class="section-container  my-4">
+      <h1 class="font-lato">An Explanation About SFURTI Scheme: Application, Funding and
+         Complete Procedure</h1>
+      <img src="https://www.cohandsindia.com/aboutsfurti.jpg" style="width: 100%;">
+      <h2 class="font-lato">Introduction</h2>
+      <p class="font-poppins">
+         The Scheme of Funds for Regeneration of Traditional Industries (SFURTI) is a scheme launched in the year
+         2004 by the
+         Government of India, for the regeneration of Traditional Industry.
+      </p>
+      <p class="font-poppins">
+         The scheme is made with the objective to create traditional industry clusters and in providing financial
+         aid
+         for the
+         manufacturing, designing, and marketing.
+      </p>
+      <p class="font-poppins">
+         Khadi, Coir and other village handloom and handicraft products are industries which comes under the
+         traditional industry
+         sector. The scheme aims to fund upto Rs. 5 Crore for a cluster and is managed by the <a
+            href="https://msme.gov.in" target="_blank">Ministry of Micro,
+            Small and Medium
+            Enterprise</a> (MSME).
+      </p>
+      <p class="font-poppins">
+         Till date the scheme has successfully approved 498 clusters all over India with almost 3 lakh artisans
+         have
+         taken
+         advantage from it. 251 clusters of these cluster under SFURTI scheme are functional as well.
+      </p>
+      <h2 class="font-lato">Aims and Objectives</h2>
+      <p class="font-poppins font-weight-light">As per the new guidelines of the scheme, it has following aims and
+         objectives:</p>
+      <ul class="font-poppins">
+         <li style="list-style-type:square;">Establishing clusters for traditional industries and artisans making
+            provision for long-term
+            sustainability and
+            support for them.</li>
+         <li style="list-style-type:square;">A sustainable model of employment for traditional industry artisans and
+            rural entrepreneurs.</li>
+         <li style="list-style-type:square;">Providing support for new products, design intervention and packaging for
+            enhancing the marketability
+            of
+            the products.</li>
+         <li style="list-style-type:square;">Setting up of common facility centers (CFCs) wherein, tools and
+            equipment for
+            artisans available.</li>
+         <li style="list-style-type:square;">Building a robust cluster governance system where there is an active
+            participation of stakeholders
+            for
+            facing future
+            challenges and opportunities.</li>
+         <li style="list-style-type:square;">Establishing an innovative and improved technologies for enhancing
+            traditional skills and advance
+            processes to
+            gradually replicate similar models of cluster based regenerated traditional industries.</li>
+         <li style="list-style-type:square;">Searching and setting up of multi-product groups.</li>
+         <li style="list-style-type:square;">Targeting with the objective to understand cluster target
+            customer.</li>
+         <li style="list-style-type:square;">Fostering a multi-product line for a cluster.</li>
+         <li style="list-style-type:square;">Creating a shift from a supply-driven model of selling to a market-driven
+            model.</li>
+         <li style="list-style-type:square;">Develop a web-based ecommerce store in outreaching growing the market of
+            the clusters.</li>
+         <li style="list-style-type:square;">To take advantage of the possibilities of the e-retail space.</li>
+         <li style="list-style-type:square;">To put resources into the area of product design and quality improvement.
+         </li>
+      </ul>
+
+      <h2 class="font-lato">SFURTI Project Intervention for Developing Clusters</h2>
+      <p class="font-poppins">Cluster development is the essential part under the SFURTI Scheme. The Ministry of MSME
+         sanctions funds
+         for
+         each cluster
+         according to the nature of intervention required.</p>
+      <p class="font-poppins">
+         To develop a cluster, it requires a setting up of common facility center where tools &amp; equipment,
+         machinery
+         and a
+         raw-material bank are placed for providing training to the artisans.
+      </p>
+      <p class="font-poppins">
+         Therefore, in a SFURTI project, the development of a cluster requires following kind of interventions.
+      </p>
+      <ul>
+         <li>
+            <h3 class="font-lato">Soft Interventions</h3>
+         </li>
+         <p class="font-poppins">Under Soft Intervention the project features following list of activities:</p>
+         <ul style="list-style-type: numeric">
+            <li class="font-poppins" style="list-style-type: square">General awareness, counseling, motivation and
+               trust-building.</li>
+            <li class="font-poppins" style="list-style-type: square">
+               Skill development and capacity building for the entire value chain of different skills need to be
+               imparted.</li>
+            <li class="font-poppins" style="list-style-type: square">Institution development.</li>
+            <li class="font-poppins" style="list-style-type: square">Exposure visits.</li>
+            <li class="font-poppins" style="list-style-type: square">Market promotion initiatives.</li>
+            <li class="font-poppins" style="list-style-type: square">Design and product development.</li>
+            <li class="font-poppins" style="list-style-type: square">Participation in seminars, workshops and training
+               programmers on technology, up-gradation, etc.
+            </li>
+         </ul>
+      </ul>
+      <ul>
+         <li>
+            <h3 class="font-lato">Hard Interventions</h3>
+         </li>
+         <p class="font-poppins">Hard Intervention features creation following facilities:</p>
+         <ul style="list-style-type: numeric">
+            <li class="font-poppins" style="list-style-type: square;">Multiple facilities for multiple products and
+               packaging wherever needed</li>
+            <li class="font-poppins" style="list-style-type: square;">Common facility centres (CFCs);</li>
+            <li class="font-poppins" style="list-style-type: square;"> Raw material banks (RMBs);</li>
+            <li class="font-poppins" style="list-style-type: square;">Up-gradation of production infrastructure;</li>
+            <li class="font-poppins" style="list-style-type: square;">Tools and technological up-gradation such as
+               charkha up-gradation, tool-kit distribution etc.</li>
+            <li class="font-poppins" style="list-style-type: square;">Warehousing facility.</li>
+            <li class="font-poppins" style="list-style-type: square;">Training centre;</li>
+            <li class="font-poppins" style="list-style-type: square;">Value addition and processing centre/
+               multi-products</li>
+         </ul>
+      </ul>
+      <ul>
+         <li>
+            <h3 class="font-lato">Thematic Interventions</h3>
+         </li>
+         <p class="font-poppins">Thematic intervention works more as an addition to support provided in Hard and Soft
+            Interventions.
+         </p>
+         <p class="font-poppins">
+            A cluster developing products in one type of a sector then the other clusters belonging to the same
+            sector
+            type will
+            collaborate in featuring themselves in domestic and international markets.</p>
+         <p class="font-poppins">Therefore, under thematic intervention following activities are done:</p>
+         <ul style="list-style-type: numeric">
+            <li class="font-poppins" style="list-style-type: square;">Brand building and promotion campaign;</li>
+            <li class="font-poppins" style="list-style-type: square;">New media marketing;</li>
+            <li class="font-poppins" style="list-style-type: square;">E-Commerce initiatives;</li>
+            <li class="font-poppins" style="list-style-type: square;">Innovation;</li>
+            <li class="font-poppins" style="list-style-type: square;">Research &amp; development initiatives; and</li>
+            <li class="font-poppins" style="list-style-type: square;">Developing institutional linkages with the
+               existing &amp; proposed clusters.</li>
+         </ul>
+      </ul>
+      <h3 class="font-lato">Institutions Involved in SFURTI</h3>
+      <p class="font-poppins">The process of cluster development requires involvement on necessary institution or
+         agencies defined
+         under
+         the scheme
+         guidelines, which are as following:</p>
+      <ul style="list-style-type: upper-alpha">
+         <li class="font-poppins" style="list-style-type: square;">Scheme Steering Committee</li>
+         <li class="font-poppins" style="list-style-type: square;">Nodal Agency</li>
+         <li class="font-poppins" style="list-style-type: square;">Technical Agency</li>
+         <li class="font-poppins" style="list-style-type: square;">Implementing Agency</li>
+         <li class="font-poppins" style="list-style-type: square;">Special Purpose Vehicle</li>
+         <li class="font-poppins" style="list-style-type: square;">Working Committee</li>
+      </ul>
+      <p class="font-poppins">So let us now understand in detail the duties and functions of these institutions in
+         developing cluster:
+      </p>
+      <ul style="list-style-type:upper-alpha">
+         <li>
+            <h3 class="font-lato">Scheme Steering Committee (SSC):</h3>
+         </li>
+         <p class="font-poppins">An SSC functions by providing overall policy, coordination and management of the scheme
+            with Ministry
+            of
+            MSME. An SSC is
+            constituted having the following list of members in it:</p>
+         <div class="d-flex justify-content-center">
+
+            <table border="1" class="rounded font-poppins" style="border-collapse: collapse;">
+               <tbody>
+                  <tr>
+                     <td class="p-1">1</td>
+                     <td class="p-1">Secretary, Ministry of MSME</td>
+                     <td class="p-1">Chairman</td>
+                  </tr>
+                  <tr>
+                     <td class="p-1">2</td>
+                     <td class="p-1">Additional Secretary and Development Commissioner (MSME)</td>
+                     <td class="p-1">Member</td>
+                  </tr>
+                  <tr>
+                     <td class="p-1">3</td>
+                     <td class="p-1">Additional Secretary and Financial Adviser (AS &amp; FA), Ministries of MSME (or a
+                        representative)</td>
+                     <td class="p-1">Member</td>
+                  </tr>
+                  <tr>
+                     <td class="p-1">4</td>
+                     <td class="p-1">Principal Adviser, PAMD, Niti Aayog</td>
+                     <td class="p-1">Member</td>
+                  </tr>
+                  <tr>
+                     <td class="p-1">5</td>
+                     <td class="p-1">Chief Executive Officer, KVIC</td>
+                     <td class="p-1">Member</td>
+                  </tr>
+                  <tr>
+                     <td class="p-1">6</td>
+                     <td class="p-1">Secretary, Coir Board</td>
+                     <td class="p-1">Member</td>
+                  </tr>
+                  <tr>
+                     <td class="p-1">7</td>
+                     <td class="p-1">Representative of Indian Banks Association (IBA)</td>
+                     <td class="p-1">Member</td>
+                  </tr>
+                  <tr>
+                     <td class="p-1">8</td>
+                     <td class="p-1">Representative of National Bank for Agriculture and Rural Development (NABARD)</td>
+                     <td class="p-1">Member</td>
+                  </tr>
+                  <tr>
+                     <td class="p-1">9</td>
+                     <td class="p-1">5 Cluster Experts- to be nominated by Ministry of MSME</td>
+                     <td class="p-1">Member</td>
+                  </tr>
+                  <tr>
+                     <td class="p-1">10</td>
+                     <td class="p-1">DC (Handlooms)</td>
+                     <td class="p-1">Member</td>
+                  </tr>
+                  <tr>
+                     <td class="p-1">11</td>
+                     <td class="p-1">DC (Handicrafts)</td>
+                     <td class="p-1">Member</td>
+                  </tr>
+                  <tr>
+                     <td class="p-1">12</td>
+                     <td class="p-1">Joint Secretary (NRLM), Ministry of Rural Development</td>
+                     <td class="p-1">Member</td>
+                  </tr>
+                  <tr>
+                     <td class="p-1">13</td>
+                     <td class="p-1">Joint Secretary, Ministry of Food Processing Industry</td>
+                     <td class="p-1">Member</td>
+                  </tr>
+                  <tr>
+                     <td class="p-1">14</td>
+                     <td class="p-1">Joint Secretary, Ministry of MSME</td>
+                     <td class="p-1">Member Convener</td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <p class="font-poppins">An Implementing Agency (IA) makes the proposal for establishing the cluster on behalf
+            of the Nodal
+            Agency
+            before the
+            SSC.</p>
+         <p class="font-poppins">
+            The SSC after attaining proper documentation and reviewing the necessary criteria in it, can grant or
+            reject the
+            proposal for the cluster.</p>
+         <li>
+            <h3 class="font-lato">Nodal Agency</h3>
+         </li>
+         <p class="font-poppins">A Nodal Agency is a national level institution which has sectoral expertise in a major
+            or sub-sector
+            of a
+            traditional
+            industry and are operating in the field of cluster development for the last five years.</p>
+
+         <p class="font-poppins">
+            After approval of a proposal by SSC, the newly approved cluster is assigned to the NA. It is selected
+            on
+            the basis of
+            its competency in cluster development, project management and facilitation of access to the market for
+            the
+            traditional
+            industry.
+         </p>
+
+         <p class="font-poppins">
+            A cluster will be assigned to such nodal agency registered under any of the above-mentioned laws.</p>
+         <li>
+            <h3 class="font-lato">Technical Agency</h2>
+         </li>
+         <p class="font-poppins">
+            Technical Agencies are selected by Nodal Agencies. A <a
+               href="https://www.consultantsf.com/sfurti/hand-holding-as-a-technical-agency/" target="_blank">Technical
+               Agency</a> is a national level institution,
+            which has a
+            proven expertise in artisanal training and development of small enterprise clusters.
+         </p>
+         <p class="font-poppins">
+            A TA generally provides all kind of technical support to NAs and IAs which is also known as under SFURTI.
+         </p>
+         <p class="font-poppins">
+            Some important tasks performed by the TA are:
+         </p>
+         <ul style="list-style-type: lower-roman">
+            <li class="font-poppins" style="list-style-type: square;">Preparation of DPR with NA &amp; IA.</li>
+            <li class="font-poppins" style="list-style-type: square;">Preparing and validating Cluster Action Plan.</li>
+            <li class="font-poppins" style="list-style-type: square;">Conducting training of Cluster Development
+               Executive (CDE) and other officials of IA.</li>
+            <li class="font-poppins" style="list-style-type: square;">Preparation of timeline on the stages of project
+               intervention.</li>
+         </ul>
+         <li>
+            <h3 class="font-lato">Implementing Agency</h3>
+         </li>
+         <p class="font-poppins">
+            An Implementing Agency is a non-government organization or institution established by Centre or State
+            Government or a
+            semi-Government institution or a field functionary of State / Central Government or a Panchayati Raj
+            Institution which
+            have an expertise in cluster development.</p>
+
+         <p class="font-poppins">
+            Private Sector enterprise are also allowed to participate in implementing cluster project. Such as
+            Corporate or
+            Corporate Social Responsibility (CSR) foundation which have an expertise in cluster development are
+            encouraged to become
+            IA.
+         </p>
+
+         <p class="font-poppins">
+            The IA is allowed to work on development of one cluster only. However, if the IA have a state-wide
+            coverage, it can set
+            up more clusters after proper assessment by NAs.</p>
+
+         <p class="font-poppins">
+            An IA is appointed after reviewing its past experience at the grass root level and it is appointed by
+            a
+            Nodal Agency
+            (NA).</p>
+
+         <p class="font-poppins">
+            The primary goal of the IA is cluster development and it takes all necessary steps as per the Cluster
+            Development
+            Program and to take steps for its further development.</p>
+
+         <p class="font-poppins">
+            The IA also appoints a Cluster Development Executive (CDE) on a full-time executive role who will be
+            responsible for the
+            implementation of the project as per the approved DPR.
+         </p>
+         <li>
+            <h3 class="font-lato">Special Purpose Vehicle (SPV)</h2>
+         </li>
+         <p class="font-poppins">For establishment of any cluster, formation of <a
+               href="https://www.consultantsf.com/sfurti/everything-you-should-know-about-special-purpose-vehicle-spv-in-sfurti/"
+               target="_blank">SPV</a> is required. The SPV is formed by the IA and after the
+            completion of
+            project interventions, the SPV will sustain the cluster.
+         </p>
+         <p class="font-poppins">
+            An SPV is established and registered under the following laws:</p>
+         <ul style="list-style-type: numeric">
+            <li class="font-poppins" style="list-style-type: square;">A Society under Societies (Registration) Act,
+               1860;</li>
+            <li class="font-poppins" style="list-style-type: square;">A Co-operative Society under an appropriate
+               statute;</li>
+            <li class="font-poppins" style="list-style-type: square;">A Producer Company under Section 465(1) of
+               Companies Act, 2013 (18 of 2013);</li>
+            <li class="font-poppins" style="list-style-type: square;">Under Section 8 of the Companies Act, 2013 (18 of
+               2013)</li>
+            <li class="font-poppins" style="list-style-type: square;">A Trust;</li>
+            <li class="font-poppins" style="list-style-type: square;">Any other legal entity, with the prior approval of
+               SSC.</li>
+         </ul>
+         <p class="font-poppins">In case a Panchayati Raj Institute develops a cluster and becomes an IA, it can form an
+            SPV wherein,
+            it
+            will dedicate
+            33% of the shareholding to micro-enterprise or benefactor of the cluster.</p>
+         <li>
+            <h3 class="font-lato">Working Committee</h3>
+         </li>
+         <p class="font-poppins">A working committee is the executive body of the SPV which looks after and plans out
+            the
+            sustainability
+            of a cluster.
+            The working committee will meet in the establishing CFCs, including facilities and infrastructure
+            using
+            aid provided by
+            the Government under the scheme.</p>
+         <p class="font-poppins">
+            The working committee will compromise the following list members:</p>
+         <ul style="list-style-type: numeric">
+            <li class="font-poppins" style="list-style-type: square;">A Chief Functionary of the IA, will be the
+               Convener.</li>
+            <li class="font-poppins" style="list-style-type: square;">Representative of a Nationalized bank operating in
+               the area;</li>
+            <li class="font-poppins" style="list-style-type: square;">3-artisans nominated by the IA (including at least
+               one woman) on an annual rotational basis,
+               re-nomination will not
+               be allowed for five years.</li>
+            <li class="font-poppins" style="list-style-type: square;">Representative of the NA; and</li>
+            <li class="font-poppins" style="list-style-type: square;">GM, DIC or his representative.</li>
+         </ul>
+         <p class="font-poppins">The members of the working committee will meet at least once in a month to review the
+            operational and
+            maintenance of the
+            Cluster as well of the CFC.</p>
+      </ul>
+      <h2 class="font-lato">How Financial Aid Is Given?</h2>
+      <p class="font-poppins">
+         In SFURTI Scheme a financial assistance to a maximum of Rs. 5 Crore for creating a traditional industry
+         cluster.</p>
+      <p class="font-poppins">
+         The responsibility for providing funds and aid is made by the NA which is received by the Ministry of
+         MSME
+         for any
+         cluster development project.</p>
+      <p class="font-poppins">
+         The <a href="https://www.consultantsf.com/sfurti/apply-assistance-sfurti-scheme/" target="_blank">method
+            of
+            financial assistance</a> under the scheme is classified according to the following criteria
+         mentioned in the
+         table below:
+      </p>
+      <div class="d-flex justify-content-center m-2">
+         <table border="1" class="rounded font-poppins" style="border-collapse: collapse;">
+            <thead>
+               <tr>
+                  <th class="p-1">Type of Clusters</th>
+                  <th class="p-1">Per Cluster Budget Limit</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr>
+                  <td class="p-1">Regular Clusters (upto 500 artisans)</td>
+                  <td class="p-1">Rs 2.50 Crore</td>
+               </tr>
+               <tr>
+                  <td class="p-1">Major Cluster (more than 500 artisans)</td>
+                  <td class="p-1">Rs. 5.00 Crore</td>
+               </tr>
+            </tbody>
+         </table>
+      </div>
+      <p class="font-poppins">
+         The funding is made as per the estimated project cost as per DPR.</p>
+      <p class="font-poppins">
+         A cost of project is arrived after calculating the cost incurred in hard intervention and soft
+         intervention.
+         It also
+         includes the cost of professional services by the TA, the cost incurred by the IA for engaging a CDE and
+         other
+         administrative expense incurred by the TA.</p>
+      <p class="font-poppins">
+         The ministry transfers the funds to an NA under two heads which are:
+      </p>
+      <ul style="list-style-type: numeric">
+         <li class="font-poppins" style="list-style-type: square;">SFURTI Programme Fund</li>
+         <li class="font-poppins" style="list-style-type: square;">SFURTI Administrative Fund</li>
+      </ul>
+      <p class="font-poppins">These funds are used to meet out the expense and other project related cost for a cluster.
+      </p>
+
+      <h2 class="font-lato">Conclusion</h2>
+      <p class="font-poppins">
+         The aim and objective of the SFURTI scheme is to uplift the traditional industry sector and make its
+         product
+         available
+         world-wide.</p>
+
+      <p class="font-poppins">
+         The scheme does its job by providing funding to clusters. This financial assistance create initiative for
+         a
+         national
+         level institute as well as private sector entities to participate in cluster development.</p>
+
+      <p class="font-poppins">
+         The business plan of a cluster drafted looking at profitability and future sustainability of the cluster.
+         The core
+         motive is to make clusters self-reliant in attracting investment and generating income for the artisans
+         working under
+         it. Therefore, SFURTI scheme is a mixture of business model and a
+         government program for
+         uplifting the
+         backward
+         citizens of the country.</p>
+
+      <p class="font-poppins">
+         <a href="https://cohandsindia.com" target="_blank">NCHHD</a> is a national level institution and have
+         experience in setting up handloom and handicraft clusters
+         all over
+         India.
+      </p>
+
+      <p class="font-poppins">
+         We have assisted several IAs in aiding them with a robust model of application and compliance system with
+         our
+         state-of-the-art Financial Management System and Management Interface System on our website.
+      </p>
+   </section>
+   <!-- footer -->
+   <footer>
+      <div class="footer-section  bg-light">
+         <section class="my-0 section-container py-5">
+            <div class="row d-flex justify-content-between" style="width: 100%;">
+               <div class="col-md-4 col-12 d-flex flex-column my-2 my-md-0">
+                  <h2 class="footer-heading">About NCHHD FMS & MIS</h2>
+                  <p>The FMS and MIS 2.0 is a digital platform that simplifies the management of cluster funds for
+                     IAs
+                     working under NCHHD,
+                     featuring various tools such as email support, reporting, and a Management Information System
+                     for
+                     comprehensive
+                     monitoring and decision-making.<br> Its flexible design allows for future adaptability and
+                     scalability.</p>
+               </div>
+               <div class="col-md-4 d-flex footerlink flex-column my-2 my-md-0">
+                  <div>
+                     <h2 class="footer-heading">Links</h2>
+                     <ul class="d-flex p-0 flex-column">
+                        <li><a class=" text-dark" href="index.html">Home</a></li>
+                        <li><a class=" text-dark" href="https://cohandsindia.com/sfurti-scheme-about.html">About
+                              Sfurti</a>
+                        </li>
+                        <li><a class=" text-dark" href="https://cohandsindia.com/faq.html">FAQ</a></li>
+                        <li><a class=" text-dark" href="opentenders.html">Tenders</a></li>
+                        <li><a class=" text-dark" href="./contact.html">Contact Us</a></li>
+                        <li><a class=" text-dark" href="cohandsindia_sitemap.xml">Site Map</a></li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col-md-4 d-flex flex-column my-2 my-md-0">
+                  <h2 class="footer-heading">Contact</h2>
+                  <div class="d-flex">
+                     <div class="col-1 p-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                           class="bi bi-geo-alt-fill mr-2" viewBox="0 0 16 16">
+                           <path
+                              d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
+                        </svg>
+                     </div>
+                     <div class="col-11 pl-0"><a class="footercontactlink"
+                           href="https://www.google.com/maps/place/August+Kranti+Bhawan+Bhikaji+Cama+Place/@28.5665232,77.1866064,17z/data=!3m1!4b1!4m6!3m5!1s0x390d1d869db47d9d:0xc39e79e91edf34fb!8m2!3d28.5665232!4d77.1887951!16s%2Fg%2F11bysjvy1lhttps://www.google.com/maps/place/August+Kranti+Bhawan+Bhikaji+Cama+Place/@28.5665232,77.1866064,17z/data=!3m1!4b1!4m6!3m5!1s0x390d1d869db47d9d:0xc39e79e91edf34fb!8m2!3d28.5665232!4d77.1887951!16s%2Fg%2F11bysjvy1l">No.
+                           122-123,Ground Floor, August Kranti Bhawan, Handloom Haveli, Bhikaji Cama
+                           Palace,
+                           New Delhi
+                           -110066, India</a></div>
+                  </div>
+                  <div class="d-flex">
+                     <div class="col-1 p-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                           fill="currentColor" class="bi bi-telephone-outbound-fill mr-2" viewBox="0 0 16 16">
+                           <path fill-rule="evenodd"
+                              d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z" />
+                        </svg></div>
+                     <div class="col-11 pl-0"><a class="footercontactlink"
+                           href="tel:+91-11-26176431">+91-11-26176431</a>
+                     </div>
+                  </div>
+                  <div class="d-flex">
+                     <div class="col-1 p-0">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                           class="bi bi-card-text mr-2" viewBox="0 0 16 16">
+                           <path
+                              d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
+                           <path
+                              d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z" />
+                        </svg>
+                     </div>
+                     <div class="col-11 pl-0"><a class="footercontactlink"
+                           href="tel:+91-11-26174269">+91-11-26174269</a>
+                     </div>
+                  </div>
+                  <div class="d-flex">
+                     <div class="col-1 p-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                           fill="currentColor" class="bi bi-envelope-fill mr-2" viewBox="0 0 16 16">
+                           <path
+                              d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                        </svg></div>
+                     <div class="col-11 pl-0"><a class="footercontactlink"
+                           href="mailto:contact@sfurticohands.com">contact@sfurticohands.com</a></div>
+                  </div>
+                  <div class="d-flex">
+                     <div class="col-1 p-0"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                           fill="currentColor" class="bi bi-globe-asia-australia mr-2" viewBox="0 0 16 16">
+                           <path
+                              d="m10.495 6.92 1.278-.619a.483.483 0 0 0 .126-.782c-.252-.244-.682-.139-.932.107-.23.226-.513.373-.816.53l-.102.054c-.338.178-.264.626.1.736a.476.476 0 0 0 .346-.027ZM7.741 9.808V9.78a.413.413 0 1 1 .783.183l-.22.443a.602.602 0 0 1-.12.167l-.193.185a.36.36 0 1 1-.5-.516l.112-.108a.453.453 0 0 0 .138-.326ZM5.672 12.5l.482.233A.386.386 0 1 0 6.32 12h-.416a.702.702 0 0 1-.419-.139l-.277-.206a.302.302 0 1 0-.298.52l.761.325Z" />
+                           <path
+                              d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM1.612 10.867l.756-1.288a1 1 0 0 1 1.545-.225l1.074 1.005a.986.986 0 0 0 1.36-.011l.038-.037a.882.882 0 0 0 .26-.755c-.075-.548.37-1.033.92-1.099.728-.086 1.587-.324 1.728-.957.086-.386-.114-.83-.361-1.2-.207-.312 0-.8.374-.8.123 0 .24-.055.318-.15l.393-.474c.196-.237.491-.368.797-.403.554-.064 1.407-.277 1.583-.973.098-.391-.192-.634-.484-.88-.254-.212-.51-.426-.515-.741a6.998 6.998 0 0 1 3.425 7.692 1.015 1.015 0 0 0-.087-.063l-.316-.204a1 1 0 0 0-.977-.06l-.169.082a1 1 0 0 1-.741.051l-1.021-.329A1 1 0 0 0 11.205 9h-.165a1 1 0 0 0-.945.674l-.172.499a1 1 0 0 1-.404.514l-.802.518a1 1 0 0 0-.458.84v.455a1 1 0 0 0 1 1h.257a1 1 0 0 1 .542.16l.762.49a.998.998 0 0 0 .283.126 7.001 7.001 0 0 1-9.49-3.409Z" />
+                        </svg></div>
+                     <div class="col-11 pl-0"><a class="footercontactlink"
+                           href="https://cohands.in">www.cohands.in</a>&nbsp;|&nbsp;<a class="footercontactlink"
+                           href="https://sfurticohands.com">www.sfurticohands.com</a></div>
+                  </div>
+               </div>
+            </div>
+         </section>
+      </div>
+      <div class="p-3  py-2 d-flex text-light justify-content-center "
+         style="background-color: var(--secondary-color);">
+         <div class="d-flex flex-wrap copyright" style="font-family: sans-serif;font-weight: lighter;">
+            2023 © All Rights Reserved NCHHD&nbsp;|&nbsp;<span>&nbsp;Designed and Developed with ❤️ By Folks at <a
+                  href="https://www.consultantsf.com/">SF Consultant</a></span>
+         </div>
+      </div>
+   </footer>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=G-8S95WQPZ49"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+         dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-8S95WQPZ49');
+   </script>
+</body>
+
+</html>

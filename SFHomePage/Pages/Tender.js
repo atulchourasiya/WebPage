@@ -23,7 +23,7 @@ function handleTender(url) {
 		.then((res) => res.json())
 		.then((response) => {
 			let TenderContainer = document.getElementById('tenderDataContainer');
-			TenderContainer.innerHTML = ''
+			TenderContainer.innerHTML = '';
 			response.data.forEach((tender) => {
 				let str = `
 						<td class="font-poppins pl-4">${tender.Number}</td>
@@ -71,7 +71,7 @@ function displayPagination() {
 		li.classList.add('page-item');
 		if (i === currentPage) {
 			li.classList.add('active');
-			li.innerHTML = `<button  class='page-link' style='background-color:var(--hover-color);border-color:var(--hover-color);'>
+			li.innerHTML = `<button  class='page-link bg-info border-info'>
 									${i} <span class='sr-only'>(current)</span>
 								</button>`;
 		} else {
@@ -96,7 +96,8 @@ document.getElementById('tenderSearchBar').addEventListener('input', (event) => 
 		return;
 	}
 	items.forEach((item) => {
-		if (item.innerText.toLowerCase().includes(searchText)) {
+		let text = item.innerText.toLowerCase();
+		if (text.includes(searchText)) {
 			item.classList.remove('d-none');
 		} else {
 			item.classList.add('d-none');

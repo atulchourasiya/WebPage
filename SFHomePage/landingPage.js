@@ -137,7 +137,7 @@ function handleEvent() {
 											xmlns='http://www.w3.org/2000/svg'
 											width='20'
 											height='20'
-											fill='currentColor'
+											fill='gray'
 											class='bi bi-download'
 											viewBox='0 0 16 16'>
 											<path d='M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z' />
@@ -151,19 +151,29 @@ function handleEvent() {
 					element.innerHTML = str;
 					PhysicalEventContainer.firstElementChild.insertAdjacentElement('beforeend', element);
 				} else if (event.Type === 'Virtual') {
+					let isMeetingLinkPresent = event.LinkOfMeeting.length === 0;
 					let str = `	
 								<td class="font-poppins text-center">${event.Name}</td>
 								<td class="font-poppins text-center">${event.DateAndTime}</td>
-								<td class="font-poppins text-center"><a href=${
-									event.LinkOfMeeting
-								}><svg xmlns="http://www.w3.org/2000/svg"
+								<td class="font-poppins text-center">${
+									!isMeetingLinkPresent
+										? `<a href=${event.LinkOfMeeting}><svg xmlns="http://www.w3.org/2000/svg"
 											width="20" height="20" fill="currentColor" class="bi bi-link-45deg"
 											viewBox="0 0 16 16">
 											<path
 												d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z" />
 											<path
 												d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z" />
-										</svg></a></td>
+										</svg></a>`
+										: `<svg xmlns="http://www.w3.org/2000/svg"
+											width="20" height="20" fill="gray" class="bi bi-link-45deg"
+											viewBox="0 0 16 16">
+											<path
+												d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z" />
+											<path
+												d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z" />
+										</svg>`
+								}</td>
 								<td class="font-poppins text-center">
 								${
 									!isAttachmentPresent
@@ -180,7 +190,7 @@ function handleEvent() {
 											xmlns='http://www.w3.org/2000/svg'
 											width='20'
 											height='20'
-											fill='currentColor'
+											fill='gray'
 											class='bi bi-download'
 											viewBox='0 0 16 16'>
 											<path d='M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z' />
@@ -224,7 +234,7 @@ function handleNotifications() {
 											xmlns='http://www.w3.org/2000/svg'
 											width='20'
 											height='20'
-											fill='currentColor'
+											fill='gray'
 											class='bi bi-download'
 											viewBox='0 0 16 16'>
 											<path d='M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z' />
@@ -248,20 +258,29 @@ function handleMeeting() {
 		.then((response) => {
 			let MeetingContainer = document.getElementById('meeting');
 			response.data.forEach((meeting) => {
+				let isMeetingLinkPresent = meeting.MeetingAgenda.length === 0;
 				let str = `
 								<td class="font-poppins pl-4">${meeting.MeetingName}</td>
 
 								<td class="font-poppins pl-4">${new Date(meeting.StartDate).toLocaleString()}</td>
 
-								<td class="font-poppins pointer pl-4"><a href=${
-									meeting.MeetingAgenda
-								}><svg xmlns="http://www.w3.org/2000/svg" width="20"
+								<td class="font-poppins pointer pl-4">${
+									!isMeetingLinkPresent
+										? `<a href=${meeting.MeetingAgenda}><svg xmlns="http://www.w3.org/2000/svg" width="20"
 										height="20" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
 										<path
 											d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
 										<path
 											d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
-									</svg></a></td>
+									</svg></a>`
+										: `<svg xmlns="http://www.w3.org/2000/svg" width="20"
+										height="20" fill="gray" class="bi bi-download" viewBox="0 0 16 16">
+										<path
+											d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+										<path
+											d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+									</svg>`
+								}</td>
 								`;
 				let element = document.createElement('tr');
 				element.innerHTML = str;
@@ -274,190 +293,39 @@ handleMeeting();
 handleNotifications();
 handleEvent();
 
-// function numDifferentiation(value) {
-// 	var val = Math.abs(value);
-// 	if (val >= 10000000) {
-// 		val = (val / 10000000).toFixed(2) + ' Cr';
-// 	} else if (val >= 100000) {
-// 		val = (val / 100000).toFixed(2) + ' Lac';
-// 	}
-// 	return val;
-// }
-// fetch('https://cohandsindia.com/misapi/getAllCohandsSlides')
-// 	.then((res) => res.json())
-// 	.then((response) => {
-// 		let result = ``;
-// 		response.cohandsInfo.map((item, index) => {
-// 			if (index === 0) {
-// 				result += `<div class="slide active blue"><img src="${item.image}" class="slide-image" /></div>`;
-// 			} else {
-// 				result += `<div class="slide blue"><img src="${item.image}" class="slide-image" /></div>`;
-// 			}
-// 		});
-// 		console.log(result);
-// 		document.getElementById('slides').innerHTML = result;
-// 	});
+const countingAnimation = (start, target, element, speed) => {
+	element.innerText = start;
+	if (target > start) {
+		setTimeout(() => {
+			window.requestAnimationFrame(() => {
+				countingAnimation(start + speed, target, element, speed);
+			});
+		}, 10);
+	} else {
+		element.innerText = target;
+	}
+};
 
-// fetch('https://cohandsindia.com/misapi/gettotalsantionedamount')
-// 	.then((res) => res.json())
-// 	.then((response) => {
-// 		console.log(response);
-// 		let result = numDifferentiation(response.data[0].grandtotal);
-// 		document.getElementById('sanctioned').innerHTML = result;
-// 	});
-// fetch('https://cohandsindia.com/misapi/getAritansaInfo')
-// 	.then((res) => res.json())
-// 	.then((response) => {
-// 		console.log(response);
-// 		let result = response.data.toLocaleString();
-// 		document.getElementById('artisans').innerHTML = result;
-// 	});
-// function handleAll() {
-// 	fetch('https://cohandsindia.com/misapi/getEvents')
-// 		.then((res) => res.json())
-// 		.then((response) => {
-// 			console.log(response);
-// 			let result = ``;
-// 			response.data
-// 				.filter(
-// 					(item) =>
-// 						new Date(
-// 							item.Type === 'Physical'
-// 								? item.PhysicalEventType === 'Single Day Event'
-// 									? item.Date
-// 									: item.FromDate
-// 								: item.DateAndTime
-// 						).getTime() > new Date().getTime()
-// 				)
-// 				.map((item, index) => {
-// 					result += ` <div class="col-lg-2 m-0 p-0 card p-2 m-1 border-teal">
-//           <h3>${item.Name}</h3>
-//           <p>Date: ${moment(
-// 						item.Type === 'Physical'
-// 							? item.PhysicalEventType === 'Single Day Event'
-// 								? item.Date
-// 								: item.FromDate
-// 							: item.DateAndTime
-// 					).format('DD MMM YYYY')}</p>
-//           <p>Time: ${moment(
-// 						item.Type === 'Physical'
-// 							? item.PhysicalEventType === 'Single Day Event'
-// 								? item.Date
-// 								: item.FromDate
-// 							: item.DateAndTime
-// 					).format('hh:mm A')}</p>
-//           <p>Location: ${item.Location}</p>
-//           <div class="d-flex flex-wrap align-items-start">
-//           ${
-// 						item.LinkOfMeeting
-// 							? `<a href="${item.LinkOfMeeting}" class="btn btn-sm btn-success col-lg-4 m-1">Join</a>`
-// 							: ''
-// 					}
-//           ${
-// 						item.Attachment
-// 							? `<a href="${item.Attachment}" class="btn btn-sm btn-success col-lg-4 m-1">File</a>`
-// 							: ''
-// 					}
-//           </div>
-//         </div>`;
-// 				});
-// 			document.getElementById('events').innerHTML = result;
-// 			document.getElementById('filterText').innerHTML = 'All Events';
-// 		});
-// }
-// fetch('https://cohandsindia.com/misapi/getNotifications')
-// 	.then((res) => res.json())
-// 	.then((response) => {
-// 		console.log(response);
-// 		let result = ``;
-// 		response.data.slice(0, 5).map((item, index) => {
-// 			result += `
-//             <tr>
-//               <td width="40%">${item.Title}</td>
-//               <td>${moment(item.createdAt).format('DD MMM YYYY')}</td>
-//               <td><a href="${item.Attachment}">Download</a></td>
-//             </tr>`;
-// 		});
-// 		document.getElementById('notifications').innerHTML = result;
-// 	});
-// fetch('https://cohandsindia.com/misapi/getMeetings')
-// 	.then((res) => res.json())
-// 	.then((response) => {
-// 		console.log(response);
-// 		let result = ``;
-// 		response.data.slice(0, 5).map((item, index) => {
-// 			result += `
-//             <tr>
-//               <td width="40%">${item.MeetingName}</td>
-//               <td>${moment(item.StartDate).format('DD MMM YYYY')}</td>
-//               <td><a href="${item.MeetingAgenda}">Download</a></td>
-//             </tr>`;
-// 		});
-// 		document.getElementById('meetings').innerHTML = result;
-// 	});
-// fetch('https://cohandsindia.com/misapi/getExecutiveMessages')
-// 	.then((res) => res.json())
-// 	.then((response) => {
-// 		console.log(response);
-// 		let photo = response.data[0].Photo;
-// 		let message = response.data[0].Message;
-// 		let name = response.data[0].Name;
-// 		document.getElementById('photo').src = photo;
-// 		document.getElementById('message').innerHTML = message;
-// 		document.getElementById('name').innerHTML = name;
-// 	});
+function countingstep() {
+	const animatedBox = document.getElementById('staticsNumberContainer');
+	let financialaid = document.getElementById('financialaid');
+	let artisancount = document.getElementById('artisancount');
+	const windowOffsetTop = window.innerHeight + window.scrollY;
+	if (
+		windowOffsetTop >= animatedBox.offsetTop + animatedBox.offsetHeight / 1.5 &&
+		!animatedBox.classList.contains('loaded')
+	) {
+		animatedBox.classList.add('loaded');
+		window.requestAnimationFrame(() => {
+			countingAnimation(0, 172, financialaid, 6);
+		});
+		window.requestAnimationFrame(() => {
+			countingAnimation(0, 40, artisancount, 1);
+		});
+	}
+}
 
-// function handlePhysical() {
-// 	fetch('https://cohandsindia.com/misapi/getEvents')
-// 		.then((res) => res.json())
-// 		.then((response) => {
-// 			console.log(response);
-// 			let result = ``;
-// 			response.data
-// 				.filter(
-// 					(item) =>
-// 						new Date(
-// 							item.Type === 'Physical'
-// 								? item.PhysicalEventType === 'Single Day Event'
-// 									? item.Date
-// 									: item.FromDate
-// 								: item.DateAndTime
-// 						).getTime() > new Date().getTime()
-// 				)
-// 				.filter((item) => item.Type === 'Physical')
-// 				.map((item, index) => {
-// 					result += ` <div class="col-lg-2 m-0 p-0 card p-2 m-1 border-teal">
-//           <h3>${item.Name}</h3>
-//           <p>Date: ${moment(
-// 						item.Type === 'Physical'
-// 							? item.PhysicalEventType === 'Single Day Event'
-// 								? item.Date
-// 								: item.FromDate
-// 							: item.DateAndTime
-// 					).format('DD MMM YYYY')}</p>
-//           <p>Time: ${moment(
-// 						item.Type === 'Physical'
-// 							? item.PhysicalEventType === 'Single Day Event'
-// 								? item.Date
-// 								: item.FromDate
-// 							: item.DateAndTime
-// 					).format('hh:mm A')}</p>
-//           <p>Location: ${item.Location}</p>
-//            <div class="d-flex flex-wrap align-items-start">
-//           ${
-// 						item.LinkOfMeeting
-// 							? `<a href="${item.LinkOfMeeting}" class="btn btn-sm btn-success col-lg-4 m-1">Join</a>`
-// 							: ''
-// 					}
-//           ${
-// 						item.Attachment
-// 							? `<a href="${item.Attachment}" class="btn btn-sm btn-success col-lg-4 m-1">File</a>`
-// 							: ''
-// 					}
-//           </div>
-//         </div>`;
-// 				});
-// 			document.getElementById('events').innerHTML = result;
-// 			document.getElementById('filterText').innerHTML = 'Physical Events';
-// 		});
-// }
+document.addEventListener('DOMContentLoaded', function (event) {
+	countingstep();
+	document.addEventListener('scroll', countingstep);
+});

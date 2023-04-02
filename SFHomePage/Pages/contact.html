@@ -6,69 +6,92 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Document</title>
-   <link rel="stylesheet" href="../landing-page.module.css" />
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
    <link rel="stylesheet"
       href="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/compiled-4.20.0.min.css">
+   <link rel="stylesheet" href="../landing-page.module.css" />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
    <script defer type="text/javascript"
       src="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/js/bundles/4.20.0/compiled.min.js"></script>
-   <script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"></script>
-   <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
-   <script defer src="../landingPage.js"></script>
-   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
-   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"></script>
+   <script defer src="../cookieconsent.js"></script>
+   <script defer src="../navbardropdown.js"></script>
 </head>
 
 <body>
-   <nav class="navbar navbar-expand-lg sticky-top navbar-light" style="box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
-      <a class="navbar-brand" id="nchhdlogo" href="/"><img src="../assets/nchhdlogo.png" alt=""></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-         <i class="bi bi-list"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-         <ul class="navbar-nav ml-auto d-flex  align-items-center font-poppins">
-            <li class="nav-item">
-               <a class="nav-link" href="/index.html">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  About Us
-               </a>
-               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="/about-vision.html">VISION</a>
-                  <a class="dropdown-item" href="/about-aims.html">AIMS</a>
-                  <a class="dropdown-item" href="/about-sfurti-scheme.html">SFURTI SCHEME</a>
-               </div>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="./Pages/contact.html">Contact Us</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="/opentenders.html">Tenders</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="/modules.html">Modules</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="iafdashboard/#/login">Login</a>
-            </li>
-            <li class="nav-item">
-               <a class="nav-link" href="iafdashboard/#/login">Register</a>
-            </li>
-         </ul>
+   <nav class="navbar navbar-expand-lg sticky-top navbar-light"
+      style="background-color: #fff; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;">
+      <div class="container">
+         <a class="navbar-brand" id="nchhdlogo" href="/"><img src="../assets/nchhdlogo.png" alt=""></a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" class="iconSize" viewBox="0 0 448 512">
+					<path
+						d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+				</svg>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto align-items-md-center align-items-start">
+               <li class="nav-item font-poppins">
+                  <a class="nav-link mx-1 d-flex justify-content-center align-items-center" href="/index.html"><svg
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="iconSize mr-1">
+                        <path
+                           d="M575.8 255.5c0 18-15 32.1-32 32.1h-32l.7 160.2c0 2.7-.2 5.4-.5 8.1V472c0 22.1-17.9 40-40 40H456c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1H416 392c-22.1 0-40-17.9-40-40V448 384c0-17.7-14.3-32-32-32H256c-17.7 0-32 14.3-32 32v64 24c0 22.1-17.9 40-40 40H160 128.1c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2H104c-22.1 0-40-17.9-40-40V360c0-.9 0-1.9 .1-2.8V287.6H32c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z" />
+                     </svg>Home</a>
+               </li>
+               <li id="navbarDropdown" class="nav-item font-poppins">
+                  <a class="nav-link mx-1  d-flex justify-content-center align-items-center" href="#" role="button"
+                     aria-haspopup="true" aria-expanded="false">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="iconSize mr-1">
+                        <path
+                           d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                     </svg>
+                     About Us
+                  </a>
+                  <ul id="dropdownContainer"
+                     class="rounded font-poppins p-0 py-2 d-flex flex-column position-absolute  justify-content-center align-items-start"
+                     style="background-color: #fff;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;z-index: 1000;top: -300%;">
+                     <li class="px-3 py-1"><a class="d-flex align-items-center" href="./aboutsfurti.html">About
+                           Sfurti</a></li>
+                     <li class="px-3 py-1"><a class="d-flex align-items-center" href="./faq.html">FAQ</a></li>
+                     <li class="px-3 py-1"><a class="d-flex align-items-center" href="./privacypolicy.html">Privacy
+                           Policy</a></li>
+                     <li class="px-3 py-1"><a class="d-flex align-items-center" href="./cookiepolicy.html">Cookie
+                           Policy</a></li>
+                  </ul>
+               </li>
+               <li class="nav-item font-poppins">
+                  <a class="nav-link mx-1  d-flex justify-content-center align-items-center"
+                     href="./Pages/contact.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                        class="iconSize mr-1">
+                        <path
+                           d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64h96v80c0 6.1 3.4 11.6 8.8 14.3s11.9 2.1 16.8-1.5L309.3 416H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64z" />
+                     </svg>Contact Us</a>
+               </li>
+               <li class="nav-item font-poppins">
+                  <a class="nav-link mx-1  d-flex justify-content-center align-items-center" href="/Pages/Tender.html">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="iconSize mr-1">
+
+                        <path
+                           d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM112 256H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16zm0 64H272c8.8 0 16 7.2 16 16s-7.2 16-16 16H112c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
+                     </svg>
+                     Tenders</a>
+               </li>
+               <li class="nav-item font-poppins">
+                  <a class="nav-link mx-1 d-flex justify-content-center align-items-center"
+                     href="/Pages/module.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+                        class="iconSize mr-1">
+                        <path
+                           d="M0 32C0 14.3 14.3 0 32 0H160c17.7 0 32 14.3 32 32V416c0 53-43 96-96 96s-96-43-96-96V32zM223.6 425.9c.3-3.3 .4-6.6 .4-9.9V154l75.4-75.4c12.5-12.5 32.8-12.5 45.3 0l90.5 90.5c12.5 12.5 12.5 32.8 0 45.3L223.6 425.9zM182.8 512l192-192H480c17.7 0 32 14.3 32 32V480c0 17.7-14.3 32-32 32H182.8zM128 64H64v64h64V64zM64 192v64h64V192H64zM96 440a24 24 0 1 0 0-48 24 24 0 1 0 0 48z" />
+                     </svg>Modules</a>
+               </li>
+               <li class="nav-item font-poppins ms-3">
+                  <a class="btn rounded-pill px-3" href="https://www.cohandsindia.com/iafdashboard/#/login"
+                     style="box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(255, 170, 73, 0.23) 0px 3px 6px;background-color:#17a2b8;color:#fff">Sign
+                     in</a>
+               </li>
+            </ul>
+         </div>
       </div>
    </nav>
    <!--Section: Contact v.2-->
@@ -147,7 +170,7 @@
                </div>
             </form>
             <div class="text-center text-md-left">
-               <a class="btn font-poppins" onclick="validateForm()"
+               <a class="btn font-poppins px-4" onclick="validateForm()"
                   style="background-color: var(--heading-color); color: #fff;">Send</a>
             </div>
             <div class="status text-danger"></div>
