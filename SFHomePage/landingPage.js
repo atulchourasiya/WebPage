@@ -289,40 +289,73 @@ function handleMeeting() {
 		});
 }
 
-handleMeeting();
-handleNotifications();
-handleEvent();
+// handleMeeting();
+// handleNotifications();
+// handleEvent();
 
+function convertToK(number) {
+	if (number >= 1000) {
+		return (number / 1000).toFixed(1);
+	} else {
+		return number.toString();
+	}
+}
 const countingAnimation = (start, target, element, speed) => {
 	element.innerText = start;
 	if (target > start) {
-		setTimeout(() => {
+		let timeOut = setTimeout(() => {
 			window.requestAnimationFrame(() => {
 				countingAnimation(start + speed, target, element, speed);
 			});
+			clearTimeout(timeOut);
 		}, 10);
 	} else {
 		element.innerText = target;
 	}
 };
 
-function countingstep() {
+async function countingstep() {
 	const animatedBox = document.getElementById('staticsNumberContainer');
 	let financialaid = document.getElementById('financialaid');
 	let artisancount = document.getElementById('artisancount');
 	const windowOffsetTop = window.innerHeight + window.scrollY;
-	if (
-		windowOffsetTop >= animatedBox.offsetTop + animatedBox.offsetHeight / 1.5 &&
-		!animatedBox.classList.contains('loaded')
-	) {
-		animatedBox.classList.add('loaded');
-		window.requestAnimationFrame(() => {
-			countingAnimation(0, 172, financialaid, 6);
+	fetch('https://cohandsindia.com/misapi/getAritansaInfo')
+		.then((res) => res.json())
+		.then((response) => {
+			if (
+				windowOffsetTop >= animatedBox.offsetTop + animatedBox.offsetHeight / 1.5 &&
+				!animatedBox.classList.contains('loaded')
+			) {
+				animatedBox.classList.add('loaded');
+				window.requestAnimationFrame(() => {
+					countingAnimation(0, 62, financialaid, 6);
+				});
+				window.requestAnimationFrame(() => {
+					// countingAnimation(0, convertToK(response.data), artisancount, 1);
+					countingAnimation(0, response.data, artisancount, 1);
+				});
+			}
+		})
+		.catch((err) => {
+			let response = {
+				success: true,
+				data: 40,
+				message: 'All Artisans'
+			};
+			if (
+				windowOffsetTop >= animatedBox.offsetTop + animatedBox.offsetHeight / 1.5 &&
+				!animatedBox.classList.contains('loaded')
+			) {
+				animatedBox.classList.add('loaded');
+				window.requestAnimationFrame(() => {
+					countingAnimation(0, 62, financialaid, 6);
+				});
+				window.requestAnimationFrame(() => {
+					// countingAnimation(0, convertToK(response.data), artisancount, 1);
+					countingAnimation(0, response.data, artisancount, 1);
+				});
+			}
 		});
-		window.requestAnimationFrame(() => {
-			countingAnimation(0, 40, artisancount, 1);
-		});
-	}
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {

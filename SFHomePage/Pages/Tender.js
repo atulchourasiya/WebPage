@@ -18,13 +18,24 @@ const toggletenderbtn = (event) => {
 	});
 };
 
-function handleTender(url) {
-	fetch(url)
+function handleTender() {
+	fetch('https://www.cohandsindia.com//misapi/getTenders')
 		.then((res) => res.json())
 		.then((response) => {
-			let TenderContainer = document.getElementById('tenderDataContainer');
-			TenderContainer.innerHTML = '';
-			response.data.forEach((tender) => {
+			if(response.data.length=== 0){
+				let TenderContainer = document.getElementById('tenderTable');
+				let str = `<p class='font-poppins'>Currently there are no active tenders</p>`;
+				let element = document.createElement('div');
+				element.classList.add('d-flex')
+				element.classList.add('justify-content-center')
+				element.style.fontSize = '1rem';
+				element.innerHTML = str;
+				TenderContainer.insertAdjacentElement('afterend', element);
+			}
+			else{
+				let TenderContainer = document.getElementById('tenderDataContainer');
+				TenderContainer.innerHTML = '';
+				response.data.forEach((tender) => {
 				let str = `
 						<td class="font-poppins pl-4">${tender.Number}</td>
                   <td class="font-poppins pl-4">${tender.Title}</td>
@@ -45,10 +56,11 @@ function handleTender(url) {
 			items = Array.from(document.getElementById('tenderDataContainer').querySelectorAll('tr'));
 			displayItems(currentPage);
 			displayPagination();
+			}
 		});
 }
 
-handleTender('https://cohandsindia.com/misapi/ClosedTenders');
+handleTender();
 
 function displayItems(pageNumber) {
 	const startIndex = (pageNumber - 1) * itemsPerPage;
